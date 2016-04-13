@@ -31,14 +31,14 @@ namespace OPTITEST {
 
         void grad(const double* x, double* g) {
             g[0] = 2 * x[0];
-            g[1] = 2 * x[1];
+            g[1] = -2 * x[1];
         }
 
         void hess(const double* x, double* H) {
-            H[0] = 2
+            H[0] = 2;
             H[1] = 0;
             H[2] = 0;
-            H[3] = 2;
+            H[3] = -2;
         }
     private:
 

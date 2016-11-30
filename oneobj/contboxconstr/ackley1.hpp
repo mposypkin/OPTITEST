@@ -36,7 +36,7 @@ namespace OPTITEST {
     };
 
     /**
-     * Factory to produce instances of DeJong optimization problem
+     * Factory to produce instances of Ackley1 optimization problem
      */
     class Ackley1ProblemFactory {
     public:
@@ -66,7 +66,6 @@ namespace OPTITEST {
         }
 
     private:
-
         int mN;
         double mA;
         double mB;

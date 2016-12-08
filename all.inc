@@ -82,6 +82,7 @@ clean:
 	rm -f *.exe *.o *.a *~ *.log deps.inc
 
 dep:
+	$(CC) $(COPTS) -MM -c *.c > deps.inc;\
 	$(CPP) $(CPPOPTS) -MM -c *.cpp >> deps.inc;\
         true
 

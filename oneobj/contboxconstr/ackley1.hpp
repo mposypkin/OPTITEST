@@ -8,9 +8,11 @@
 #ifndef ACKLEY1_HPP
 #define	ACKLEY1_HPP
 
-#include <math.h>
+#include <iostream>
+#include <cmath>
 #include <mpproblem.hpp>
 #include <box/box.hpp>
+
 
 namespace OPTITEST {
 
@@ -25,12 +27,27 @@ namespace OPTITEST {
             double sumCosX = 0;
             for (int i = 0; i < mN; i++) {
                 sumXSqr += x[i] * x[i];
-                sumCosX += cos(2*PI*x[i]);               
+                sumCosX += cos(2*M_PI*x[i]);               
             }
-            return -20*exp(pow(sumXSqr/mN, -0.02)) - \
-                    exp(sumCosX/mN) + 20 + exp(1);
+            return -20*exp(-0.02*sqrt(sumXSqr/mN)) - exp(sumCosX/mN) + 20 + exp(1);
         }
-
+        
+        void grad(const double* x, double* g) 
+        {
+            
+            double sumXSqr = 0.0;
+            double sumCosX = 0.0;
+            for (int i = 0; i < mN; i++) {
+                sumXSqr += x[i] * x[i];
+                sumCosX += cos(2*M_PI*x[i]); 
+            }
+            for (int i = 0; i < mN; i++) {
+                double firstPart = 0.4*sqrt((double)1/mN)*exp(-0.02*sqrt(sumXSqr/mN))*x[i]/sumXSqr;
+                double secondPart = 2*M_PI*exp(sumCosX/mN)*sin(2*M_PI*x[i])/mN;
+                g[i]= firstPart + secondPart;               
+            }
+            
+        }
     private:
         int mN;
     };

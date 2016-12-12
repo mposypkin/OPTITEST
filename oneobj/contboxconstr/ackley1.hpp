@@ -9,7 +9,7 @@
 #define	ACKLEY1_HPP
 
 #include <iostream>
-#include <cmath>
+#include <math.h>
 #include <mpproblem.hpp>
 #include <box/box.hpp>
 
@@ -23,13 +23,13 @@ namespace OPTITEST {
         }
 
         double func(const double* x) {
-            double sumXSqr = 0;
-            double sumCosX = 0;
+            double sumXSqr = 0.0;
+            double sumCosX = 0.0;
             for (int i = 0; i < mN; i++) {
                 sumXSqr += x[i] * x[i];
-                sumCosX += cos(2*M_PI*x[i]);               
+                sumCosX += ::cos(2*M_PI*x[i]);               
             }
-            return -20*exp(-0.02*sqrt(sumXSqr/mN)) - exp(sumCosX/mN) + 20 + exp(1);
+            return -20*::exp(-0.2*::sqrt(sumXSqr/mN)) - ::exp(sumCosX/mN) + 20 + M_El;
         }
         
         void grad(const double* x, double* g) 
@@ -39,11 +39,11 @@ namespace OPTITEST {
             double sumCosX = 0.0;
             for (int i = 0; i < mN; i++) {
                 sumXSqr += x[i] * x[i];
-                sumCosX += cos(2*M_PI*x[i]); 
+                sumCosX += ::cos(2*M_PI*x[i]); 
             }
             for (int i = 0; i < mN; i++) {
-                double firstPart = 0.4*sqrt((double)1/mN)*exp(-0.02*sqrt(sumXSqr/mN))*x[i]/sumXSqr;
-                double secondPart = 2*M_PI*exp(sumCosX/mN)*sin(2*M_PI*x[i])/mN;
+                double firstPart = 0.4*::sqrt((double)1/mN)*::exp(-0.2*::sqrt(sumXSqr/mN))*x[i]/sumXSqr;
+                double secondPart = 2*M_PI*::exp(sumCosX/mN)*::sin(2*M_PI*x[i])/mN;
                 g[i]= firstPart + secondPart;               
             }
             
@@ -81,11 +81,50 @@ namespace OPTITEST {
             }
             return prob;
         }
+        
 
     private:
         int mN;
         double mA;
         double mB;
+    };
+    
+    /**
+     * Factory to produce instances of Ackley1 optimization problem
+     */
+    class Ackley1ProblemFactory2 {
+    public:
+
+        /**
+         * Constructor
+         * @param n problem dimension
+         * @param a left border for a box
+         * @param b right border for a box
+         */
+        Ackley1ProblemFactory2(double a, double b, double c, double d) : mA(a), mB(b), mC(c), mD(d) {
+        }
+
+        COMPI::MPProblem<double>* getProblem() const {
+            COMPI::MPProblem<double>* prob = new COMPI::MPProblem<double>();
+            for (int i = 0; i < 2; i++) {
+                int v = COMPI::MPProblem<double>::VariableTypes::GENERIC;
+                prob->mVarTypes.push_back(v);
+            }
+            prob->mObjectives.push_back(new Ackley1Objective(2));
+            prob->mBox = new snowgoose::Box<double>(2);
+            prob->mBox->mA[0] = mA;
+            prob->mBox->mB[0] = mB;
+            prob->mBox->mA[1] = mC;
+            prob->mBox->mB[1] = mD;
+            return prob;
+        }
+        
+
+    private:
+        double mA;
+        double mB;
+        double mC;
+        double mD;
     };
 
 }

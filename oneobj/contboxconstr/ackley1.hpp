@@ -61,12 +61,6 @@ namespace OPTITEST {
     class Ackley1ProblemFactory {
     public:
 
-        /**
-         * Constructor
-         * @param n problem dimension
-         * @param a left border for a box
-         * @param b right border for a box
-         */
         Ackley1ProblemFactory(const std::vector<std::pair<double,double>> &vPair) : mVPair(vPair) {
             mN = vPair.size();
         }

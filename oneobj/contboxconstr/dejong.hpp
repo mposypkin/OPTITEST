@@ -6,7 +6,7 @@
  */
 
 #ifndef DEJONG_HPP
-#define	DEJONG_HPP
+#define DEJONG_HPP
 
 #include <mpproblem.hpp>
 #include <box/box.hpp>
@@ -49,13 +49,10 @@ namespace OPTITEST {
 
         COMPI::MPProblem<double>* getProblem() const {
             COMPI::MPProblem<double>* prob = new COMPI::MPProblem<double>();
-            for (int i = 0; i < mN; i++) {
-                int v = COMPI::MPProblem<double>::VariableTypes::GENERIC;
-                prob->mVarTypes.push_back(v);
-            }
+            prob->mVarTypes.assign(mN, COMPI::MPProblem<double>::VariableTypes::GENERIC);
             prob->mObjectives.push_back(new DejongObjective(mN));
             prob->mBox = new snowgoose::Box<double>(mN);
-            for(int i = 0; i < mN; i ++) {
+            for (int i = 0; i < mN; i++) {
                 prob->mBox->mA[i] = mA;
                 prob->mBox->mB[i] = mB;
             }
@@ -71,5 +68,5 @@ namespace OPTITEST {
 
 }
 
-#endif	/* DEJONG_HPP */
+#endif /* DEJONG_HPP */
 

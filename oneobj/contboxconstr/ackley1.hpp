@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <vector>
+#include <utility>
 #include <math.h>
 #include <mpproblem.hpp>
 #include <box/box.hpp>
@@ -66,9 +67,8 @@ namespace OPTITEST {
          * @param a left border for a box
          * @param b right border for a box
          */
-        Ackley1ProblemFactory(const std::vector<double>& a, const std::vector<double>& b) : mA(a), mB(b) {
-            SG_ASSERT(a.size() == b.size());
-            mN = a.size();
+        Ackley1ProblemFactory(const std::vector<std::pair<double,double>> &vPair) : mVPair(vPair) {
+            mN = vPair.size();
         }
 
         COMPI::MPProblem<double>* getProblem() const {
@@ -77,8 +77,8 @@ namespace OPTITEST {
             prob->mObjectives.push_back(new Ackley1Objective(mN));
             prob->mBox = new snowgoose::Box<double>(mN);
             for (int i = 0; i < mN; i++) {
-                prob->mBox->mA[i] = mA[i];
-                prob->mBox->mB[i] = mB[i];
+                prob->mBox->mA[i] = mVPair[i].first;
+                prob->mBox->mB[i] = mVPair[i].second;
             }
             return prob;
         }
@@ -86,8 +86,7 @@ namespace OPTITEST {
 
     private:
         int mN;
-        std::vector<double> mA;
-        std::vector<double> mB;
+        std::vector<std::pair<double,double>> mVPair;
     };
 }
 

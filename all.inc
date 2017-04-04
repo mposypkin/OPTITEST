@@ -33,7 +33,7 @@ OPTIMOPT=-g
 #STATIC=-static
 
 #C++ 11 support on
-STD_OPT = -std=c++11
+STD_OPT = -std=c++14 -U__STRICT_ANSI__
 
 
 # Auxilary headers
@@ -56,7 +56,7 @@ COPTS=$(COMOPTS) $(ADDIT_INCS) $(PCOPTS)
 CPPOPTS= $(COMOPTS) $(ADDIT_INCS) $(PCPPOPTS)
 
 #Linker options for static linking
-LDFLAGS = -lm -ldl $(OPENMPLD) $(PTHREADLD) $(STATIC)
+LDFLAGS = -lm $(OPENMPLD) $(PTHREADLD) $(STATIC)
 
 
 MFLAGS = MPICC=$(MPICC) COPTS="$(COPTS)" CPPOPTS="$(CPPOPTS) LIBTOOL="$(LIBTOOL)"

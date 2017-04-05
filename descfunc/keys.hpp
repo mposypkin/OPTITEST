@@ -54,22 +54,31 @@ struct Keys
 	const std::string Chichinadze = "Chichinadze";
 	const std::string ChungReynolds = "ChungReynolds";
 	const std::string Colville = "Colville";
+	const std::string Complex = "Complex";
 	const std::string CosineMixture = "CosineMixture";
+        const std::string CrossInTray = "CrossInTray";
+	const std::string CrossLeg = "CrossLeg";
 	const std::string Csendes = "Csendes";
 	const std::string Cube = "Cube";
 	const std::string Damavandi = "Damavandi";
+	const std::string Davis = "Davis";
 	const std::string Deb1 = "Deb1";
 	const std::string DeckkersAarts = "Deckkers-Aarts";
 	const std::string DixonPrice = "DixonPrice";
 	const std::string Dolan = "Dolan";
+	const std::string DropWave = "DropWave";
 	const std::string Easom = "Easom";
 	const std::string EggCrate = "EggCrate";
 	const std::string EggHolder = "EggHolder";
 	const std::string ElAttarVidyasagarDutt = "ElAttarVidyasagarDutt";
+	const std::string Engvall = "Engvall";
 	const std::string Exp2 = "Exp2";
 	const std::string Exponential = "Exponential";
 	const std::string FreudensteinRoth = "FreudensteinRoth";
 	const std::string GoldsteinPrice = "GoldsteinPrice";
+        const std::string GramacyLee2 = "GramacyLee2";
+        const std::string GramacyLee3 = "GramacyLee3";
+        const std::string GramacyLee2Max = "GramacyLee2Max";
 	const std::string Griewank = "Griewank";
 	const std::string Hansen = "Hansen";
 	const std::string Hartman3 = "Hartman3";
@@ -102,6 +111,10 @@ struct Keys
 	const std::string Price2 = "Price2";
 	const std::string Price3 = "Price3";
 	const std::string Price4 = "Price4";
+	const std::string Problem02="Problem02";
+	const std::string Problem04="Problem04";
+	const std::string Problem05="Problem05";
+	const std::string Problem06="Problem06";
 	const std::string Qing = "Qing";
 	const std::string Quadratic = "Quadratic";
 	const std::string Quintic = "Quintic";
@@ -168,6 +181,7 @@ struct Keys
 	const std::string XinSheYang3 = "XinSheYang3";
 	const std::string XinSheYang4 = "XinSheYang4";
 	const std::string Zakharov = "Zakharov";
+
 	const std::string Zettl = "Zettl";
 	const std::string Zirilli = "Zirilli";
 

@@ -270,8 +270,6 @@ using namespace snowgoose::expression;
 		return (4 - 2.1*sqr(x[0]) + (x[0] ^ 4) / 3)*sqr(x[0]) + x[0] * x[1] + (4 * sqr(x[1]) - 4) * sqr(x[1]);
 	}
 
-
-
 	template <class T>
 	Expr<T> Chichinadze()
 	{
@@ -558,11 +556,11 @@ using namespace snowgoose::expression;
 		std::vector<std::vector<double>> a = { { 10, 3, 17, 3.5, 1.7, 8 } ,
 		                                       { 0.05, 10, 17, 0.1, 8, 14 },
 		                                       { 3, 3.5, 1.7, 10, 17, 8 }, 
-											   { 17, 8, 0.05, 10, 0.1, 14 } };
+						       { 17, 8, 0.05, 10, 0.1, 14 } };
 		std::vector<std::vector<double>> p = { { 0.1312, 0.1696, 0.5569, 0.0124, 0.8283, 0.5886 },
 		                                       { 0.2329, 0.4135, 0.8307, 0.3736, 0.1004, 0.9991 },
-											   { 0.2348, 0.1451, 0.3522, 0.2883, 0.3047, 0.6650 },
-											   { 0.4047, 0.8828, 0.8732, 0.5743, 0.1091, 0.0381 } };
+						       { 0.2348, 0.1451, 0.3522, 0.2883, 0.3047, 0.6650 },
+						       { 0.4047, 0.8828, 0.8732, 0.5743, 0.1091, 0.0381 } };
 		std::vector<double> c = { 1.0, 1.2, 3.0, 3.2 };
 
 		Expr<T> y = 0.0;
@@ -678,7 +676,6 @@ using namespace snowgoose::expression;
 		Expr<T> a = abs(sqr(x[0]) + x[1]);
 		Expr<T> b = sqrt(a);
 		Expr<T> c = sqrt(abs(cos(b)));
-
 		return c + 0.01*(x[0] + x[1]);
 	}
 
@@ -1426,7 +1423,6 @@ using namespace snowgoose::expression;
 		return (a-b)*c;
 	}
 	
-
 	template <class T>
 	Expr<T> Zakharov(int n)
 	{
@@ -1435,7 +1431,6 @@ using namespace snowgoose::expression;
 		Expr<T> k = (Expr<T>)i;
 		return loopSum(sqr(x[i]),i) + sqr(0.5*loopSum(k*x[i], i)) + pow(0.5*loopSum(k*x[i], i), 4);
 	}
-
 
 
 	template <class T>

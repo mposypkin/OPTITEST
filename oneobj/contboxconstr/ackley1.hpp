@@ -33,7 +33,7 @@ namespace OPTITEST {
                 sumXSqr += x[i] * x[i];
                 sumCosX += ::cos(2 * M_PI * x[i]);
             }
-            return -20 * ::exp(-0.2 * ::sqrt(sumXSqr / mN)) - ::exp(sumCosX / mN) + 20 + M_El;
+            return -20 * ::exp(-0.2 * ::sqrt(sumXSqr / mN)) - ::exp(sumCosX / mN) + 20 + M_E;
         }
 
         void grad(const double* x, double* g) {

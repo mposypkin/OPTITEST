@@ -239,7 +239,7 @@ using namespace snowgoose::expression;
 	Expr<T> Bukin2()
 	{
 		Expr<T> x;
-		return 100 * (x[1] - 0.01 * sqr(x[0]) + 1) + 0.01 * sqr(x[0] + 10);
+		return 100 * sqr(x[1] - 0.01 * sqr(x[0]) + 1) + 0.01 * sqr(x[0] + 10);
 	}
 
 	template <class T>
@@ -269,8 +269,6 @@ using namespace snowgoose::expression;
 		Expr<T> x;
 		return (4 - 2.1*sqr(x[0]) + (x[0] ^ 4) / 3)*sqr(x[0]) + x[0] * x[1] + (4 * sqr(x[1]) - 4) * sqr(x[1]);
 	}
-
-
 
 	template <class T>
 	Expr<T> Chichinadze()
@@ -302,12 +300,43 @@ using namespace snowgoose::expression;
 	}
 
 	template <class T>
+	Expr<T> Complex()
+	{
+		Expr<T> x;
+		Expr<T> a = pow(x[0],3);
+		Expr<T> b = pow(x[1],3);
+		Expr<T> c = 3.0*x[0]*sqr(x[1]);
+		return sqr(a-c-1) + sqr(c-b);
+	}
+
+	template <class T>
 	Expr<T> CosineMixture()
 	{
 		int n=2;
 		Expr<T> x;
 		Iterator i(0, n - 1);
-		return 0.1* loopSum(cos(5 * M_PI*x[i]), i) - loopSum(sqr(x[i]), i);
+		return -0.1* loopSum(cos(5 * M_PI*x[i]), i) + loopSum(sqr(x[i]), i);
+	}
+
+        template <class T>
+	Expr<T> CrossInTray()
+	{
+		Expr<T> x;
+		Expr<T> a = sqrt(sqr(x[0])+sqr(x[1]));
+		Expr<T> b = abs(100.0 - a/M_PI); 
+		Expr<T> c = abs(sin(x[0])*sin(x[1])*exp(b));
+		Expr<T> d = -0.0001 * pow(c + 1.0, 0.1);
+		return d;
+	}
+	template <class T>
+	Expr<T> CrossLeg()
+	{
+		Expr<T> x;
+		Expr<T> a = sqrt(sqr(x[0])+sqr(x[1]));
+		Expr<T> b = abs(100.0 - a/M_PI); 
+		Expr<T> c = abs(sin(x[0])*sin(x[1])*exp(b));
+		Expr<T> d = -1.0/pow(c + 1.0, 0.1);
+		return d;
 	}
 
 	template <class T>
@@ -326,6 +355,16 @@ using namespace snowgoose::expression;
 	}
 
 	template <class T>
+	Expr<T> Davis()
+	{
+		Expr<T> x;
+		Expr<T> a = pow(sqr(x[0])+sqr(x[1]),0.25);
+		Expr<T> b = 50*pow(3 * sqr(x[0])+sqr(x[1]) ,0.1);
+		Expr<T> c = a*sqr(sin(b)+1);
+		return c;
+	}
+
+	template <class T>
 	Expr<T> DeckkersAarts()
 	{
 		Expr<T> x;
@@ -336,14 +375,24 @@ using namespace snowgoose::expression;
 	Expr<T> DixonPrice()
 	{
 		Expr<T> x;
-		return sqr(x[1] - 1) + 2.0 * sqr(2 * sqr(x[1]) - x[0]);
+		return sqr(x[0] - 1) + 2.0 * sqr(2 * sqr(x[1]) - x[0]);
 	}
 
 	template <class T>
 	Expr<T> Dolan()
 	{
 		Expr<T> x;
-		return (x[0] + 1.7 * x[1]) * sin(x[0]) - 1.5 * x[2] - 0.1 * x[3] * cos(x[3] + x[4] - x[0]) + 0.2 * sqr(x[4]- x[1] - 1.0);
+		return (x[0] + 1.7 * x[1]) * sin(x[0]) - 1.5 * x[2] - 0.1 * x[3] * cos(x[3] + x[4] - x[0]) + 0.2 * sqr(x[4]) - x[1] - 1.0;
+	}
+
+	template <class T>
+	Expr<T> DropWave()
+	{
+		Expr<T> x;
+		Expr<T> a = sqr(x[0])+sqr(x[1]);
+		Expr<T> b = 1+cos(12*sqrt(a));
+		Expr<T> c = 0.5*a + 2;
+		return -b/c;
 	}
 
 	template <class T>
@@ -361,6 +410,13 @@ using namespace snowgoose::expression;
 		Expr<T> b = sqr(x[0] + sqr(x[1]) - 7);
 		Expr<T> c = sqr(sqr(x[0]) + (x[1] ^ 3) - 1);
 		return a + b + c;
+	}
+
+	template <class T>
+	Expr<T> Engvall()
+	{
+		Expr<T> x;
+		return pow(x[0],4) + pow(x[1],4) + 2.0 * sqr(x[0]) * sqr(x[1]) - 4*x[0] + 3.0;
 	}
 
 	template <class T>
@@ -398,6 +454,13 @@ using namespace snowgoose::expression;
 	}
 
 	template <class T>
+	Expr<T> F26()
+	{
+		Expr<T> x;
+		return 0.25 * pow(x[0],4) - 0.5 * sqr(x[0]) + 0.1 * x[0]  + 0.5 * sqr(x[1]);
+	}
+
+	template <class T>
 	Expr<T> FreudensteinRoth()
 	{
 		Expr<T> x;
@@ -430,11 +493,32 @@ using namespace snowgoose::expression;
 	}
 
 	template <class T>
+	Expr<T> GramacyLee2()
+	{
+		Expr<T> x;
+		Expr<T> a = -sqr(x[0])-sqr(x[1]);
+		return x[0]*exp(a);
+	}
+
+	template <class T>
+	Expr<T> GramacyLee3()
+	{
+		Expr<T> x;
+		Iterator i(0, 1);
+
+		Expr<T> a = -sqr(x[i]-1.0);
+                Expr<T> b = -0.8 * sqr(x[i]+1.0);
+		Expr<T> c = 8.0 * x[i]+0.8;
+		
+		return -loopMul(exp(a)+exp(b)-0.05*sin(c), i);
+	}
+
+	template <class T>
 	Expr<T> Griewank(int n)
 	{
 		Expr<T> x;
 		Iterator i(0, n - 1);
-		return loopSum(sqr(x[i]) / 4000.0, i) - loopMul(cos(x[i] / sqrt((Expr<T>)i)), i) + 1;
+		return loopSum(sqr(x[i]) / 4000.0, i) - loopMul(cos(x[i] / sqrt((Expr<T>)i + 1.0)), i) + 1;
 	}
 
 	template <class T>
@@ -472,11 +556,11 @@ using namespace snowgoose::expression;
 		std::vector<std::vector<double>> a = { { 10, 3, 17, 3.5, 1.7, 8 } ,
 		                                       { 0.05, 10, 17, 0.1, 8, 14 },
 		                                       { 3, 3.5, 1.7, 10, 17, 8 }, 
-											   { 17, 8, 0.05, 10, 0.1, 14 } };
+						       { 17, 8, 0.05, 10, 0.1, 14 } };
 		std::vector<std::vector<double>> p = { { 0.1312, 0.1696, 0.5569, 0.0124, 0.8283, 0.5886 },
 		                                       { 0.2329, 0.4135, 0.8307, 0.3736, 0.1004, 0.9991 },
-											   { 0.2348, 0.1451, 0.3522, 0.2883, 0.3047, 0.6650 },
-											   { 0.4047, 0.8828, 0.8732, 0.5743, 0.1091, 0.0381 } };
+						       { 0.2348, 0.1451, 0.3522, 0.2883, 0.3047, 0.6650 },
+						       { 0.4047, 0.8828, 0.8732, 0.5743, 0.1091, 0.0381 } };
 		std::vector<double> c = { 1.0, 1.2, 3.0, 3.2 };
 
 		Expr<T> y = 0.0;
@@ -495,9 +579,9 @@ using namespace snowgoose::expression;
 	Expr<T> HelicalValley()
 	{
 		Expr<T> x;
-		Expr<T> t = ifThen( x[0]>=0.0, (0.5/M_PI)*pow(tg(x[1]/x[0]), -1), (0.5 / M_PI)*pow(tg(x[1]/x[0] + 0.5), -1));
+		Expr<T> t = ifThen( x[0]>=0.0, (0.5/M_PI)*atg(x[1]/x[0]), (0.5 / M_PI)*atg(x[1]/x[0] + 0.5));
 		Expr<T> a = sqr(x[2] - 10 * t);
-		Expr<T> b = sqrt(sqr(x[0] + x[1])) - 1;
+		Expr<T> b = sqr(sqrt(sqr(x[0] + x[1])) - 1);
 		return 100 * (a + b) + sqr(x[2]);
 	}
 
@@ -537,23 +621,24 @@ using namespace snowgoose::expression;
 			{8.074, 8.777, 3.467, 1.863, 6.708, 6.349, 4.534, 0.276, 7.633, 1.567}
 		};
 
-		std::vector<double> c = { 0.806, 0.517, 1.5, 0.908, 0.965 };
+		std::vector<double> c = { 0.806, 0.517, 0.100, 0.908, 0.965 };
 
-		Expr<T> s = 0.0, y = 0.0;
+		Expr<T> y = 0.0;
 		for (int i = 0; i < 5; i++)
 		{ 
+			Expr<T> s = 0.0;
 			for (int j = 0; j < n; j++)
 				s += sqr(x[j] - a[i][j]);
 			y += c[i] * exp((-1.0 / M_PI) * s) * cos(M_PI*s);
 		}
-		return y;
+		return -y;
 	}
 
 	template <class T>
 	Expr<T> Keane()
 	{
 		Expr<T> x;
-		return sqr(sin(x[0] - x[1]))*sqr(sin(x[0] + x[1])) / sqrt(sqr(x[0]) + sqr(x[1]));
+		return -sqr(sin(x[0] - x[1]))*sqr(sin(x[0] + x[1])) / sqrt(sqr(x[0]) + sqr(x[1]));
 	}
 
 	template <class T>
@@ -588,10 +673,9 @@ using namespace snowgoose::expression;
 	Expr<T> Mishra3()
 	{
 		Expr<T> x;
-		Expr<T> a = abs(sqr(x[0]) + sqr(x[1]));
+		Expr<T> a = abs(sqr(x[0]) + x[1]);
 		Expr<T> b = sqrt(a);
 		Expr<T> c = sqrt(abs(cos(b)));
-
 		return c + 0.01*(x[0] + x[1]);
 	}
 
@@ -599,7 +683,7 @@ using namespace snowgoose::expression;
 	Expr<T> Mishra4()
 	{
 		Expr<T> x;
-		Expr<T> a = abs(sqr(x[0]) + sqr(x[1]));
+		Expr<T> a = abs(sqr(x[0]) + x[1]);
 		Expr<T> b = sqrt(a);
 		Expr<T> c = sqrt(abs(sin(b)));
 
@@ -610,23 +694,25 @@ using namespace snowgoose::expression;
 	Expr<T> Mishra5()
 	{
 		Expr<T> x;
-		Expr<T> a = sqr(sin(sqr(cos(x[0] + cos(x[1])))));
-		Expr<T> b = sqr(cos(sin(x[0]) + sin(x[1])));
-		return sqr(a + b + x[0]) + 0.01*(x[0] + x[1]);
+		Expr<T> a = sqr(sin(sqr( cos(x[0]) + cos(x[1]) )));
+		Expr<T> b = sqr(cos(sqr( sin(x[0]) + sin(x[1]) )));
+		return sqr(a + b + x[0]) + 0.01*x[0] + 0.1*x[1];
 	}
 
 	template <class T>
 	Expr<T> Mishra6()
 	{
 		Expr<T> x;
-		Expr<T> a = sqr(sin(sqr(cos(x[0] + cos(x[1])))));
-		Expr<T> b = sqr(cos(sin(x[0]) + sin(x[1])));
-		return -ln(sqr(a + b + x[0])) + 0.01*(sqr(x[0] - 1.0) + sqr(x[1] - 1.0));
+		Expr<T> a = sqr(sin(sqr( cos(x[0]) + cos(x[1]) )));
+		Expr<T> b = sqr(cos(sqr(sin(x[0]) + sin(x[1]))));
+	 	Expr<T> c = 0.1*(sqr(x[0] - 1.0) + sqr(x[1] - 1.0));
+		return -ln(sqr(a - b + x[0])) + c;
 	}
 
 	template <class T>
-	Expr<T> Mishra7(int n)
+	Expr<T> Mishra7()
 	{
+		int n = 2;
 		Expr<T> x;
 		Iterator i(0, n - 1);
 		int N = 1;
@@ -650,7 +736,7 @@ using namespace snowgoose::expression;
 	{
 		Expr<T> x;
 		Expr<T> a = 2 * pow(x[0], 3) + 5 * x[0] * x[1] + 4 * x[2] - 2 * sqr(x[0])*x[2] - 18;
-		Expr<T> b = x[0] + pow(x[1], 3) + x[0] * sqr(x[2]) - 22;
+		Expr<T> b = x[0] + pow(x[1], 3) + x[0] * sqr(x[1]) + x[0] * sqr(x[2]) - 22;
 		Expr<T> c = 8 * sqr(x[0]) + 2 * x[1] * x[2] + 2 * sqr(x[1]) + 3 * pow(x[1], 3) - 52;
 		return sqr(a*sqr(b)*c + a*b*sqr(c) + sqr(b) + sqr(x[0] + x[1] - x[2]));
 
@@ -661,15 +747,6 @@ using namespace snowgoose::expression;
 	{
 		Expr<T> x;
 		return sqr(cos(x[0])) + sqr(sin(x[1]));
-	}
-
-	template <class T>
-	Expr<T> PenHolder()
-	{
-		Expr<T> x;
-		Expr<T> a = abs(1 - sqrt(sqr(x[0]) + sqr(x[1])) / M_PI);
-		Expr<T> b = cos(x[0]) * cos(x[1]) * exp(a);
-		return -exp(1.0 / abs(b));
 	}
 
 	template <class T>
@@ -725,7 +802,7 @@ using namespace snowgoose::expression;
 	Expr<T> Price1()
 	{
 		Expr<T> x;
-		return sqr(abs(x[0]) - 5) - sqr(abs(x[1]) - 5);
+		return sqr(abs(x[0]) - 5) + sqr(abs(x[1]) - 5);
 	}
 
 	template <class T>
@@ -739,7 +816,7 @@ using namespace snowgoose::expression;
 	Expr<T> Price3()
 	{
 		Expr<T> x;
-		return 100 * sqr(x[1] - sqr(x[0])) + 6 * sqr(6.4*sqr(x[1]-0.5) - x[0] - 0.6);
+		return 100 * sqr(x[1] - sqr(x[0])) + sqr(6.4*sqr(x[1]-0.5) - x[0] - 0.6);
 	}
 
 	template <class T>
@@ -750,12 +827,40 @@ using namespace snowgoose::expression;
 	}
 
 	template <class T>
-	Expr<T> Qing(int n)
+	Expr<T> Problem02()
 	{
 		Expr<T> x;
-		Iterator i(0, n - 1);
+		return sin(x[0])+sin(x[0]*10.0/3.0);
+	}
+
+	template <class T>
+	Expr<T> Problem04()
+	{
+		Expr<T> x;
+		return -(16.0*sqr(x[0])-24*x[0]+5)*exp(-x[0]);
+	}
+
+	template <class T>
+	Expr<T> Problem05()
+	{
+		Expr<T> x;
+		return -(1.4-3.0*x[0])*sin(18.0*x[0]);
+	}
+
+	template <class T>
+	Expr<T> Problem06()
+	{
+		Expr<T> x;
+		return -(x[0]+sin(x[0]))*exp(-sqr(x[0]));
+	}
+
+	template <class T>
+	Expr<T> Qing()
+	{
+		Expr<T> x;
+		Iterator i(0, 1);
 		Expr<T> t = i;
-		return loopSum(sqr(sqr(x[i]) - t - 1), i);
+		return loopSum(sqr(sqr(x[i]) - t - 1.0), i);
 	}
 
 	template <class T>
@@ -771,37 +876,6 @@ using namespace snowgoose::expression;
 		Expr<T> x;
 		Iterator i(0, n - 1);
 		return loopSum(abs(pow(x[i], 5) - 3*pow(x[i], 4) + 4*pow(x[i], 3) + 2*sqr(x[i]) - 10*x[i] - 4), i);
-	}
-
-	template <class T>
-	Expr<T> Rana(int n)
-	{
-		Expr<T> x;
-		Iterator i(0, n - 2);
-		Expr<T> j = i;
-		Expr<T> t1 = sqrt(abs(x[j+1] + x[i] + 1));
-		Expr<T> t2 = sqrt(abs(x[j + 1] - x[i] + 1));
-		return loopSum((x[j + 1] + 1)*cos(t2)*sin(t1) + x[i] * cos(t1)*sin(t2), i);
-	}
-
-	template <class T>
-	Expr<T> Ripple1(int n)
-	{
-		Expr<T> x;
-		Iterator i(0, n - 1);
-		Expr<T> a = -exp(-2.0 * ln(2 * sqr((x[i] - 0.1) / 0.8)));
-		Expr<T> b = pow(sin(5 * M_PI*x[i]), 6) + 0.1*sqr(cos(500 * M_PI*x[i]));
-		return loopSum(a*b, i);
-	}
-
-	template <class T>
-	Expr<T> Ripple25(int n)
-	{
-		Expr<T> x;
-		Iterator i(0, n - 1);
-		Expr<T> a = -exp(-2.0 * ln(2 * sqr((x[i] - 0.1) / 0.8)));
-		Expr<T> b = pow(sin(5 * M_PI*x[i]), 6);
-		return loopSum(a*b, i);
 	}
 
 	template <class T>
@@ -833,14 +907,6 @@ using namespace snowgoose::expression;
 		Expr<T> x;
 		return sqr(x[0]) - x[0] * x[1] + sqr(x[1]);
 	}
-
-	template <class T>
-	Expr<T> Rump()
-	{
-		Expr<T> x;
-		return (333.75 - sqr(x[0]))*pow(x[1], 6) + sqr(x[0])*(11 * sqr(x[0])*sqr(x[1]) - 121 * pow(x[1], 4) - 2) + 5.5*pow(x[1], 8) + x[0] / (2 * x[1]);
-	}
-
 
 	template <class T>
 	Expr<T> Solomon()
@@ -939,7 +1005,7 @@ using namespace snowgoose::expression;
 	{
 		Expr<T> x;
 		Iterator i(0, n - 1);
-		return -loopSum(abs(x[i]), i);
+		return loopSum(abs(x[i]), i);
 	}
 
 	template <class T>
@@ -959,11 +1025,11 @@ using namespace snowgoose::expression;
 	}
 
 	template <class T>
-	Expr<T> Schwefel2_26(int n)
+	Expr<T> Schwefel2_26()
 	{
 		Expr<T> x;
-		Iterator i(0, n - 1);
-		return (-1.0/n)*loopSum(x[i]*sin(sqrt(abs(x[i]))), i);
+		Iterator i(0, 1);
+		return -loopSum(x[i]*sin(sqrt(abs(x[i]))), i);
 	}
 
 	template <class T>
@@ -988,14 +1054,14 @@ using namespace snowgoose::expression;
 				t += sqr(x[j] - a[i][j]);
 			y += 1.0 / (t + c[i]);
 		}
-		return y;
+		return -y;
 	}
 
 	template <class T>
 	Expr<T> Shekel7()
 	{
 		Expr<T> x;
-		std::vector<std::vector<double>> a = { { 4,4,4,4 },{ 1,1,1,1 },{ 8,8,8,8 },{ 6,6,6,6 },{ 3,7,3,7 }, {2,9,2,9}, {5,5,3,3} };
+		std::vector<std::vector<double>> a = { { 4.0,4.0,4.0,4.0 },{ 1.0,1.0,1.0,1.0 },{ 8.0,8.0,8.0,8.0 },{ 6.0,6.0,6.0,6.0 },{ 3.0,7.0,3.0,7.0 }, {2.0,9.0,2.0,9.0}, {5.0,5.0,3.0,3.0} };
 		std::vector<double> c = { 0.1, 0.2, 0.2, 0.4, 0.4, 0.6, 0.3 };
 
 		Expr<T> y = 0.0;
@@ -1006,7 +1072,7 @@ using namespace snowgoose::expression;
 				t += sqr(x[j] - a[i][j]);
 			y += 1.0 / (t + c[i]);
 		}
-		return y;
+		return -y;
 	}
 
 	template <class T>
@@ -1024,7 +1090,7 @@ using namespace snowgoose::expression;
 				t += sqr(x[j] - a[i][j]);
 			y += 1.0 / (t + c[i]);
 		}
-		return y;
+		return -y;
 	}
 
 	template <class T>
@@ -1047,11 +1113,11 @@ using namespace snowgoose::expression;
 	Expr<T> Shubert2()
 	{
 		Expr<T> x;
-		Iterator i(0, 4);
+		Iterator i(1, 5);
 		Expr<T> t = (Expr<T>)i;
-		Expr<T> s1 = loopSum((t+1)*cos((t + 2.0)*x[0] + t + 1.0), i);
-                Expr<T> s2 = loopSum((t+1)*cos((t + 2.0)*x[1] + t + 1.0), i);
-                return s1 + s2;
+		Expr<T> s1 = loopSum(t*cos((t + 1.0)*x[0] + t), i);
+                Expr<T> s2 = loopSum(t*cos((t + 1.0)*x[1] + t), i);
+                return s1 * s2;
 	}
 
 	template <class T>
@@ -1147,7 +1213,7 @@ using namespace snowgoose::expression;
 	Expr<T> Trecanni()
 	{
 		Expr<T> x;
-		return pow(x[0], 4) - 4 * pow(x[0], 3) + 4 * x[0] + sqr(x[1]);
+		return pow(x[0], 4) + 4 * pow(x[0], 3) + 4 * sqr(x[0]) + sqr(x[1]);
 	}
 
 	template <class T>
@@ -1243,7 +1309,7 @@ using namespace snowgoose::expression;
 	Expr<T> UrsemWaves()
 	{
 		Expr<T> x;
-		Expr<T> a = -0.9*sqr(x[0]) + (sqr(x[1]) - 4.5*sqr(x[1]))*x[0] * x[1];
+		Expr<T> a = -pow(0.3*x[0], 3) + (sqr(x[1]) - 4.5*sqr(x[1]))*x[0] * x[1];
 		Expr<T> b = 4.7*cos(3 * x[0] - sqr(x[1])*(2 + x[0]))*sin(2.5*M_PI*x[0]);
 		return a + b;
 	}
@@ -1341,9 +1407,9 @@ using namespace snowgoose::expression;
 	template <class T>
 	Expr<T> XinSheYang3(int n)
 	{
-		Expr<T> x, m=5, b=15;
+		Expr<T> x, b=15;
 		Iterator i(0, n - 1);
-		return exp(-loopSum(pow(x[i] / b, 2 * m), i)) - 2 * exp(-loopSum(sqr(x[i]), i)) * loopMul(sqr(cos(x[i])), i);
+		return exp(-loopSum(pow(x[i] / b, 2 * 5), i)) - 2 * exp(-loopSum(sqr(x[i]), i)) * loopMul(sqr(cos(x[i])), i);
 	}
 
 	template <class T>
@@ -1357,7 +1423,6 @@ using namespace snowgoose::expression;
 		return (a-b)*c;
 	}
 	
-
 	template <class T>
 	Expr<T> Zakharov(int n)
 	{
@@ -1366,6 +1431,7 @@ using namespace snowgoose::expression;
 		Expr<T> k = (Expr<T>)i;
 		return loopSum(sqr(x[i]),i) + sqr(0.5*loopSum(k*x[i], i)) + pow(0.5*loopSum(k*x[i], i), 4);
 	}
+
 
 	template <class T>
 	Expr<T> Zettl()

@@ -338,11 +338,12 @@
   },
    "Bukin2" : {
     "description": "Bukin 2 Function",
+    "comment" : "invalid formula in the article https://arxiv.org/pdf/1308.4008.pdf",
     "anyDim" : false,
     "dim": 2,
     "bounds": [
       {"a": -15.0, "b": -5.0},
-      {"a": -3.0, "b": -3.0}
+      {"a": -3.0, "b": 3.0}
     ],
     "globMin": [
       { "x" : [-10.0, 0.0] }
@@ -355,7 +356,7 @@
     "dim": 2,
     "bounds": [
       {"a": -15.0, "b": -5.0},
-      {"a": -3.0, "b": -3.0}
+      {"a": -3.0, "b": 3.0}
     ],
     "globMin": [
       { "x" : [-10.0, 0.0] }
@@ -368,7 +369,7 @@
     "dim": 2,
     "bounds": [
       {"a": -15.0, "b": -5.0},
-      {"a": -3.0, "b": -3.0}
+      {"a": -3.0, "b": 3.0}
     ],
     "globMin": [
       { "x" : [-10.0, 1.0] }
@@ -468,6 +469,19 @@
     ],
     "globMinY": 0.0
   },
+  "Complex" : {
+    "description": "Complex function",
+    "anyDim" : false,
+    "dim" : 2,
+    "bounds": [
+      {"a": -2.0, "b": 2.0},
+      {"a": -2.0, "b": 2.0}
+    ],
+    "globMin": [
+      { "x" : [1.0, 0.0] }
+    ],
+    "globMinY": 0.0
+  },
    "CosineMixture" : {
     "description": "Cosine Mixture function",
     "comment" : "Note, invalid formula in the article https://arxiv.org/pdf/1308.4008.pdf",
@@ -480,7 +494,34 @@
     "globMin": [
       { "x" : [0.0, 0.0] }
     ],
-    "globMinY": 0.2
+    "globMinY": -0.2
+  },
+  "CrossInTray" : {
+    "description": "Cross In Tray function",
+    "anyDim" : false,
+    "dim" : 2,
+    "bounds": [
+      {"a": -15.0, "b": 15.0},
+      {"a": -15.0, "b": 15.0}
+    ],
+    "globMin": [
+      { "x" : [1.349406608602084, 1.349406608602084] },
+      { "x" : [-1.349406608602084, -1.349406608602084] }
+    ],
+    "globMinY": -2.062611870822739
+  },
+  "CrossLeg" : {
+    "description": "Cross-Leg function",
+    "anyDim" : false,
+    "dim" : 2,
+    "bounds": [
+      {"a": -10.0, "b": 10.0},
+      {"a": -10.0, "b": 10.0}
+    ],
+    "globMin": [
+      { "x" : [0.0, 0.0] }
+    ],
+    "globMinY": -1.0
   },
    "Cube" : {
     "description": "Cube function",
@@ -492,6 +533,19 @@
     ],
     "globMin": [
       { "x" : [1.0, 1.0] }
+    ],
+    "globMinY": 0.0
+  },
+  "Davis" : {
+    "description": "Davis's function",
+    "anyDim" : false,
+    "dim": 2,
+    "bounds": [
+      {"a": -100.0, "b": 100.0},
+      {"a": -100.0, "b": 100.0}
+    ],
+    "globMin": [
+      { "x" : [0.0, 0.0] }
     ],
     "globMinY": 0.0
   },
@@ -535,10 +589,11 @@
     "globMin": [
       { "x" : [1.0, 0.70710678118654752440084436210485] }
     ],
-    "globMinY": 0.085786437626904924
+    "globMinY": 0.0
   },
    "Dolan" : {
     "description": "Dolan function",
+    "comment" : "Note, invalid formula in the article https://arxiv.org/pdf/1308.4008.pdf",
     "anyDim" : false,
     "dim": 5,
     "bounds": [
@@ -549,9 +604,22 @@
       {"a": -100.0, "b": 100.0}
     ],
     "globMin": [
-      { "x" : [0.0] }
+      { "x" : [98.964258312237106, 100.0, 100.0, 99.224323672554704, -0.249987527588471] }
     ],
-    "globMinY": 0.0
+    "globMinY": -529.8714387324576
+  },
+  "DropWave" : {
+    "description": "Drop-Wave function",
+    "anyDim" : false,
+    "dim": 2,
+    "bounds": [
+      {"a": -5.12, "b": 5.12},
+      {"a": -5.12, "b": 5.12}
+    ],
+    "globMin": [
+      { "x" : [0.0, 0.0] }
+    ],
+    "globMinY": -1.0
   },
   "Easom" : {
     "description": "Easom function",
@@ -575,9 +643,22 @@
       {"a": -500.0, "b": 500.0}
     ],
     "globMin": [
-      { "x" : [2.842503, 1.920175] }
+      { "x" : [3.4091868222,-2.1714330361] }
     ],
-    "globMinY": 0.470427
+    "globMinY": 1.712780354862198
+  },
+  "Engvall" : {
+    "description": "Engvall's function",
+    "anyDim" : false,
+    "dim": 2,
+    "bounds": [
+      {"a": -2000.0, "b": 2000.0},
+      {"a": -2000.0, "b": 2000.0}
+    ],
+    "globMin": [
+      { "x" : [1.0, 0.0] }
+    ],
+    "globMinY": 0.0
   },
   "EggCrate" : {
     "description": "Egg Crate function",
@@ -594,6 +675,7 @@
   },
   "EggHolder" : {
     "description": "Egg Holder function",
+    "comment" : "Note, invalid formula in the article https://arxiv.org/pdf/1308.4008.pdf",
     "anyDim" : false,
     "dim": 2,
     "bounds": [
@@ -601,12 +683,13 @@
       {"a": -512.0, "b": 512.0}
     ],
     "globMin": [
-      { "x" : [512, 404.2319] }
+      { "x" : [512, 404.231805123817] }
     ],
-    "globMinY": 959.64
+    "globMinY": -959.640662720850742
   },
   "Exponential" : {
     "description": "Exponential function",
+    "comment" : "Note, invalid formula in the article https://arxiv.org/pdf/1308.4008.pdf",
     "anyDim" : true,
     "bounds": [
       {"a": -1.0, "b": 1.0}
@@ -614,7 +697,7 @@
     "globMin": [
       { "x" : [0.0] }
     ],
-    "globMinY": 1.0
+    "globMinY": -1.0
   },
   "Exp2" : {
     "description": "Exp 2  function",
@@ -655,6 +738,32 @@
     ],
     "globMinY": 3.0
   },
+  "GramacyLee2" : {
+    "description": "GramacyLee's 2  function",
+    "anyDim" : false,
+    "dim": 2,
+    "bounds": [
+      {"a": -1.5, "b": 1.5},
+      {"a": -1.5, "b": 1.5}
+    ],
+    "globMin": [
+      { "x" : [-0.707106776321847, -3.324529260087811e-9] }
+    ],
+    "globMinY": -0.428881942480353
+  },
+ "GramacyLee3" : {
+    "description": "GramacyLee's 3  function",
+    "anyDim" : false,
+    "dim": 2,
+    "bounds": [
+      {"a": -1.5, "b": 1.5},
+      {"a": -1.5, "b": 1.5}
+    ],
+    "globMin": [
+      { "x" : [-1.040825908416920, -1.040825908416920] }
+    ],
+    "globMinY": -1.126871745786324
+  },
   "Griewank" : {
     "description": "Griewank function",
     "anyDim" : true,
@@ -668,6 +777,7 @@
   },
   "Hansen" : {
     "description": "Hansen function",
+    "comment" : "Note, invalid data in the article https://arxiv.org/pdf/1308.4008.pdf",
     "anyDim" : false,
     "dim": 2,
     "bounds": [
@@ -684,7 +794,7 @@
       { "x" : [4.976478, -1.425128] },
       { "x" : [4.976478, -7.708314] }
     ],
-    "globMinY": 0.0
+    "globMinY": -176.541793
   },
   "Hartman3" : {
     "description": "Hartman 3 function",
@@ -719,10 +829,11 @@
   },
   "HelicalValley" : {
     "description": "Helical Valley function",
+    "comment" : "Note, invalid formula in the article https://arxiv.org/pdf/1308.4008.pdf. Also Box was updated, see a=0.1",
     "anyDim" : false,
     "dim": 3,
     "bounds": [
-      {"a": -10.0, "b": 10.0},
+      {"a": 0.1, "b": 10.0},
       {"a": -10.0, "b": 10.0},
       {"a": -10.0, "b": 10.0}
     ],
@@ -772,6 +883,7 @@
   },
   "Langerman5" : {
     "description": "Langerman-5 function",
+    "comment" : "Note, error in data in the article https://arxiv.org/pdf/1308.4008.pdf",
     "anyDim" : false,
     "dim": 5,
     "bounds": [
@@ -782,21 +894,21 @@
       {"a": 0.0, "b": 10.0}
     ],
     "globMin": [
-      { "x" : [0.0, 0.0, 0.0, 0.0, 0.0] }
+      { "x" : [8.074000, 8.777001, 3.467004, 1.863013, 6.707995] }
     ],
-    "globMinY": -1.4
+    "globMinY": -0.964999919793332
   },
   "Keane" : {
     "description": "Keane function",
+    "comment": "Note, invalid formula in the article https://arxiv.org/pdf/1308.4008.pdf. Box was updated, see a=0.1",
     "anyDim" : false,
     "dim": 2,
     "bounds": [
       {"a": 0.0, "b": 10.0},
-      {"a": 0.0, "b": 10.0}
+      {"a": 0.1, "b": 10.0}
     ],
     "globMin": [
-      { "x" : [0, 1.39325] },
-      { "x" : [1.39325, 0] }
+      { "x" : [0, 1.39325] }
     ],
     "globMinY": -0.673668
   },
@@ -856,64 +968,70 @@
   },
   "Mishra3" : {
     "description": "Mishra 3 function",
+    "comment" : "Note, invalid formula in article https://arxiv.org/pdf/1308.4008.pdf",
     "anyDim" : false,
     "dim": 2,
     "bounds": [
-      {"a": 0.0, "b": 1.0},
-      {"a": 0.0, "b": 1.0}
+      {"a": -10.0, "b": 10.0},
+      {"a": -10.0, "b": 10.0}
     ],
     "globMin": [
-      { "x" : [-8.466, -10] }
+      { "x" : [-8.466613775046579,-9.998521308999999] }
     ],
-    "globMinY": -0.18467
+    "globMinY": -0.184651333342989
   },
   "Mishra4" : {
     "description": "Mishra 4 function",
+    "comment" : "Note, invalid formula in article https://arxiv.org/pdf/1308.4008.pdf",
     "anyDim" : false,
     "dim": 2,
     "bounds": [
-      {"a": 0.0, "b": 1.0},
-      {"a": 0.0, "b": 1.0}
+      {"a": -10.0, "b": 10.0},
+      {"a": -10.0, "b": 10.0}
     ],
     "globMin": [
-      { "x" : [-9.94112, -10] }
+      { "x" : [-9.941127263635860,-9.999571661999983] }
     ],
-    "globMinY": -0.199409
+    "globMinY": -0.199406970088833
   },
   "Mishra5" : {
     "description": "Mishra 5 function",
+    "comment" : "Note, invalid formula in article https://arxiv.org/pdf/1308.4008.pdf",
     "anyDim" : false,
     "dim": 2,
     "bounds": [
-      {"a": 0.0, "b": 1.0},
-      {"a": 0.0, "b": 1.0}
+      {"a": -10.0, "b": 10.0},
+      {"a": -10.0, "b": 10.0}
     ],
     "globMin": [
-      { "x" : [-1.98682, -10] }
+      { "x" : [-1.986820662153768, -10] }
     ],
-    "globMinY": -1.01983
+    "globMinY": -1.019829519930943
   },
   "Mishra6" : {
     "description": "Mishra 6 function",
+    "comment" : "Note, invalid formula in article https://arxiv.org/pdf/1308.4008.pdf",
     "anyDim" : false,
     "dim": 2,
     "bounds": [
-      {"a": 0.0, "b": 1.0},
-      {"a": 0.0, "b": 1.0}
+      {"a": -10.0, "b": 10.0},
+      {"a": -10.0, "b": 10.0}
     ],
     "globMin": [
-      { "x" : [2.88631, 1.82326] }
+      { "x" : [2.886307215440481,1.823260331422321] }
     ],
-    "globMinY": -2.28395
+    "globMinY": -2.283949838474759
   },
   "Mishra7" : {
     "description": "Mishra 7 function",
-    "anyDim" : true,
+    "anyDim" : false,
+    "dim" : 2,
     "bounds": [
-      {"a": 0.0, "b": 1.0}
+      {"a": -10.0, "b": 10.0},
+      {"a": -10.0, "b": 10.0}
     ],
     "globMin": [
-      { "x" : [0.0] }
+      { "x" : [1.0, 2.0] }
     ],
     "globMinY": 0.0
   },
@@ -922,8 +1040,8 @@
     "anyDim" : false,
     "dim": 2,
     "bounds": [
-      {"a": 0.0, "b": 1.0},
-      {"a": 0.0, "b": 1.0}
+      {"a": -10.0, "b": 10.0},
+      {"a": -10.0, "b": 10.0}
     ],
     "globMin": [
       { "x" : [2.0, -3.0] }
@@ -935,9 +1053,9 @@
     "anyDim" : false,
     "dim": 3,
     "bounds": [
-      {"a": 0.0, "b": 1.0},
-      {"a": 0.0, "b": 1.0},
-      {"a": 0.0, "b": 1.0}
+      {"a": -10.0, "b": 10.0},
+      {"a": -10.0, "b": 10.0},
+      {"a": -10.0, "b": 10.0}
     ],
     "globMin": [
       { "x" : [1.0, 2.0, 3.0] }
@@ -949,28 +1067,14 @@
     "anyDim" : false,
     "dim": 2,
     "bounds": [
-      {"a": 0.0, "b": 1.0},
-      {"a": 0.0, "b": 1.0}
+      {"a": -5.0, "b": 5.0},
+      {"a": -5.0, "b": 5.0}
     ],
     "globMin": [
       { "x" : [1.5707963267948966192313216916398, 0.0] },
       { "x" : [-1.5707963267948966192313216916398, 0.0] }
     ],
     "globMinY": 0.0
-  },
-  "PenHolder" : {
-    "description": "Pen Holder function",
-    "anyDim" : false,
-    "dim": 2,
-    "bounds": [
-      {"a": -11.0, "b": 11.0},
-      {"a": -11.0, "b": 11.0}
-    ],
-    "globMin": [
-      { "x" : [9.646168, 9.646168] },
-      { "x" : [-9.646168, -9.646168] }
-    ],
-    "globMinY": -0.96354
   }, 
   "Pathological" : {
     "description": "Pathological function",
@@ -1005,7 +1109,7 @@
     "globMin": [
       { "x" : [0.0, 0.0] }
     ],
-    "globMinY": -0.9
+    "globMinY": 0.9
   }, 
   "PowellSingular2" : {
     "description": "Powell Singular 2 function",
@@ -1034,13 +1138,11 @@
     "anyDim" : false,
     "dim": 2,
     "bounds": [
-      {"a": -500.0, "b": 500.0},
-      {"a": -500.0, "b": 500.0}
+      {"a": -10.0, "b": 10.0},
+      {"a": -10.0, "b": 10.0}
     ],
     "globMin": [
       { "x" : [-5.0, -5.0] },
-      { "x" : [-5.0, 5.0] },
-      { "x" : [5.0, -5.0] },
       { "x" : [5.0, 5.0] }
     ],
     "globMinY": 0.0
@@ -1063,14 +1165,12 @@
     "anyDim" : false,
     "dim": 2,
     "bounds": [
-      {"a": -500.0, "b": 500.0},
-      {"a": -500.0, "b": 500.0}
+      {"a": -5.0, "b": 5.0},
+      {"a": -5.0, "b": 5.0}
     ],
     "globMin": [
-      { "x" : [-5.0, -5.0] },
-      { "x" : [-5.0, 5.0] },
-      { "x" : [5.0, -5.0] },
-      { "x" : [5.0, 5.0] }
+      { "x" : [0.341307503353524, 0.116490811845416] },
+      { "x" : [1.0, 1.0] }
     ],
     "globMinY": 0.0
   }, 
@@ -1089,15 +1189,65 @@
     ],
     "globMinY": 0.0
   }, 
+ "Problem02" : {
+    "description": "Problem 02 function",
+    "anyDim" : false,
+    "dim": 1,
+    "bounds": [
+      {"a": 2.7, "b": 7.5}
+    ],
+    "globMin": [
+      { "x" : [5.145735] }
+    ],
+    "globMinY": -1.899599
+  },  
+  "Problem04" : {
+    "description": "Problem 04 function",
+    "anyDim" : false,
+    "dim": 1,
+    "bounds": [
+      {"a": 1.9, "b": 3.9}
+    ],
+    "globMin": [
+      { "x" : [2.868034] }
+    ],
+    "globMinY": -3.85045
+  }, 
+  "Problem05" : {
+    "description": "Problem 05 function",
+    "anyDim" : false,
+    "dim": 1,
+    "bounds": [
+      {"a": 0.0, "b": 1.2}
+    ],
+    "globMin": [
+      { "x" : [0.96609] }
+    ],
+    "globMinY": -1.48907
+  }, 
+  "Problem06" : {
+    "description": "Problem 06 function",
+    "anyDim" : false,
+    "dim": 1,
+    "bounds": [
+      {"a": -10, "b": 10}
+    ],
+    "globMin": [
+      { "x" : [0.67956] }
+    ],
+    "globMinY": -0.824239
+  },
   "Qing" : {
     "description": "Qing function",
-    "anyDim" : true,
+    "anyDim" : false,
+    "dim" : 2,
     "bounds": [
+      {"a": -500.0, "b": 500.0},
       {"a": -500.0, "b": 500.0}
     ],
     "globMin": [
-      { "x" : [1.0] },
-      { "x" : [-1.0] }
+      { "x" : [1.0, 1.4142135623730950488016887242097] },
+      { "x" : [-1.0, -1.4142135623730950488016887242097] }
     ],
     "globMinY": 0.0
   },
@@ -1126,39 +1276,6 @@
     ],
     "globMinY": 0.0
   },
-  "Rana" : {
-    "description": "Rana function",
-    "anyDim" : true,
-    "bounds": [
-      {"a": -500.0, "b": 500.0}
-    ],
-    "globMin": [
-      { "x" : [0.0] }
-    ],
-    "globMinY": 0.0
-  },
-  "Ripple1" : {
-    "description": "Ripple 1 function",
-    "anyDim" : true,
-    "bounds": [
-      {"a": 0.0, "b": 1.0}
-    ],
-    "globMin": [
-      { "x" : [0.0] }
-    ],
-    "globMinY": 0.0
-  },
-  "Ripple25" : {
-    "description": "Ripple 25 function",
-    "anyDim" : true,
-    "bounds": [
-      {"a": 0.0, "b": 1.0}
-    ],
-    "globMin": [
-      { "x" : [0.0] }
-    ],
-    "globMinY": 0.0
-  },
    "Rosenbrock" : {
     "description": "Rosenbrock function",
     "anyDim" : true,
@@ -1179,9 +1296,9 @@
       {"a": -2.0, "b": 2.0}
     ],
     "globMin": [
-      { "x" : [-1.0, 1.0] }
+      { "x" : [-0.9, -0.95] }
     ],
-    "globMinY": 0.0
+    "globMinY": 34.371238966161798
   },
   "RotatedEllipse" : {
     "description": "Rotated Ellipse function",
@@ -1198,19 +1315,6 @@
   },
   "RotatedEllipse2" : {
     "description": "Rotated Ellipse 2 function",
-    "anyDim" : false,
-    "dim": 2,
-    "bounds": [
-      {"a": -500.0, "b": 500.0},
-      {"a": -500.0, "b": 500.0}
-    ],
-    "globMin": [
-      { "x" : [0.0, 0.0] }
-    ],
-    "globMinY": 0.0
-  },
-  "Rump" : {
-    "description": "Rump function",
     "anyDim" : false,
     "dim": 2,
     "bounds": [
@@ -1279,14 +1383,14 @@
     "anyDim" : false,
     "dim": 3,
     "bounds": [
-      {"a": -100.0, "b": 100.0},
-      {"a": -100.0, "b": 100.0},
-      {"a": -100.0, "b": 100.0}
+      {"a": 0.1, "b": 10.0},
+      {"a": 0.1, "b": 10.0},
+      {"a": 0.1, "b": 10.0}
     ],
     "globMin": [
-      { "x" : [0.78547, 0.78547, 0.78547] }
+      { "x" : [7.0585205078125, 9.985498046875, 3.1043212890625] }
     ],
-    "globMinY": 3.0
+    "globMinY": 0.194017971546873
   },
   "SchumerSteiglitz" : {
     "description": "Schumer Steiglitz function",
@@ -1347,6 +1451,7 @@
   },
   "Schwefel2_20" : {
     "description": "Schwefel 2.20 function",
+    "comment" : "invalid formula in the article https://arxiv.org/pdf/1308.4008.pdf",
     "anyDim" : true,
     "bounds": [
       {"a": -100.0, "b": 100.0}
@@ -1380,15 +1485,16 @@
   },
   "Schwefel2_26" : {
     "description": "Schwefel 2.26 function",
-    "anyDim" : true,
+    "anyDim" : false,
+    "dim" : 2,
     "bounds": [
+      {"a": -500.0, "b": 500.0},
       {"a": -500.0, "b": 500.0}
     ],
     "globMin": [
-      { "x" : [2.467401100272339654708622749969] },
-      { "x" : [-2.467401100272339654708622749969] }
+      { "x" : [420.968746, 420.968746] }
     ],
-    "globMinY": -418.983
+    "globMinY": -837.965774544867599615827202796
   },
   "Schwefel2_36" : {
     "description": "Schwefel 2.36 function",
@@ -1416,7 +1522,7 @@
     "globMin": [
       { "x" : [4.0, 4.0, 4.0, 4.0] }
     ],
-    "globMinY": -10.1499
+    "globMinY": -10.153195850979039
   },
   "Shekel7" : {
     "description": "Shekel 7 function",
@@ -1431,7 +1537,7 @@
     "globMin": [
       { "x" : [4.0, 4.0, 4.0, 4.0] }
     ],
-    "globMinY": -10.3999
+    "globMinY": -10.402818836930305
   },
   "Shekel10" : {
     "description": "Shekel 10 function",
@@ -1446,7 +1552,7 @@
     "globMin": [
       { "x" : [4.0, 4.0, 4.0, 4.0] }
     ],
-    "globMinY": -10.5319
+    "globMinY": -10.534103719991014
   },
   "Shubert" : {
     "description": "Shubert function",
@@ -1465,7 +1571,6 @@
   },
   "Shubert2" : {
     "description": "Shubert 2 function",
-    "comment" : "invalid formula in the article https://arxiv.org/pdf/1308.4008.pdf",
     "anyDim" : false,
     "dim" : 2,
     "bounds": [
@@ -1473,10 +1578,9 @@
       {"a": -10, "b": 10.0}
     ],
     "globMin": [
-      { "x" : [-6.774576, -6.774576] },
-      { "x" : [5.791794, 5.791794] }
+      { "x" : [-7.0835, 4.8580] }
     ],
-    "globMinY": 4.1219527147518757
+    "globMinY": -186.7309
   },
  "Shubert3" : {
     "description": "Shubert 3 function",
@@ -1759,9 +1863,9 @@
       {"a": -1.2, "b": 1.2}
     ],
     "globMin": [
-      { "x" : [0.0, 0.0] }
+      { "x" : [-0.605689494589848,-1.177561933039789] }
     ],
-    "globMinY": 0.0
+    "globMinY": -7.306998731324462
   },
   "VenterSobiezcczanskiSobieski" : {
     "description": "Venter Sobiezcczanski-Sobieski function",
@@ -1827,13 +1931,13 @@
     "anyDim" : false,
     "dim": 2,
     "bounds": [
-      {"a": -500, "b": 500},
-      {"a": -500, "b": 500}
+      {"a": -10, "b": 10},
+      {"a": -10, "b": 10}
     ],
     "globMin": [
-      { "x" : [5.611, 6.187] }
+      { "x" : [5.146896745324582,6.839589743000071] }
     ],
-    "globMinY": 21.349802824766659
+    "globMinY": 19.105879794567979
   },
   "WWavy" : {
     "description": "W Wavy function",
@@ -1859,9 +1963,10 @@
   },
   "Whitley" : {
     "description": "Whitley function",
+    "comment" : "invalid formula in https://arxiv.org/pdf/1308.4008.pdf",
     "anyDim" : true,
     "bounds": [
-      {"a": -0.5, "b": 0.5}
+      {"a": -10.0, "b": 10.0}
     ],
     "globMin": [
       { "x" : [1.0] }

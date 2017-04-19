@@ -44,7 +44,7 @@ public:
 			throw std::invalid_argument("Invalid file path for funcdesc.json file. Please check it.");
 		fs >> js;
 	}
-	descfunc getdesr(const std::string &key)
+	descfunc getdesr(const std::string &key, int dimIfAnyDimTrue = 1)
 	{
 		json fd = js[key];
 
@@ -60,7 +60,7 @@ public:
 			globMinX.push_back(v);
 		}
         if(fd[K.anyDim])
-            return{ fd[K.desc] , fd[K.anyDim], 0, fd[K.globMinY], globMinX, bounds };
+            return{ fd[K.desc] , fd[K.anyDim], dimIfAnyDimTrue, fd[K.globMinY], globMinX, Bounds(dimIfAnyDimTrue, bounds[0]) };
         else
             return{ fd[K.desc] , fd[K.anyDim], fd[K.dim], fd[K.globMinY], globMinX, bounds };
 	}

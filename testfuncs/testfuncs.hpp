@@ -884,7 +884,8 @@ using namespace snowgoose::expression;
 		Expr<T> x;
 		Iterator i(0, n - 2);
 		Expr<T> t = i;
-		return loopSum(100 * sqr(x[t+1] - sqr(x[i])) + sqr((x[i]-1)), i);
+		return loopSum(100 * sqr(x[t+1] -
+		sqr(x[i])) + sqr((x[i]-1)), i);
 	}
 
 	template <class T>

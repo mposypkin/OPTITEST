@@ -55,8 +55,11 @@ public:
 		GlobMinX globMinX;
 		for (auto& globMin : fd[K.globMin]) {
 			std::vector<double> v;
-			for (double x : globMin[K.x])
-				v.push_back(x);
+                        if(fd[K.anyDim])
+				v.insert(v.begin(), dimIfNotDefined, globMin[K.x][0]);
+			else
+				for (double x : globMin[K.x])
+					v.push_back(x);
 			globMinX.push_back(v);
 		}
         if(fd[K.anyDim])

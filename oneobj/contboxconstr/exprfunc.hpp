@@ -15,6 +15,7 @@
 #define EXPRFUNC_HPP
 
 #include <vector>
+#include <memory>
 #include "expression/expr.hpp"
 #include "expression/algorithm.hpp"
 
@@ -33,7 +34,7 @@ namespace OPTITEST {
 
         double func(const double* x) {
             std::vector<double> v(x, x+mN);
-            return expr.calc(v, FuncAlg<double>());            
+            return expr.calc(FuncAlg<double>(v));            
         }
                 
     private:
@@ -54,7 +55,8 @@ namespace OPTITEST {
         COMPI::MPProblem<double>* getProblem() const {
             COMPI::MPProblem<double>* prob = new COMPI::MPProblem<double>();
             prob->mVarTypes.assign(mN, COMPI::MPProblem<double>::VariableTypes::GENERIC);
-            prob->mObjectives.push_back(new ExprFunctor(expr, mN));
+            std::shared_ptr<COMPI::Functor <double>> pf = std::make_shared<ExprFunctor>(ExprFunctor(expr, mN));
+            prob->mObjectives.push_back(pf);
             prob->mBox = new snowgoose::Box<double>(mN);
             for (int i = 0; i < mN; i++) {
                 prob->mBox->mA[i] = mVPair[i].first;

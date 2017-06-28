@@ -33,7 +33,7 @@ namespace OPTITEST {
 
         double func(const double* x) {
             std::vector<double> v(x, x+mN);
-            return expr.calc(v, FuncAlg<double>());            
+            return expr.calc(FuncAlg<double>(v));            
         }
                 
     private:

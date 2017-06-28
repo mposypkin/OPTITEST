@@ -68,7 +68,7 @@ namespace OPTITEST {
         COMPI::MPProblem<double>* getProblem() const {
             COMPI::MPProblem<double>* prob = new COMPI::MPProblem<double>();
             prob->mVarTypes.assign(mN, COMPI::MPProblem<double>::VariableTypes::GENERIC);
-            prob->mObjectives.push_back(new Ackley1Objective(mN));
+            prob->mObjectives.push_back(std::make_shared<Ackley1Objective>(mN));
             prob->mBox = new snowgoose::Box<double>(mN);
             for (int i = 0; i < mN; i++) {
                 prob->mBox->mA[i] = mVPair[i].first;

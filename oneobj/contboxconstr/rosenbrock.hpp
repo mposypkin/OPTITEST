@@ -6,7 +6,7 @@
  */
 
 #ifndef ROSENBROCK_HPP
-#define	ROSENBROCK_HPP
+#define ROSENBROCK_HPP
 
 #include <mpproblem.hpp>
 #include <box/box.hpp>
@@ -22,7 +22,7 @@ namespace OPTITEST {
 
         double func(const double* x) {
             double v;
-            v = 0.;            
+            v = 0.;
             for (int i = 0; i < (mN - 1); i++) {
                 v += 100. * SGSQR(x[i] * x[i] - x[i + 1]) + SGSQR(x[i] - 1);
             }
@@ -51,11 +51,8 @@ namespace OPTITEST {
 
         COMPI::MPProblem<double>* getProblem() const {
             COMPI::MPProblem<double>* prob = new COMPI::MPProblem<double>();
-            for (int i = 0; i < mN; i++) {
-                int v = COMPI::MPProblem<double>::VariableTypes::GENERIC;
-                prob->mVarTypes.push_back(v);
-            }
-            prob->mObjectives.push_back(new RosenbrockObjective(mN));
+            prob->mVarTypes.assign(mN, COMPI::MPProblem<double>::GENERIC);
+            prob->mObjectives.push_back(std::make_shared<RosenbrockObjective>(mN));
             prob->mBox = new snowgoose::Box<double>(mN);
             for (int i = 0; i < mN; i++) {
                 prob->mBox->mA[i] = mA;
@@ -73,5 +70,5 @@ namespace OPTITEST {
 
 }
 
-#endif	/* ROSENBROCK_HPP */
+#endif /* ROSENBROCK_HPP */
 

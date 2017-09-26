@@ -231,7 +231,7 @@ using namespace snowgoose::expression;
 	{
 		Expr<T> x;
 		Iterator i(0, n - 2);
-		auto t = [=] { return i.Current() + 1; };
+		Expr<T> t = (Expr<T>)i + 1;
 		return loopSum(pow(sqr(x[i]), sqr(x[t]) + 1) + pow(sqr(x[t]), sqr(x[i]) + 1), i);
 	}
 
@@ -326,7 +326,7 @@ using namespace snowgoose::expression;
 		Expr<T> b = abs(100.0 - a/M_PI); 
 		Expr<T> c = abs(sin(x[0])*sin(x[1])*exp(b));
 		Expr<T> d = -0.0001 * pow(c + 1.0, 0.1);
-		return d;
+        return d;
 	}
 	template <class T>
 	Expr<T> CrossLeg()
@@ -764,9 +764,11 @@ using namespace snowgoose::expression;
 	Expr<T> Pinter(int n)
 	{
 		Expr<T> x;
-		Iterator i(0, n - 1);	
-		auto pred = [=] { int j = i.Current() - 1; return j < 0 ? 0 : j; };
-		auto sus =  [=] { int j = i.Current() + 1; return j >= n ? (n-1) : j; };
+		Iterator i(0, n - 1);
+                Expr<T> t1 = (Expr<T>)i - 1.0;	
+                Expr<T> t2 = (Expr<T>)i + 1.0;	
+                Expr<T> pred = ifThen(t1 < 0, Expr<T>(0.0), t1);
+		Expr<T> sus = ifThen(t2 >= n, Expr<T>(n-1), t2);
 		auto A = x[pred] * sin(x[i]) + sin(x[sus]);
 		auto B = sqr(x[pred]) - 2 * x[i] + 3 * x[sus] - cos(x[i]) + 1;
 		auto t = (Expr<T>)i;
@@ -1273,7 +1275,7 @@ using namespace snowgoose::expression;
 		Expr<T> a = 8 * sqr(sin(7 * sqr(x[i] - 0.9)));
 		Expr<T> b = 6 * sqr(sin(14 * sqr(x[i] - 0.9)));
 		Expr<T> c = sqr(x[i] - 0.9);
-		return 1 + loopSum(a + b + c, i);
+		return 1.0 + loopSum(a + b + c, i);
 	}
 
 	template <class T>

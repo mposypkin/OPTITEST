@@ -18,6 +18,7 @@
 #include <memory>
 #include "expression/expr.hpp"
 #include "expression/algorithm.hpp"
+#include "testfuncs/benchmarks.hpp"
 
 #include <mpproblem.hpp>
 #include <box/box.hpp>
@@ -29,17 +30,16 @@ namespace OPTITEST {
     class ExprFunctor : public COMPI::Functor <double> {
     public:
 
-        ExprFunctor(Expr<double> expr, int n) : expr(expr), mN(n) {
+        ExprFunctor(const PtrBench<double> benchmark) : bm(benchmark) {
         }
 
         double func(const double* x) {
-            std::vector<double> v(x, x+mN);
-            return expr.calc(FuncAlg<double>(v));            
+            std::vector<double> v(x, x+bm->getDim());
+            return bm->calcFunc(v);            
         }
                 
     private:
-        Expr<double> expr;
-        int mN;
+	PtrBench<double> bm;
     };
     
     /**
@@ -48,27 +48,25 @@ namespace OPTITEST {
     class ExprProblemFactory {
     public:
 
-        ExprProblemFactory(Expr<double> expr, const std::vector<std::pair<double,double>> &vPair) : expr(expr), mVPair(vPair) {
-            mN = vPair.size();
+        ExprProblemFactory(const PtrBench<double> benchmark) : bm(benchmark) {
         }
 
         COMPI::MPProblem<double>* getProblem() const {
+	    int dim = bm->getDim();
             COMPI::MPProblem<double>* prob = new COMPI::MPProblem<double>();
-            prob->mVarTypes.assign(mN, COMPI::MPProblem<double>::VariableTypes::GENERIC);
-            std::shared_ptr<COMPI::Functor <double>> pf = std::make_shared<ExprFunctor>(ExprFunctor(expr, mN));
+            prob->mVarTypes.assign(dim, COMPI::MPProblem<double>::VariableTypes::GENERIC);
+            std::shared_ptr<COMPI::Functor <double>> pf = std::make_shared<ExprFunctor>(ExprFunctor(bm));
             prob->mObjectives.push_back(pf);
-            prob->mBox = new snowgoose::Box<double>(mN);
-            for (int i = 0; i < mN; i++) {
-                prob->mBox->mA[i] = mVPair[i].first;
-                prob->mBox->mB[i] = mVPair[i].second;
+            prob->mBox = new snowgoose::Box<double>(dim);
+            for (int i = 0; i < dim; i++) {
+                prob->mBox->mA[i] = bm->getBounds(i).first;
+                prob->mBox->mB[i] = bm->getBounds(i).second;
             }
             return prob;
         }
 
     private:
-        int mN;
-        Expr<double> expr;
-        std::vector<std::pair<double,double>> mVPair;
+	PtrBench<double> bm;
     };
 }
 

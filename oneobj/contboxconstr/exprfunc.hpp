@@ -37,6 +37,12 @@ namespace OPTITEST {
             std::vector<double> v(x, x+bm->getDim());
             return bm->calcFunc(v);            
         }
+
+	void grad(const double* x, double* g) {
+            std::vector<double> v(x, x+bm->getDim());
+	    auto gr = bm->calcGrad(v).grad();
+	    memcpy(g, gr.getGrad(), bm->getDim() * sizeof(double));		
+        }
                 
     private:
 	PtrBench<double> bm;

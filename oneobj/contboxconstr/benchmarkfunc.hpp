@@ -27,10 +27,10 @@ using namespace snowgoose::expression;
 
 namespace OPTITEST {
 
-    class ExprFunctor : public COMPI::Functor <double> {
+    class BenchmarkFunctor : public COMPI::Functor <double> {
     public:
 
-        ExprFunctor(const PtrBench<double> benchmark) : bm(benchmark) {
+        BenchmarkFunctor(const PtrBench<double> benchmark) : bm(benchmark) {
         }
 
         double func(const double* x) {
@@ -51,22 +51,22 @@ namespace OPTITEST {
     /**
      * Factory to produce instances of any expression optimization problem
      */
-    class ExprProblemFactory {
+    class BenchmarkProblemFactory {
     public:
 
-        ExprProblemFactory(const PtrBench<double> benchmark) : bm(benchmark) {
+        BenchmarkProblemFactory(const PtrBench<double> benchmark) : bm(benchmark) {
         }
 
         COMPI::MPProblem<double>* getProblem() const {
 	    int dim = bm->getDim();
             COMPI::MPProblem<double>* prob = new COMPI::MPProblem<double>();
             prob->mVarTypes.assign(dim, COMPI::MPProblem<double>::VariableTypes::GENERIC);
-            std::shared_ptr<COMPI::Functor <double>> pf = std::make_shared<ExprFunctor>(ExprFunctor(bm));
+            std::shared_ptr<COMPI::Functor <double>> pf = std::make_shared<BenchmarkFunctor>(BenchmarkFunctor(bm));
             prob->mObjectives.push_back(pf);
             prob->mBox = new snowgoose::Box<double>(dim);
             for (int i = 0; i < dim; i++) {
-                prob->mBox->mA[i] = bm->getBounds(i).first;
-                prob->mBox->mB[i] = bm->getBounds(i).second;
+                prob->mBox->mA[i] = bm->getBounds()[i].first;
+                prob->mBox->mB[i] = bm->getBounds()[i].second;
             }
             return prob;
         }

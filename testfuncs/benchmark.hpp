@@ -104,16 +104,17 @@ template <class T> Benchmark<T>::Benchmark(const std::string& desc, T globmin, b
 
 template <class T2> std::ostream& operator<<(std::ostream &out, const Benchmark<T2> &bm)
 {
-	out << "mDesciption: " << bm.mDesciption << '\n';
-	out << "dimension: " << bm.getDim() << '\n';
-	out << "globMinY: " << bm.mGlobMinY << '\n';
-	out << "mMultiModal: " << bm.mMultiModal << '\n';
-	out << "globMinX: \n"<< '\n';
+	const char* boollut[2] = {"true", "false"};
+	out << "desciption: " << bm.mDesciption << std::endl;
+	out << "dimension: " << bm.getDim() << std::endl;
+	out << "globMinY: " << bm.mGlobMinY << std::endl;
+	out << "multiModal: " << boollut[bm.mMultiModal] << std::endl;
+	out << "globMinX:"<< std::endl;
 	for(int i=0; i < bm.getDim(); ++i)
-		out << "x[" << i << "]:" <<  bm.mGlobMinX[i] << '\n';
-	out << "bounds: \n"<< '\n';
+		out << "x[" << i << "]:" <<  bm.mGlobMinX[i] << std::endl;
+	out << "bounds:"<< std::endl;
 	for(int i=0; i < bm.getDim(); ++i)
-		out << "[ " << bm.mBounds[i].first << " , " << bm.mBounds[i].second << " ]:" << '\n';
+		out << "[ " << bm.mBounds[i].first << " , " << bm.mBounds[i].second << " ]:" << std::endl;
 	return out;	
 };
 

@@ -20,7 +20,7 @@ namespace OPTITEST {
         RosenbrockObjective(int n) : mN(n) {
         }
 
-        double func(const double* x) {
+        double func(const double* x) const {
             double v;
             v = 0.;
             for (int i = 0; i < (mN - 1); i++) {

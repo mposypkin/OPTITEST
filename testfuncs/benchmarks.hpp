@@ -4265,197 +4265,204 @@ template <class T>
 using PtrBench = std::shared_ptr<Benchmark<T>>;
 
 template <class T>
-class Benchmarks
+class BenchmarksBase
 {
 private:
-	std::vector<PtrBench<T>> vbm;
+	std::vector<T> vbm;
 public:
-	Benchmarks() { fill(); }
-	void fill()
-	{
-		clear();
-		add(std::make_shared<Ackley1Benchmark<double>>(3));
-		add(std::make_shared<Ackley2Benchmark<double>>(4));
-		add(std::make_shared<Ackley3Benchmark<double>>());
-		add(std::make_shared<AdjimanBenchmark<double>>());
-		add(std::make_shared<Alpine1Benchmark<double>>(3));
-		add(std::make_shared<Alpine2Benchmark<double>>());
-		add(std::make_shared<BradBenchmark<double>>());
-		add(std::make_shared<BartelsConnBenchmark<double>>());
-		add(std::make_shared<BealeBenchmark<double>>());
-		add(std::make_shared<BiggsEXP2Benchmark<double>>());
-		add(std::make_shared<BiggsEXP3Benchmark<double>>());
-		add(std::make_shared<BiggsEXP4Benchmark<double>>());
-		add(std::make_shared<BiggsEXP5Benchmark<double>>());
-		add(std::make_shared<BiggsEXP6Benchmark<double>>());
-		add(std::make_shared<BirdBenchmark<double>>());
-		add(std::make_shared<Bohachevsky1Benchmark<double>>());
-		add(std::make_shared<Bohachevsky2Benchmark<double>>());
-		add(std::make_shared<Bohachevsky3Benchmark<double>>());
-		add(std::make_shared<BoothBenchmark<double>>());
-		add(std::make_shared<BoxBettsQuadraticSumBenchmark<double>>());
-		add(std::make_shared<BraninRCOSBenchmark<double>>());
-		add(std::make_shared<BraninRCOS2Benchmark<double>>());
-		add(std::make_shared<BrentBenchmark<double>>());
-		add(std::make_shared<BrownBenchmark<double>>(3));
-		add(std::make_shared<Bukin2Benchmark<double>>());
-		add(std::make_shared<Bukin4Benchmark<double>>());
-		add(std::make_shared<Bukin6Benchmark<double>>());
-		add(std::make_shared<CamelSixHumpBenchmark<double>>());
-		add(std::make_shared<CamelThreeHumpBenchmark<double>>());
-		add(std::make_shared<ChichinadzeBenchmark<double>>());
-		add(std::make_shared<ChungReynoldsBenchmark<double>>(3));
-		add(std::make_shared<ColvilleBenchmark<double>>());
-		add(std::make_shared<ComplexBenchmark<double>>());
-		add(std::make_shared<CosineMixtureBenchmark<double>>());
-		add(std::make_shared<CrossInTrayBenchmark<double>>());
-		add(std::make_shared<CrossLegBenchmark<double>>());
-		add(std::make_shared<CubeBenchmark<double>>());
-		add(std::make_shared<DavisBenchmark<double>>());
-		add(std::make_shared<Deb1Benchmark<double>>(3));
-		add(std::make_shared<DeckkersAartsBenchmark<double>>());
-		add(std::make_shared<DixonPriceBenchmark<double>>());
-		add(std::make_shared<DolanBenchmark<double>>());
-		add(std::make_shared<DropWaveBenchmark<double>>());
-		add(std::make_shared<EasomBenchmark<double>>());
-		add(std::make_shared<EggCrateBenchmark<double>>());
-		add(std::make_shared<EggHolderBenchmark<double>>());
-		add(std::make_shared<ElAttarVidyasagarDuttBenchmark<double>>());
-		add(std::make_shared<EngvallBenchmark<double>>());
-		add(std::make_shared<Exp2Benchmark<double>>());
-		add(std::make_shared<ExponentialBenchmark<double>>(3));
-		add(std::make_shared<FreudensteinRothBenchmark<double>>());
-		add(std::make_shared<GoldsteinPriceBenchmark<double>>());
-		add(std::make_shared<GramacyLee2Benchmark<double>>());
-		add(std::make_shared<GramacyLee3Benchmark<double>>());
-		add(std::make_shared<GriewankBenchmark<double>>(3));
-		add(std::make_shared<HansenBenchmark<double>>());
-		add(std::make_shared<Hartman3Benchmark<double>>());
-		add(std::make_shared<Hartman6Benchmark<double>>());
-		add(std::make_shared<HelicalValleyBenchmark<double>>());
-		add(std::make_shared<HimmelblauBenchmark<double>>());
-		add(std::make_shared<HosakiBenchmark<double>>());
-		add(std::make_shared<JennrichSampsonBenchmark<double>>());
-		add(std::make_shared<KeaneBenchmark<double>>());
-		add(std::make_shared<Langerman5Benchmark<double>>());
-		add(std::make_shared<LeonBenchmark<double>>());
-		add(std::make_shared<MatyasBenchmark<double>>());
-		add(std::make_shared<McCormickBenchmark<double>>());
-		add(std::make_shared<MieleCantrellBenchmark<double>>());
-		add(std::make_shared<Mishra3Benchmark<double>>());
-		add(std::make_shared<Mishra4Benchmark<double>>());
-		add(std::make_shared<Mishra5Benchmark<double>>());
-		add(std::make_shared<Mishra6Benchmark<double>>());
-		add(std::make_shared<Mishra7Benchmark<double>>());
-		add(std::make_shared<Mishra8Benchmark<double>>());
-		add(std::make_shared<Mishra9Benchmark<double>>());
-		add(std::make_shared<ParsopoulosBenchmark<double>>());
-		add(std::make_shared<PeriodicBenchmark<double>>());
-		add(std::make_shared<PinterBenchmark<double>>(3));
-		add(std::make_shared<PowellSingular2Benchmark<double>>(8));
-		add(std::make_shared<PowellSingular2Benchmark<double>>(3));
-		add(std::make_shared<Price1Benchmark<double>>());
-		add(std::make_shared<Price2Benchmark<double>>());
-		add(std::make_shared<Price3Benchmark<double>>());
-		add(std::make_shared<Price4Benchmark<double>>());
-		add(std::make_shared<Problem02Benchmark<double>>());
-		add(std::make_shared<Problem04Benchmark<double>>());
-		add(std::make_shared<Problem05Benchmark<double>>());
-		add(std::make_shared<Problem06Benchmark<double>>());
-		add(std::make_shared<QingBenchmark<double>>());
-		add(std::make_shared<QuadraticBenchmark<double>>());
-		add(std::make_shared<QuinticBenchmark<double>>(3));
-		add(std::make_shared<RosenbrockBenchmark<double>>(3));
-		add(std::make_shared<RosenbrockModifiedBenchmark<double>>());
-		add(std::make_shared<RotatedEllipseBenchmark<double>>());
-		add(std::make_shared<RotatedEllipse2Benchmark<double>>());
-		add(std::make_shared<Scahffer1Benchmark<double>>());
-		add(std::make_shared<Scahffer3Benchmark<double>>());
-		add(std::make_shared<Scahffer4Benchmark<double>>());
-		add(std::make_shared<Scahffer2_6Benchmark<double>>());
-		add(std::make_shared<SchafferF6Benchmark<double>>(3));
-		add(std::make_shared<SchmidtVettersBenchmark<double>>());
-		add(std::make_shared<SchumerSteiglitzBenchmark<double>>(3));
-		add(std::make_shared<SchwefelBenchmark<double>>(3));
-		add(std::make_shared<Schwefel1_2Benchmark<double>>(3));
-		add(std::make_shared<Schwefel2_20Benchmark<double>>(3));
-		add(std::make_shared<Schwefel2_20Benchmark<double>>(3));
-		add(std::make_shared<Schwefel2_23Benchmark<double>>(3));
-		add(std::make_shared<Schwefel2_26Benchmark<double>>());
-		add(std::make_shared<Schwefel2_36Benchmark<double>>());
-		add(std::make_shared<Schwefel2_4Benchmark<double>>(3));
-		add(std::make_shared<Shekel10Benchmark<double>>());
-		add(std::make_shared<Shekel5Benchmark<double>>());
-		add(std::make_shared<Shekel7Benchmark<double>>());
-		add(std::make_shared<ShubertBenchmark<double>>());
-		add(std::make_shared<Shubert2Benchmark<double>>());
-		add(std::make_shared<Shubert3Benchmark<double>>());
-		add(std::make_shared<SolomonBenchmark<double>>());
-		add(std::make_shared<SphereBenchmark<double>>(3));
-		add(std::make_shared<StrechedVSineWaveBenchmark<double>>(3));
-		add(std::make_shared<StyblinskiTangBenchmark<double>>());
-		add(std::make_shared<SumSquaresBenchmark<double>>(3));
-		add(std::make_shared<Table1HolderTable1Benchmark<double>>());
-		add(std::make_shared<Table2HolderTable2Benchmark<double>>());
-		add(std::make_shared<Table3CarromBenchmark<double>>());
-		add(std::make_shared<TesttubeHolderBenchmark<double>>());
-		add(std::make_shared<TrecanniBenchmark<double>>());
-		add(std::make_shared<TrefethenBenchmark<double>>());
-		add(std::make_shared<Trid10Benchmark<double>>());
-		add(std::make_shared<Trid6Benchmark<double>>());
-		add(std::make_shared<Trigonometric1Benchmark<double>>(3));
-		add(std::make_shared<Trigonometric2Benchmark<double>>(3));
-		add(std::make_shared<TripodBenchmark<double>>());
-		add(std::make_shared<Ursem1Benchmark<double>>());
-		add(std::make_shared<Ursem3Benchmark<double>>());
-		add(std::make_shared<Ursem4Benchmark<double>>());
-		add(std::make_shared<UrsemWavesBenchmark<double>>());
-		add(std::make_shared<VenterSobiezcczanskiSobieskiBenchmark<double>>());
-		add(std::make_shared<WWavyBenchmark<double>>(3));
-		add(std::make_shared<WayburnSeader1Benchmark<double>>());
-		add(std::make_shared<WayburnSeader2Benchmark<double>>());
-		add(std::make_shared<WayburnSeader3Benchmark<double>>());
-		add(std::make_shared<WeierstrassBenchmark<double>>(3));
-		add(std::make_shared<WhitleyBenchmark<double>>(3));
-		add(std::make_shared<WolfeBenchmark<double>>());
-		add(std::make_shared<XinSheYang2Benchmark<double>>(3));
-		add(std::make_shared< XinSheYang3Benchmark<double>>(3));
-		add(std::make_shared<XinSheYang4Benchmark<double>>(3));
-		add(std::make_shared<ZakharovBenchmark<double>>(3));
-		add(std::make_shared<ZettlBenchmark<double>>());
-		add(std::make_shared<ZirilliBenchmark<double>>());
-	}
+	BenchmarksBase() { fill(); }
+	virtual void fill() = 0;
 	void clear()
 	{
 		vbm.clear();
 	}
-	void add(const PtrBench<T> &ptrBenchmark)
+	void add(const T &ptrBenchmark)
 	{
 		vbm.push_back(ptrBenchmark);
 	}
 	
 	void print() const
 	{
-		for(PtrBench<T> ptrBench : *this)
+		for(T ptrBench : *this)
 			std::cout << *ptrBench;
 	}	
 
-	typename std::vector<PtrBench<T>>::iterator begin()
+	typename std::vector<T>::iterator begin()
 	{
         	return vbm.begin();
     	}
-    	typename std::vector<PtrBench<T>>::iterator end()
+    	typename std::vector<T>::iterator end()
 	{
         	return vbm.end();
     	}
-    	typename std::vector<PtrBench<T>>::const_iterator begin() const 
+    	typename std::vector<T>::const_iterator begin() const 
 	{
         	return vbm.begin();
     	}
-    	typename std::vector<PtrBench<T>>::const_iterator end() const 
+    	typename std::vector<T>::const_iterator end() const 
 	{
         	return vbm.end();
     	}
+};
+
+template <class T>
+class Benchmarks : public BenchmarksBase<PtrBench<T>>
+{
+public:
+	virtual void fill()
+	{
+		this->clear();
+		add(std::make_shared<Ackley1Benchmark<T>>(3));
+		add(std::make_shared<Ackley2Benchmark<T>>(4));
+		add(std::make_shared<Ackley3Benchmark<T>>());
+		add(std::make_shared<AdjimanBenchmark<T>>());
+		add(std::make_shared<Alpine1Benchmark<T>>(3));
+		add(std::make_shared<Alpine2Benchmark<T>>());
+		add(std::make_shared<BradBenchmark<T>>());
+		add(std::make_shared<BartelsConnBenchmark<T>>());
+		add(std::make_shared<BealeBenchmark<T>>());
+		add(std::make_shared<BiggsEXP2Benchmark<T>>());
+		add(std::make_shared<BiggsEXP3Benchmark<T>>());
+		add(std::make_shared<BiggsEXP4Benchmark<T>>());
+		add(std::make_shared<BiggsEXP5Benchmark<T>>());
+		add(std::make_shared<BiggsEXP6Benchmark<T>>());
+		add(std::make_shared<BirdBenchmark<T>>());
+		add(std::make_shared<Bohachevsky1Benchmark<T>>());
+		add(std::make_shared<Bohachevsky2Benchmark<T>>());
+		add(std::make_shared<Bohachevsky3Benchmark<T>>());
+		add(std::make_shared<BoothBenchmark<T>>());
+		add(std::make_shared<BoxBettsQuadraticSumBenchmark<T>>());
+		add(std::make_shared<BraninRCOSBenchmark<T>>());
+		add(std::make_shared<BraninRCOS2Benchmark<T>>());
+		add(std::make_shared<BrentBenchmark<T>>());
+		add(std::make_shared<BrownBenchmark<T>>(3));
+		add(std::make_shared<Bukin2Benchmark<T>>());
+		add(std::make_shared<Bukin4Benchmark<T>>());
+		add(std::make_shared<Bukin6Benchmark<T>>());
+		add(std::make_shared<CamelSixHumpBenchmark<T>>());
+		add(std::make_shared<CamelThreeHumpBenchmark<T>>());
+		add(std::make_shared<ChichinadzeBenchmark<T>>());
+		add(std::make_shared<ChungReynoldsBenchmark<T>>(3));
+		add(std::make_shared<ColvilleBenchmark<T>>());
+		add(std::make_shared<ComplexBenchmark<T>>());
+		add(std::make_shared<CosineMixtureBenchmark<T>>());
+		add(std::make_shared<CrossInTrayBenchmark<T>>());
+		add(std::make_shared<CrossLegBenchmark<T>>());
+		add(std::make_shared<CubeBenchmark<T>>());
+		add(std::make_shared<DavisBenchmark<T>>());
+		add(std::make_shared<Deb1Benchmark<T>>(3));
+		add(std::make_shared<DeckkersAartsBenchmark<T>>());
+		add(std::make_shared<DixonPriceBenchmark<T>>());
+		add(std::make_shared<DolanBenchmark<T>>());
+		add(std::make_shared<DropWaveBenchmark<T>>());
+		add(std::make_shared<EasomBenchmark<T>>());
+		add(std::make_shared<EggCrateBenchmark<T>>());
+		add(std::make_shared<EggHolderBenchmark<T>>());
+		add(std::make_shared<ElAttarVidyasagarDuttBenchmark<T>>());
+		add(std::make_shared<EngvallBenchmark<T>>());
+		add(std::make_shared<Exp2Benchmark<T>>());
+		add(std::make_shared<ExponentialBenchmark<T>>(3));
+		add(std::make_shared<FreudensteinRothBenchmark<T>>());
+		add(std::make_shared<GoldsteinPriceBenchmark<T>>());
+		add(std::make_shared<GramacyLee2Benchmark<T>>());
+		add(std::make_shared<GramacyLee3Benchmark<T>>());
+		add(std::make_shared<GriewankBenchmark<T>>(3));
+		add(std::make_shared<HansenBenchmark<T>>());
+		add(std::make_shared<Hartman3Benchmark<T>>());
+		add(std::make_shared<Hartman6Benchmark<T>>());
+		add(std::make_shared<HelicalValleyBenchmark<T>>());
+		add(std::make_shared<HimmelblauBenchmark<T>>());
+		add(std::make_shared<HosakiBenchmark<T>>());
+		add(std::make_shared<JennrichSampsonBenchmark<T>>());
+		add(std::make_shared<KeaneBenchmark<T>>());
+		add(std::make_shared<Langerman5Benchmark<T>>());
+		add(std::make_shared<LeonBenchmark<T>>());
+		add(std::make_shared<MatyasBenchmark<T>>());
+		add(std::make_shared<McCormickBenchmark<T>>());
+		add(std::make_shared<MieleCantrellBenchmark<T>>());
+		add(std::make_shared<Mishra3Benchmark<T>>());
+		add(std::make_shared<Mishra4Benchmark<T>>());
+		add(std::make_shared<Mishra5Benchmark<T>>());
+		add(std::make_shared<Mishra6Benchmark<T>>());
+		add(std::make_shared<Mishra7Benchmark<T>>());
+		add(std::make_shared<Mishra8Benchmark<T>>());
+		add(std::make_shared<Mishra9Benchmark<T>>());
+		add(std::make_shared<ParsopoulosBenchmark<T>>());
+		add(std::make_shared<PeriodicBenchmark<T>>());
+		add(std::make_shared<PinterBenchmark<T>>(3));
+		add(std::make_shared<PowellSingular2Benchmark<T>>(8));
+		add(std::make_shared<PowellSingular2Benchmark<T>>(3));
+		add(std::make_shared<Price1Benchmark<T>>());
+		add(std::make_shared<Price2Benchmark<T>>());
+		add(std::make_shared<Price3Benchmark<T>>());
+		add(std::make_shared<Price4Benchmark<T>>());
+		add(std::make_shared<Problem02Benchmark<T>>());
+		add(std::make_shared<Problem04Benchmark<T>>());
+		add(std::make_shared<Problem05Benchmark<T>>());
+		add(std::make_shared<Problem06Benchmark<T>>());
+		add(std::make_shared<QingBenchmark<T>>());
+		add(std::make_shared<QuadraticBenchmark<T>>());
+		add(std::make_shared<QuinticBenchmark<T>>(3));
+		add(std::make_shared<RosenbrockBenchmark<T>>(3));
+		add(std::make_shared<RosenbrockModifiedBenchmark<T>>());
+		add(std::make_shared<RotatedEllipseBenchmark<T>>());
+		add(std::make_shared<RotatedEllipse2Benchmark<T>>());
+		add(std::make_shared<Scahffer1Benchmark<T>>());
+		add(std::make_shared<Scahffer3Benchmark<T>>());
+		add(std::make_shared<Scahffer4Benchmark<T>>());
+		add(std::make_shared<Scahffer2_6Benchmark<T>>());
+		add(std::make_shared<SchafferF6Benchmark<T>>(3));
+		add(std::make_shared<SchmidtVettersBenchmark<T>>());
+		add(std::make_shared<SchumerSteiglitzBenchmark<T>>(3));
+		add(std::make_shared<SchwefelBenchmark<T>>(3));
+		add(std::make_shared<Schwefel1_2Benchmark<T>>(3));
+		add(std::make_shared<Schwefel2_20Benchmark<T>>(3));
+		add(std::make_shared<Schwefel2_20Benchmark<T>>(3));
+		add(std::make_shared<Schwefel2_23Benchmark<T>>(3));
+		add(std::make_shared<Schwefel2_26Benchmark<T>>());
+		add(std::make_shared<Schwefel2_36Benchmark<T>>());
+		add(std::make_shared<Schwefel2_4Benchmark<T>>(3));
+		add(std::make_shared<Shekel10Benchmark<T>>());
+		add(std::make_shared<Shekel5Benchmark<T>>());
+		add(std::make_shared<Shekel7Benchmark<T>>());
+		add(std::make_shared<ShubertBenchmark<T>>());
+		add(std::make_shared<Shubert2Benchmark<T>>());
+		add(std::make_shared<Shubert3Benchmark<T>>());
+		add(std::make_shared<SolomonBenchmark<T>>());
+		add(std::make_shared<SphereBenchmark<T>>(3));
+		add(std::make_shared<StrechedVSineWaveBenchmark<T>>(3));
+		add(std::make_shared<StyblinskiTangBenchmark<T>>());
+		add(std::make_shared<SumSquaresBenchmark<T>>(3));
+		add(std::make_shared<Table1HolderTable1Benchmark<T>>());
+		add(std::make_shared<Table2HolderTable2Benchmark<T>>());
+		add(std::make_shared<Table3CarromBenchmark<T>>());
+		add(std::make_shared<TesttubeHolderBenchmark<T>>());
+		add(std::make_shared<TrecanniBenchmark<T>>());
+		add(std::make_shared<TrefethenBenchmark<T>>());
+		add(std::make_shared<Trid10Benchmark<T>>());
+		add(std::make_shared<Trid6Benchmark<T>>());
+		add(std::make_shared<Trigonometric1Benchmark<T>>(3));
+		add(std::make_shared<Trigonometric2Benchmark<T>>(3));
+		add(std::make_shared<TripodBenchmark<T>>());
+		add(std::make_shared<Ursem1Benchmark<T>>());
+		add(std::make_shared<Ursem3Benchmark<T>>());
+		add(std::make_shared<Ursem4Benchmark<T>>());
+		add(std::make_shared<UrsemWavesBenchmark<T>>());
+		add(std::make_shared<VenterSobiezcczanskiSobieskiBenchmark<T>>());
+		add(std::make_shared<WWavyBenchmark<T>>(3));
+		add(std::make_shared<WayburnSeader1Benchmark<T>>());
+		add(std::make_shared<WayburnSeader2Benchmark<T>>());
+		add(std::make_shared<WayburnSeader3Benchmark<T>>());
+		add(std::make_shared<WeierstrassBenchmark<T>>(3));
+		add(std::make_shared<WhitleyBenchmark<T>>(3));
+		add(std::make_shared<WolfeBenchmark<T>>());
+		add(std::make_shared<XinSheYang2Benchmark<T>>(3));
+		add(std::make_shared< XinSheYang3Benchmark<T>>(3));
+		add(std::make_shared<XinSheYang4Benchmark<T>>(3));
+		add(std::make_shared<ZakharovBenchmark<T>>(3));
+		add(std::make_shared<ZettlBenchmark<T>>());
+		add(std::make_shared<ZirilliBenchmark<T>>());
+	}
 };
 
 

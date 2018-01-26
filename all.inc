@@ -39,7 +39,8 @@ STD_OPT = -std=c++14 -U__STRICT_ANSI__
 # Auxilary headers
 SNOWGOOSE=$(ROOT)../snowgoose
 COMPI=$(ROOT)../COMPI
-EXTRA_INC = -I$(SNOWGOOSE) -I$(COMPI)
+ONEDIM=$(ROOT)testfuncs
+EXTRA_INC = -I$(SNOWGOOSE) -I$(COMPI) -I$(ONEDIM)
 
 
 #common options

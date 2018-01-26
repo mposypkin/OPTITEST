@@ -19,7 +19,7 @@ namespace OPTITEST {
         DejongObjective(int n) : mN(n) {
         }
 
-        double func(const double* x) {
+        double func(const double* x) const {
             double v = 0;
             for (int i = 0; i < mN; i++) {
                 v += x[i] * x[i];

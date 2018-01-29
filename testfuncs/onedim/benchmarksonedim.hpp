@@ -34,7 +34,7 @@ public:
 		return ::calcIntervalGrad(Holder1<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
-	Holder1Benchmark() : BenchmarkOneDim<T>("Holder1 function", 3.0, 7, {-4, 4}, false) {
+	Holder1Benchmark() : BenchmarkOneDim<T>("Holder1 function", 3.0, 7, {-4, 4}, true) {
 	}
 };
 
@@ -58,7 +58,7 @@ public:
 		return ::calcIntervalGrad(Holder2<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
-	Holder2Benchmark() : BenchmarkOneDim<T>("Holder2 function", 2.414213, -1.71768,  {-5, 5}, false) {
+	Holder2Benchmark() : BenchmarkOneDim<T>("Holder2 function", 2.414213, -1.71768,  {-5, 5}, true) {
 	}
 };
 
@@ -82,7 +82,7 @@ public:
 		return ::calcIntervalGrad(Holder3<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
-	Holder3Benchmark() : BenchmarkOneDim<T>("Holder3 function", 2.0,  0, {0, 6}, false) {
+	Holder3Benchmark() : BenchmarkOneDim<T>("Holder3 function", 2.0,  0, {0, 6}, true) {
 	}
 };
 
@@ -106,7 +106,7 @@ public:
 		return ::calcIntervalGrad(Holder4<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
-	Holder4Benchmark() : BenchmarkOneDim<T>("Holder4 function", 4.0, 0, {0, 6}, false) {
+	Holder4Benchmark() : BenchmarkOneDim<T>("Holder4 function", 4.0, -2, {0, 6}, true) {
 	}
 };
 
@@ -130,7 +130,7 @@ public:
 		return ::calcIntervalGrad(Holder5<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
-	Holder5Benchmark() : BenchmarkOneDim<T>("Holder5 function", 0.966085, -1.48907,  {0, 1}, false) {
+	Holder5Benchmark() : BenchmarkOneDim<T>("Holder5 function", 0.966085, -1.48907,  {0, 1}, true) {
 	}
 };
 
@@ -178,7 +178,7 @@ public:
 		return ::calcIntervalGrad(Holder7<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
-	Holder7Benchmark() : BenchmarkOneDim<T>("Holder7 function", -0.49139, -12.0312, {-10, 10}, false) {
+	Holder7Benchmark() : BenchmarkOneDim<T>("Holder7 function", -0.49139, -12.0312, {-10, 10}, true) {
 	}
 };
 
@@ -202,7 +202,7 @@ public:
 		return ::calcIntervalGrad(Holder8<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
-	Holder8Benchmark() : BenchmarkOneDim<T>("Holder8 function", 0.8003, 3.71699,  {-10, 10}, false) {
+	Holder8Benchmark() : BenchmarkOneDim<T>("Holder8 function", 0.8003, 3.71699,  {-10, 10}, true) {
 	}
 };
 

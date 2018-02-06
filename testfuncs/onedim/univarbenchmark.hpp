@@ -1,5 +1,5 @@
-#ifndef BENCHMARK_ONE_DIM_HPP
-#define BENCHMARK_ONE_DIM_HPP
+#ifndef UNIVARBENCHMARK_BENCHMARK_HPP
+#define UNIVARBENCHMARK_BENCHMARK_HPP
 
 #include <iostream>
 
@@ -7,7 +7,7 @@
 #include "derivatives/valder.hpp"
 #include "derivatives/intervalder.hpp"
 #include "expression/expr.hpp"
-#include "benchmarks.hpp"
+#include "testfuncs/manydim/benchmarks.hpp"
 
 using namespace snowgoose::expression;
 using namespace snowgoose::derivative;
@@ -16,7 +16,7 @@ using namespace snowgoose::derivative;
 * Benchmark to describe global optimization problem
 */
 template <class T>
-class BenchmarkOneDim
+class UnivarBenchmark
 {
 protected:
 	const std::string mDesciption;
@@ -81,20 +81,20 @@ public:
          * @param globmin expected global minimum
          * @param mMultiModal is multimodal function
          */
-	BenchmarkOneDim(const std::string& desc, T globMinY, T globMinX, Bound<T> bound, bool mMultiModal = true);
+	UnivarBenchmark(const std::string& desc, T globMinY, T globMinX, Bound<T> bound, bool mMultiModal = true);
 	/**
 	* print benchmark
 	* @param out out stream
 	* @param bm benchmark
  	* @return out stream
 	*/
-        template <class T2> friend std::ostream& operator<<(std::ostream &out, const BenchmarkOneDim<T2> &bm);
+        template <class T2> friend std::ostream& operator<<(std::ostream &out, const UnivarBenchmark<T2> &bm);
 };
 
-template <class T> BenchmarkOneDim<T>::BenchmarkOneDim(const std::string& desc, T globMinX, T globMinY, Bound<T> bound, bool mMultiModal) : 
+template <class T> UnivarBenchmark<T>::UnivarBenchmark(const std::string& desc, T globMinX, T globMinY, Bound<T> bound, bool mMultiModal) : 
 mDesciption(desc), mGlobMinX(globMinX), mGlobMinY(globMinY) , mBounds(bound), mMultiModal(mMultiModal) {}
 
-template <class T2> std::ostream& operator<<(std::ostream &out, const BenchmarkOneDim<T2> &bm)
+template <class T2> std::ostream& operator<<(std::ostream &out, const UnivarBenchmark<T2> &bm)
 {
 	const char* boollut[2] = {"true", "false"};
 	out << "desciption: " << bm.mDesciption << std::endl;

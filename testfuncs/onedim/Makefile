@@ -1,6 +1,6 @@
 ROOT = ../../
-BINS = testonedimfuncs.exe
-TESTS = testonedimfuncs.exe
+BINS = univartests.exe
+TESTS = univartests.exe
 
 
 include $(ROOT)all.inc

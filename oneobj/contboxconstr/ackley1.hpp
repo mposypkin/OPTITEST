@@ -26,7 +26,7 @@ namespace OPTITEST {
         Ackley1Objective(int n) : mN(n) {
         }
 
-        double func(const double* x) const {
+        double func(const double* x) {
             double sumXSqr = 0.0;
             double sumCosX = 0.0;
             for (int i = 0; i < mN; i++) {

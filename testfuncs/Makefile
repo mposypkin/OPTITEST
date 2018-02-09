@@ -1,6 +1,6 @@
 all dep clean indent tests::
-	cd oneobj && $(MAKE) $@ && cd .. 
-	cd testfuncs && $(MAKE) $@ && cd ..
+	cd onedim && $(MAKE) $@ && cd .. 
+	cd tutorial && $(MAKE) $@ && cd ..
 	
 doc: indent doxy
 

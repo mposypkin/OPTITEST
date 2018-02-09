@@ -18,7 +18,7 @@
 #include <memory>
 #include "expression/expr.hpp"
 #include "expression/algorithm.hpp"
-#include "testfuncs/benchmarks.hpp"
+#include "testfuncs/manydim/benchmarks.hpp"
 
 #include <mpproblem.hpp>
 #include <box/box.hpp>

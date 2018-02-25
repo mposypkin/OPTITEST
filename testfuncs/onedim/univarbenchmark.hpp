@@ -5,12 +5,14 @@
 
 #include "interval/interval_air.hpp"
 #include "derivatives/valder.hpp"
+#include "derhighorder/series.hpp"
 #include "derivatives/intervalder.hpp"
 #include "expression/expr.hpp"
 #include "testfuncs/manydim/benchmarks.hpp"
 
 using namespace snowgoose::expression;
 using namespace snowgoose::derivative;
+using namespace snowgoose::derhighorder;
 
 /**
 * Benchmark to describe global optimization problem
@@ -75,6 +77,12 @@ public:
  	* @return interval estimation of derivative of function
 	*/
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const = 0;
+	/**
+	* calculate gradient of function
+	* @param point coordinate where derivative of function will be calculated
+ 	* @return gradient of function
+	*/
+	virtual Series<T> calcDerHighOrder(T point, int order) const = 0; 
         /**
          * Constructor
          * @param desc description of global optimization problem
@@ -82,6 +90,7 @@ public:
          * @param mMultiModal is multimodal function
          */
 	UnivarBenchmark(const std::string& desc, T globMinY, T globMinX, Bound<T> bound, bool mMultiModal = true);
+
 	/**
 	* print benchmark
 	* @param out out stream

@@ -13,10 +13,11 @@
 
 using namespace snowgoose::expression;
 using namespace snowgoose::derivative;
+using namespace snowgoose::derhighorder;
 using namespace OPTITEST;
 
 template <class T>
-class Holder1Benchmark : public UnivarBenchmark<T>
+class Holder1Benchmark : public UnivarBenchmark<T>   
 {
 public:
 	virtual T calcFunc(T point) const {		
@@ -33,6 +34,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(Holder1<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(Holder1<Series<T>>(), point, order);
 	}
 
 	Holder1Benchmark() : UnivarBenchmark<T>("Holder1 function", 3.0, 7, {-4, 4}, true) {
@@ -59,6 +64,10 @@ public:
 		return ::calcIntervalGrad(Holder2<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(Holder2<Series<T>>(), point, order);
+	}
+
 	Holder2Benchmark() : UnivarBenchmark<T>("Holder2 function", 2.414213, -1.71768,  {-5, 5}, true) {
 	}
 };
@@ -81,6 +90,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(Holder3<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(Holder3<Series<T>>(), point, order);
 	}
 
 	Holder3Benchmark() : UnivarBenchmark<T>("Holder3 function", 2.0,  0, {0, 6}, true) {
@@ -107,6 +120,10 @@ public:
 		return ::calcIntervalGrad(Holder4<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(Holder4<Series<T>>(), point, order);
+	}
+
 	Holder4Benchmark() : UnivarBenchmark<T>("Holder4 function", 4.0, -2, {0, 6}, true) {
 	}
 };
@@ -129,6 +146,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(Holder5<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(Holder5<Series<T>>(), point, order);
 	}
 
 	Holder5Benchmark() : UnivarBenchmark<T>("Holder5 function", 0.966085, -1.48907,  {0, 1}, true) {
@@ -155,6 +176,10 @@ public:
 		return ::calcIntervalGrad(Holder6<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(Holder6<Series<T>>(), point, order);
+	}
+
 	Holder6Benchmark() : UnivarBenchmark<T>("Holder6 function", 1.590717, 7.51592,  {-3, 3}, false) {
 	}
 };
@@ -177,6 +202,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(Holder7<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(Holder7<Series<T>>(), point, order);
 	}
 
 	Holder7Benchmark() : UnivarBenchmark<T>("Holder7 function", -0.49139, 12.03125, {-10, 10}, true) {
@@ -203,6 +232,10 @@ public:
 		return ::calcIntervalGrad(Holder8<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(Holder8<Series<T>>(), point, order);
+	}
+
 	Holder8Benchmark() : UnivarBenchmark<T>("Holder8 function", -0.8003, 14.508, {-10, 10}, true) {
 	}
 };
@@ -225,6 +258,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarProblem1<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarProblem1<Series<T>>(), point, order);
 	}
 
 	Univar1Benchmark() : UnivarBenchmark<T>("Univariate 1 function", 0, 0,  {-1.5, 11}, false) {
@@ -251,6 +288,10 @@ public:
 		return ::calcIntervalGrad(UnivarProblem2<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarProblem2<Series<T>>(), point, order);
+	}
+
 	Univar2Benchmark() : UnivarBenchmark<T>("Univariate 2 function", 5.145735, 1.899599, {2.7, 7.5}, true) {
 	}
 };
@@ -273,6 +314,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarProblem4<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarProblem4<Series<T>>(), point, order);
 	}
 
 	Univar4Benchmark() : UnivarBenchmark<T>("Univariate 4 function", 2.868, 3.85045, {1.9, 3.9}, false) {
@@ -299,6 +344,10 @@ public:
 		return ::calcIntervalGrad(UnivarProblem5<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarProblem5<Series<T>>(), point, order);
+	}
+
 	Univar5Benchmark() : UnivarBenchmark<T>("Univariate 5 function", 0.96609, 1.48907,  {0, 1.2}, false) {
 	}
 };
@@ -321,6 +370,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarProblem7<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarProblem7<Series<T>>(), point, order);
 	}
 
 	Univar7Benchmark() : UnivarBenchmark<T>("Univariate 7 function", 0, 0,  {2.7, 7.5}, false) {
@@ -347,6 +400,10 @@ public:
 		return ::calcIntervalGrad(UnivarProblem9<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarProblem9<Series<T>>(), point, order);
+	}
+
 	Univar9Benchmark() : UnivarBenchmark<T>("Univariate 9 function", 17.039, 1.90596,  {3.1, 20.4}, false) {
 	}
 };
@@ -369,6 +426,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarProblem10<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarProblem10<Series<T>>(), point, order);
 	}
 
 	Univar10Benchmark() : UnivarBenchmark<T>("Univariate 10 function", 7.9787, 7.91673,  {0, 10}, false) {
@@ -396,6 +457,10 @@ public:
 		return ::calcIntervalGrad(UnivarProblem11<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarProblem11<Series<T>>(), point, order);
+	}
+
 	Univar11Benchmark() : UnivarBenchmark<T>("Univariate 11 function", 4.189, 1.5,  {-1.57, 6.28}, false) {
 	}
 };
@@ -418,6 +483,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarProblem12<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarProblem12<Series<T>>(), point, order);
 	}
 
 	Univar12Benchmark() : UnivarBenchmark<T>("Univariate 12 function", 4.712, 1,  {0, 6.28}, false) {
@@ -444,6 +513,10 @@ public:
 		return ::calcIntervalGrad(UnivarProblem13<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarProblem13<Series<T>>(), point, order);
+	}
+
 	Univar13Benchmark() : UnivarBenchmark<T>("Univariate 13 function", 0.7071, 1.5874,  {0.001, 0.99}, false) {
 	}
 };
@@ -466,6 +539,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarProblem14<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarProblem14<Series<T>>(), point, order);
 	}
 
 	Univar14Benchmark() : UnivarBenchmark<T>("Univariate 14 function", 0.224885, 0.788685,  {0, 4}, false) {
@@ -492,6 +569,10 @@ public:
 		return ::calcIntervalGrad(UnivarProblem15<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarProblem15<Series<T>>(), point, order);
+	}
+
 	Univar15Benchmark() : UnivarBenchmark<T>("Univariate 15 function", 2.4142, 0.03553,  {-5, 5}, false) {
 	}
 };
@@ -514,6 +595,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarProblem16<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarProblem16<Series<T>>(), point, order);
 	}
 
 	Univar16Benchmark() : UnivarBenchmark<T>("Univariate 16 function", 1.5907, -7.515924,  {-3, 3}, false) {
@@ -541,6 +626,10 @@ public:
 		return ::calcIntervalGrad(UnivarProblem19<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarProblem19<Series<T>>(), point, order);
+	}
+
 	Univar19Benchmark() : UnivarBenchmark<T>("Univariate 19 function", 5.87287, 7.81567,  {0, 6.5}, false) {
 	}
 };
@@ -563,6 +652,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarProblem20<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarProblem20<Series<T>>(), point, order);
 	}
 
 	Univar20Benchmark() : UnivarBenchmark<T>("Univariate 20 function", 1.195137, 0.0634905,  {-10, 10}, false) {
@@ -589,6 +682,10 @@ public:
 		return ::calcIntervalGrad(UnivarProblem21<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarProblem21<Series<T>>(), point, order);
+	}
+
 	Univar21Benchmark() : UnivarBenchmark<T>("Univariate 21 function", -3, 2.5,  {0, 8}, true) {
 	}
 };
@@ -611,6 +708,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(LipschitzProblem1<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(LipschitzProblem1<Series<T>>(), point, order);
 	}
 
 	Lipschitz1Benchmark() : UnivarBenchmark<T>("LipschitzProblem 1 function", 29763.233, 10,  {0, 8}, true) {
@@ -637,6 +738,10 @@ public:
 		return ::calcIntervalGrad(LipschitzProblem2<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(LipschitzProblem2<Series<T>>(), point, order);
+	}
+
 	Lipschitz2Benchmark() : UnivarBenchmark<T>("LipschitzProblem 2 function", 0.67956, 0.824239,  {-10, 10}, true) {
 	}
 };
@@ -659,6 +764,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(LipschitzProblem3<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(LipschitzProblem3<Series<T>>(), point, order);
 	}
 
 	Lipschitz3Benchmark() : UnivarBenchmark<T>("LipschitzProblem 3 function", 5.19978, 1.6013,  {2.7, 7.5}, true) {
@@ -685,6 +794,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem1<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem1<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem1Benchmark() : UnivarBenchmark<T>("UnivarGradProblem1 function",0, -0.9999,  {0, 20}, true) {
 	}
 };
@@ -707,6 +820,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem2<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem2<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem2Benchmark() : UnivarBenchmark<T>("UnivarGradProblem2 function",0, -1,  {0.2, 7}, true) {
@@ -733,6 +850,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem3<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem3<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem3Benchmark() : UnivarBenchmark<T>("UnivarGradProblem3 function",0, 0,  {-10, 10}, true) {
 	}
 };
@@ -755,6 +876,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem4<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem4<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem4Benchmark() : UnivarBenchmark<T>("UnivarGradProblem4 function",0, -17.582872,  {0.2, 7}, true) {
@@ -781,6 +906,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem5<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem5<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem5Benchmark() : UnivarBenchmark<T>("UnivarGradProblem5 function",0, -0.020903,  {-10, 10}, true) {
 	}
 };
@@ -803,6 +932,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem6<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem6<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem6Benchmark() : UnivarBenchmark<T>("UnivarGradProblem6 function",0, -0.952897,  {0.2, 7}, true) {
@@ -829,6 +962,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem7<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem7<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem7Benchmark() : UnivarBenchmark<T>("UnivarGradProblem7 function",0, -6.262872,  {0.2, 7}, true) {
 	}
 };
@@ -851,6 +988,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem8<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem8<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem8Benchmark() : UnivarBenchmark<T>("UnivarGradProblem8 function",0, -0.077590,  {0.2, 7}, true) {
@@ -877,6 +1018,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem9<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem9<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem9Benchmark() : UnivarBenchmark<T>("UnivarGradProblem9 function",0, 0.211315,  {0.2, 7}, true) {
 	}
 };
@@ -899,6 +1044,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem10<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem10<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem10Benchmark() : UnivarBenchmark<T>("UnivarGradProblem10 function",0, -0.478362,  {0.2, 7}, true) {
@@ -925,6 +1074,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem11<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem11<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem11Benchmark() : UnivarBenchmark<T>("UnivarGradProblem11 function",0, -5.815675,  {0.2, 7}, true) {
 	}
 };
@@ -947,6 +1100,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem12<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem12<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem12Benchmark() : UnivarBenchmark<T>("UnivarGradProblem12 function",0, -7.047444,  {0.2, 7}, true) {
@@ -973,6 +1130,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem13<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem13<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem13Benchmark() : UnivarBenchmark<T>("UnivarGradProblem13 function",0, -4.601308,  {2.7, 7.5}, true) {
 	}
 };
@@ -995,6 +1156,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem14<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem14<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem14Benchmark() : UnivarBenchmark<T>("UnivarGradProblem14 function",0, -0.141100,  {0.2, 7}, true) {
@@ -1021,6 +1186,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem15<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem15<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem15Benchmark() : UnivarBenchmark<T>("UnivarGradProblem15 function",0, -0.870885,  {0.2, 7}, true) {
 	}
 };
@@ -1043,6 +1212,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem16<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem16<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem16Benchmark() : UnivarBenchmark<T>("UnivarGradProblem16 function",0, -9.031249,  {0.2, 7}, true) {
@@ -1069,6 +1242,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem17<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem17<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem17Benchmark() : UnivarBenchmark<T>("UnivarGradProblem17 function",0, 0.475689,  {-10, 10}, true) {
 	}
 };
@@ -1091,6 +1268,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem19<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem19<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem18Benchmark() : UnivarBenchmark<T>("UnivarGradProblem18 function",0, 0,  {0.2, 7}, true) {
@@ -1117,6 +1298,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem19<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem19<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem19Benchmark() : UnivarBenchmark<T>("UnivarGradProblem19 function",0, -1,  {-5, 5}, true) {
 	}
 };
@@ -1139,6 +1324,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem20<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem20<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem20Benchmark() : UnivarBenchmark<T>("UnivarGradProblem20 function",0, 1,  {-10,10}, true) {
@@ -1165,6 +1354,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem21<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem21<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem21Benchmark() : UnivarBenchmark<T>("UnivarGradProblem21 function",0, 1,  {-20,20}, true) {
 	}
 };
@@ -1187,6 +1380,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem22<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem22<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem22Benchmark() : UnivarBenchmark<T>("UnivarGradProblem22 function",0, -0.918397,  {0.2, 7}, true) {
@@ -1213,6 +1410,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem23<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem23<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem23Benchmark() : UnivarBenchmark<T>("UnivarGradProblem23 function",0, -0.824239,  {-10, 10}, true) {
 	}
 };
@@ -1235,6 +1436,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem24<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem24<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem24Benchmark() : UnivarBenchmark<T>("UnivarGradProblem24 function",0, -0.027864,  {0.2, 7}, true) {
@@ -1261,6 +1466,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem25<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem25<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem25Benchmark() : UnivarBenchmark<T>("UnivarGradProblem25 function",0, 3.5,  {0.2, 7}, true) {
 	}
 };
@@ -1283,6 +1492,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem26<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem26<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem26Benchmark() : UnivarBenchmark<T>("UnivarGradProblem26 function",0, 0.367879,  {0.2, 7}, true) {
@@ -1309,6 +1522,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem27<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem27<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem27Benchmark() : UnivarBenchmark<T>("UnivarGradProblem27 function",0, -0.451388,  {0.2, 7}, true) {
 	}
 };
@@ -1331,6 +1548,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem28<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem28<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem28Benchmark() : UnivarBenchmark<T>("UnivarGradProblem28 function",0, -1,  {0, 20}, true) {
@@ -1357,6 +1578,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem29<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem29<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem29Benchmark() : UnivarBenchmark<T>("UnivarGradProblem29 function",0, -0.410315,  {0.2, 7}, true) {
 	}
 };
@@ -1379,6 +1604,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem30<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem30<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem30Benchmark() : UnivarBenchmark<T>("UnivarGradProblem30 function",0, -0.718282,  {0.2, 7}, true) {
@@ -1405,6 +1634,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem32<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem32<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem32Benchmark() : UnivarBenchmark<T>("UnivarGradProblem32 function",0, -1,  {0.02, 1}, true) {
 	}
 };
@@ -1427,6 +1660,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem34<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem34<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem34Benchmark() : UnivarBenchmark<T>("UnivarGradProblem34 function",0, -0.535534,  {0.2, 7}, true) {
@@ -1453,6 +1690,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem36<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem36<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem36Benchmark() : UnivarBenchmark<T>("UnivarGradProblem36 function",0, -0.35,  {0.2, 7}, true) {
 	}
 };
@@ -1475,6 +1716,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem37<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem37<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem37Benchmark() : UnivarBenchmark<T>("UnivarGradProblem37 function",0, -32.781261,  {-1, 7}, true) {
@@ -1501,6 +1746,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem38<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem38<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem38Benchmark() : UnivarBenchmark<T>("UnivarGradProblem38 function",0, 7,  {-4, 4}, true) {
 	}
 };
@@ -1523,6 +1772,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarGradProblem39<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem39<Series<T>>(), point, order);
 	}
 
 	UnivarGradProblem39Benchmark() : UnivarBenchmark<T>("UnivarGradProblem39 function",0, -1,  {-10, 20}, true) {
@@ -1549,6 +1802,10 @@ public:
 		return ::calcIntervalGrad(UnivarGradProblem40<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarGradProblem40<Series<T>>(), point, order);
+	}
+
 	UnivarGradProblem40Benchmark() : UnivarBenchmark<T>("UnivarGradProblem40 function",0, -1,  {0, 3}, true) {
 	}
 };
@@ -1571,6 +1828,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarNonDiffProblem1<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem1<Series<T>>(), point, order);
 	}
 
 	UnivarNonDiffProblem1Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem1 function", 0.2, 0,  {0.2,7}, false) {
@@ -1597,6 +1858,10 @@ public:
 		return ::calcIntervalGrad(UnivarNonDiffProblem2<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem2<Series<T>>(), point, order);
+	}
+
 	UnivarNonDiffProblem2Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem2 function",0.788, 0,  {0.1, 7}, false) {
 	}
 };
@@ -1619,6 +1884,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarNonDiffProblem3<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem3<Series<T>>(), point, order);
 	}
 
 	UnivarNonDiffProblem3Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem3 function",0, 0,  {-10, 10}, false) {
@@ -1645,6 +1914,10 @@ public:
 		return ::calcIntervalGrad(UnivarNonDiffProblem4<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem4<Series<T>>(), point, order);
+	}
+
 	UnivarNonDiffProblem4Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem4 function",0, 0,  {0, 18}, false) {
 	}
 };
@@ -1667,6 +1940,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarNonDiffProblem5<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem5<Series<T>>(), point, order);
 	}
 
 	UnivarNonDiffProblem5Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem5 function",0, 0,  {0, 7}, false) {
@@ -1693,6 +1970,10 @@ public:
 		return ::calcIntervalGrad(UnivarNonDiffProblem6<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem6<Series<T>>(), point, order);
+	}
+
 	UnivarNonDiffProblem6Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem6 function",0, 0,  {-10, 10}, false) {
 	}
 };
@@ -1715,6 +1996,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarNonDiffProblem7<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem7<Series<T>>(), point, order);
 	}
 
 	UnivarNonDiffProblem7Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem7 function",0, 0,  {0.1, 7}, false) {
@@ -1741,6 +2026,10 @@ public:
 		return ::calcIntervalGrad(UnivarNonDiffProblem8<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem8<Series<T>>(), point, order);
+	}
+
 	UnivarNonDiffProblem8Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem8 function",0, 0,  {-10, 10}, false) {
 	}
 };
@@ -1763,6 +2052,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarNonDiffProblem9<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem9<Series<T>>(), point, order);
 	}
 
 	UnivarNonDiffProblem9Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem9 function",0, 0,  {0, 4 * M_PI}, false) {
@@ -1789,6 +2082,10 @@ public:
 		return ::calcIntervalGrad(UnivarNonDiffProblem10<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem10<Series<T>>(), point, order);
+	}
+
 	UnivarNonDiffProblem10Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem10 function",0, 0,  {0, 10}, false) {
 	}
 };
@@ -1811,6 +2108,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarNonDiffProblem11<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem11<Series<T>>(), point, order);
 	}
 
 	UnivarNonDiffProblem11Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem11 function",0, 0,  {0, 5}, false) {
@@ -1837,6 +2138,10 @@ public:
 		return ::calcIntervalGrad(UnivarNonDiffProblem12<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem12<Series<T>>(), point, order);
+	}
+
 	UnivarNonDiffProblem12Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem12 function",2.356, 0,  {0, 2*M_PI}, false) {
 	}
 };
@@ -1859,6 +2164,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarNonDiffProblem13<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem13<Series<T>>(), point, order);
 	}
 
 	UnivarNonDiffProblem13Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem13 function",0, 0,  {-6, 2}, false) {
@@ -1885,6 +2194,10 @@ public:
 		return ::calcIntervalGrad(UnivarNonDiffProblem14<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem14<Series<T>>(), point, order);
+	}
+
 	UnivarNonDiffProblem14Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem14 function",0, 0,  {0, 4}, false) {
 	}
 };
@@ -1907,6 +2220,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarNonDiffProblem15<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem15<Series<T>>(), point, order);
 	}
 
 	UnivarNonDiffProblem15Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem15 function",0, 0,  {-5, 5}, false) {
@@ -1933,6 +2250,10 @@ public:
 		return ::calcIntervalGrad(UnivarNonDiffProblem16<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem16<Series<T>>(), point, order);
+	}
+
 	UnivarNonDiffProblem16Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem16 function",-8.659, 0,  {-10, 10}, false) {
 	}
 };
@@ -1955,6 +2276,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarNonDiffProblem17<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem17<Series<T>>(), point, order);
 	}
 
 	UnivarNonDiffProblem17Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem17 function",0, 0,  {-10, 10}, false) {
@@ -1981,6 +2306,10 @@ public:
 		return ::calcIntervalGrad(UnivarNonDiffProblem18<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem18<Series<T>>(), point, order);
+	}
+
 	UnivarNonDiffProblem18Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem18 function",0, 0,  {-3, 2}, false) {
 	}
 };
@@ -2005,6 +2334,10 @@ public:
 		return ::calcIntervalGrad(UnivarNonDiffProblem19<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem19<Series<T>>(), point, order);
+	}
+
 	UnivarNonDiffProblem19Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem19 function",0, 0,  {0, 6.5}, false) {
 	}
 };
@@ -2027,6 +2360,10 @@ public:
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
 		return ::calcIntervalGrad(UnivarNonDiffProblem20<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarNonDiffProblem20<Series<T>>(), point, order);
 	}
 
 	UnivarNonDiffProblem20Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem20 function",1.25 * M_PI, -0.7071067,  {-10, 10}, false) {

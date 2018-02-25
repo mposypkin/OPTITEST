@@ -22,4 +22,6 @@ int main(int argc, char** argv)
 	std::cout << "Holder7Benchmark: " << bm7.calcFunc(bm7.getGlobMinX()) <<  std::endl;
 	std::cout << "Holder8Benchmark: " << bm8.calcFunc(bm8.getGlobMinX()) <<  std::endl;
 	std::cout << "Univar21Benchmark: " << bm9.calcFunc(2.5) <<  std::endl;
+
+        std::cout << "Holder1Benchmark(der high order): " << bm1.calcDerHighOrder(bm1.getGlobMinX(), 3) <<  std::endl;
 }

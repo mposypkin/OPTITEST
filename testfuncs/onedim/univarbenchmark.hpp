@@ -6,6 +6,7 @@
 #include "interval/interval_air.hpp"
 #include "derivatives/valder.hpp"
 #include "derhighorder/series.hpp"
+#include "derhighorder/intervalseries.hpp"
 #include "derivatives/intervalder.hpp"
 #include "expression/expr.hpp"
 #include "testfuncs/manydim/benchmarks.hpp"
@@ -80,16 +81,23 @@ public:
 	/**
 	* calculate gradient of function
 	* @param point coordinate where derivative of function will be calculated
+	* @param order order of derivative
  	* @return gradient of function
 	*/
-	virtual Series<T> calcDerHighOrder(T point, int order) const = 0; 
+	virtual Series<T> calcDerHighOrder(T point, int order) const = 0; 	/**
+	* calculate interval estimation of function derivative
+	* @param interval where derivative of function will be calculated
+        * @param order order of derivative
+ 	* @return interval estimation of derivative of function
+	*/
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const = 0; 
         /**
          * Constructor
          * @param desc description of global optimization problem
          * @param globmin expected global minimum
          * @param mMultiModal is multimodal function
          */
-	UnivarBenchmark(const std::string& desc, T globMinY, T globMinX, Bound<T> bound, bool mMultiModal = true);
+	UnivarBenchmark(const std::string& desc, T globMinX, T globMinY, Bound<T> bound, bool mMultiModal = true);
 
 	/**
 	* print benchmark

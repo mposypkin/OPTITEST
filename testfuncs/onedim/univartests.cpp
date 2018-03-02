@@ -39,5 +39,10 @@ int main(int argc, char** argv)
         Expr<Interval<double>> x;
         auto expr = Holder1SecondDer<Interval<double>>(); //expression for second der of Holder1
         std::cout << "Interval estimation of second der of Holder1: " << snowgoose::expression::calcInterval(expr, std::vector<Interval<double>>(1, {2.9, 3.1}) ) <<  std::endl;
+
+        bool isDerExist = bm1.isDerExist(3.0);  
+        std::cout << "Univar14Benchmark: isDerExist " << (isDerExist ? 1 : 0) <<  std::endl;
+
+        
                                                                                      
 }

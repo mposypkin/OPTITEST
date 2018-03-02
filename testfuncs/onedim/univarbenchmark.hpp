@@ -15,6 +15,8 @@ using namespace snowgoose::expression;
 using namespace snowgoose::derivative;
 using namespace snowgoose::derhighorder;
 
+#define EPS 0.001
+
 /**
 * Benchmark to describe global optimization problem
 */
@@ -91,6 +93,8 @@ public:
  	* @return interval estimation of derivative of function
 	*/
 	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const = 0; 
+
+        
         /**
          * Constructor
          * @param desc description of global optimization problem
@@ -106,6 +110,16 @@ public:
  	* @return out stream
 	*/
         template <class T2> friend std::ostream& operator<<(std::ostream &out, const UnivarBenchmark<T2> &bm);
+
+        /**
+	* checks is a derivation exist in a point 
+	* @param point point
+ 	* @return true or false
+	*/
+        virtual bool isDerExist(T point) const = 0;
+
+protected:
+        bool isDerExist(const Expr<Series<T>> &dExp, T point) const;
 };
 
 template <class T> UnivarBenchmark<T>::UnivarBenchmark(const std::string& desc, T globMinX, T globMinY, Bound<T> bound, bool mMultiModal) : 
@@ -121,7 +135,28 @@ template <class T2> std::ostream& operator<<(std::ostream &out, const UnivarBenc
 	out << "bounds: " << "[ " << bm.mBounds.first << " , " << bm.mBounds.second << " ]" << std::endl;
 	out << "multiModal: " << boollut[bm.mMultiModal] << std::endl;
 	return out;	
-};
+}
+
+template <class T> bool UnivarBenchmark<T>::isDerExist(const Expr<Series<T>> &dExp, T point) const
+{
+   bool isFuncCont = false;
+   bool isDerCont = false;
+
+   Series<T> lv = ::calcDerHighOrder(dExp, point - EPS, 1);
+   Series<T> rv = ::calcDerHighOrder(dExp, point + EPS, 1);
+   Series<T> lv2 = ::calcDerHighOrder(dExp, point - EPS/2, 1);
+   Series<T> rv2 = ::calcDerHighOrder(dExp, point + EPS/2, 1);
+
+   T delta1 = std::abs(lv.value() - rv.value());
+   T delta2 = std::abs(lv2.value() - rv2.value());
+   isFuncCont = (delta1 == 0.0 &&  delta2==0.0) || delta2 < delta1;
+
+   delta1 = std::abs(lv.der(1) - rv.der(1));
+   delta2 = std::abs(lv2.der(1) - rv2.der(1));
+   isDerCont = (delta1 == 0.0 &&  delta2==0.0) || delta2 < delta1;
+
+   return (isFuncCont && isDerCont);
+}
 
 #endif
 

@@ -40,6 +40,15 @@ public:
 		return ::calcDerHighOrder(Holder1<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(Holder1<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(Holder1<Series<T>>(), point);
+        }
+
 	Holder1Benchmark() : UnivarBenchmark<T>("Holder1 function", 3.0, 7, {-4, 4}, true) {
 	}
 };
@@ -67,6 +76,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(Holder2<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(Holder2<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(Holder2<Series<T>>(), point);
+        }
 
 	Holder2Benchmark() : UnivarBenchmark<T>("Holder2 function", 2.414213, -1.71768,  {-5, 5}, true) {
 	}
@@ -96,6 +114,15 @@ public:
 		return ::calcDerHighOrder(Holder3<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(Holder3<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(Holder3<Series<T>>(), point);
+        }
+
 	Holder3Benchmark() : UnivarBenchmark<T>("Holder3 function", 2.0,  0, {0, 6}, true) {
 	}
 };
@@ -123,6 +150,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(Holder4<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(Holder4<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(Holder4<Series<T>>(), point);
+        }
 
 	Holder4Benchmark() : UnivarBenchmark<T>("Holder4 function", 4.0, -2, {0, 6}, true) {
 	}
@@ -152,6 +188,15 @@ public:
 		return ::calcDerHighOrder(Holder5<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(Holder5<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(Holder5<Series<T>>(), point);
+        }
+
 	Holder5Benchmark() : UnivarBenchmark<T>("Holder5 function", 0.966085, -1.48907,  {0, 1}, true) {
 	}
 };
@@ -179,6 +224,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(Holder6<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(Holder6<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(Holder6<Series<T>>(), point);
+        }
 
 	Holder6Benchmark() : UnivarBenchmark<T>("Holder6 function", 1.590717, 7.51592,  {-3, 3}, false) {
 	}
@@ -208,6 +262,15 @@ public:
 		return ::calcDerHighOrder(Holder7<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(Holder7<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(Holder7<Series<T>>(), point);
+        }
+
 	Holder7Benchmark() : UnivarBenchmark<T>("Holder7 function", -0.49139, 12.03125, {-10, 10}, true) {
 	}
 };
@@ -235,6 +298,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(Holder8<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(Holder8<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(Holder8<Series<T>>(), point);
+        }
 
 	Holder8Benchmark() : UnivarBenchmark<T>("Holder8 function", -0.8003, 14.508, {-10, 10}, true) {
 	}
@@ -264,6 +336,15 @@ public:
 		return ::calcDerHighOrder(UnivarProblem1<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarProblem1<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarProblem1<Series<T>>(), point);
+        }
+
 	Univar1Benchmark() : UnivarBenchmark<T>("Univariate 1 function", 0, 0,  {-1.5, 11}, false) {
 	}
 };
@@ -291,6 +372,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarProblem2<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarProblem2<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarProblem2<Series<T>>(), point);
+        }
 
 	Univar2Benchmark() : UnivarBenchmark<T>("Univariate 2 function", 5.145735, 1.899599, {2.7, 7.5}, true) {
 	}
@@ -320,6 +410,15 @@ public:
 		return ::calcDerHighOrder(UnivarProblem4<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarProblem4<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarProblem4<Series<T>>(), point);
+        }
+
 	Univar4Benchmark() : UnivarBenchmark<T>("Univariate 4 function", 2.868, 3.85045, {1.9, 3.9}, false) {
 	}
 };
@@ -347,6 +446,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarProblem5<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarProblem5<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarProblem5<Series<T>>(), point);
+        }
 
 	Univar5Benchmark() : UnivarBenchmark<T>("Univariate 5 function", 0.96609, 1.48907,  {0, 1.2}, false) {
 	}
@@ -376,6 +484,15 @@ public:
 		return ::calcDerHighOrder(UnivarProblem7<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarProblem7<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarProblem7<Series<T>>(), point);
+        }
+
 	Univar7Benchmark() : UnivarBenchmark<T>("Univariate 7 function", 0, 0,  {2.7, 7.5}, false) {
 	}
 };
@@ -404,6 +521,15 @@ public:
 		return ::calcDerHighOrder(UnivarProblem9<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarProblem9<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarProblem9<Series<T>>(), point);
+        }
+
 	Univar9Benchmark() : UnivarBenchmark<T>("Univariate 9 function", 17.039, 1.90596,  {3.1, 20.4}, false) {
 	}
 };
@@ -431,6 +557,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarProblem10<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarProblem10<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarProblem10<Series<T>>(), point);
+        }
 
 	Univar10Benchmark() : UnivarBenchmark<T>("Univariate 10 function", 7.9787, 7.91673,  {0, 10}, false) {
 	}
@@ -461,6 +596,15 @@ public:
 		return ::calcDerHighOrder(UnivarProblem11<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarProblem11<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarProblem11<Series<T>>(), point);
+        }
+
 	Univar11Benchmark() : UnivarBenchmark<T>("Univariate 11 function", 4.189, 1.5,  {-1.57, 6.28}, false) {
 	}
 };
@@ -488,6 +632,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarProblem12<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarProblem12<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarProblem12<Series<T>>(), point);
+        }
 
 	Univar12Benchmark() : UnivarBenchmark<T>("Univariate 12 function", 4.712, 1,  {0, 6.28}, false) {
 	}
@@ -517,6 +670,15 @@ public:
 		return ::calcDerHighOrder(UnivarProblem13<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarProblem13<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarProblem13<Series<T>>(), point);
+        }
+
 	Univar13Benchmark() : UnivarBenchmark<T>("Univariate 13 function", 0.7071, 1.5874,  {0.001, 0.99}, false) {
 	}
 };
@@ -544,6 +706,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarProblem14<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarProblem14<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarProblem14<Series<T>>(), point);
+        }
 
 	Univar14Benchmark() : UnivarBenchmark<T>("Univariate 14 function", 0.224885, 0.788685,  {0, 4}, false) {
 	}
@@ -573,6 +744,15 @@ public:
 		return ::calcDerHighOrder(UnivarProblem15<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarProblem15<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarProblem15<Series<T>>(), point);
+        }
+
 	Univar15Benchmark() : UnivarBenchmark<T>("Univariate 15 function", 2.4142, 0.03553,  {-5, 5}, false) {
 	}
 };
@@ -600,6 +780,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarProblem16<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarProblem16<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarProblem16<Series<T>>(), point);
+        }
 
 	Univar16Benchmark() : UnivarBenchmark<T>("Univariate 16 function", 1.5907, -7.515924,  {-3, 3}, false) {
 	}
@@ -630,6 +819,15 @@ public:
 		return ::calcDerHighOrder(UnivarProblem19<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarProblem19<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarProblem19<Series<T>>(), point);
+        }
+
 	Univar19Benchmark() : UnivarBenchmark<T>("Univariate 19 function", 5.87287, 7.81567,  {0, 6.5}, false) {
 	}
 };
@@ -657,6 +855,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarProblem20<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarProblem20<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarProblem20<Series<T>>(), point);
+        }
 
 	Univar20Benchmark() : UnivarBenchmark<T>("Univariate 20 function", 1.195137, 0.0634905,  {-10, 10}, false) {
 	}
@@ -686,6 +893,15 @@ public:
 		return ::calcDerHighOrder(UnivarProblem21<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarProblem21<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarProblem21<Series<T>>(), point);
+        }
+
 	Univar21Benchmark() : UnivarBenchmark<T>("Univariate 21 function", -3, 2.5,  {0, 8}, true) {
 	}
 };
@@ -713,6 +929,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(LipschitzProblem1<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(LipschitzProblem1<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(LipschitzProblem1<Series<T>>(), point);
+        }
 
 	Lipschitz1Benchmark() : UnivarBenchmark<T>("LipschitzProblem 1 function", 29763.233, 10,  {0, 8}, true) {
 	}
@@ -742,6 +967,15 @@ public:
 		return ::calcDerHighOrder(LipschitzProblem2<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(LipschitzProblem2<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(LipschitzProblem2<Series<T>>(), point);
+        }
+
 	Lipschitz2Benchmark() : UnivarBenchmark<T>("LipschitzProblem 2 function", 0.67956, 0.824239,  {-10, 10}, true) {
 	}
 };
@@ -769,6 +1003,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(LipschitzProblem3<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(LipschitzProblem3<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(LipschitzProblem3<Series<T>>(), point);
+        }
 
 	Lipschitz3Benchmark() : UnivarBenchmark<T>("LipschitzProblem 3 function", 5.19978, 1.6013,  {2.7, 7.5}, true) {
 	}
@@ -798,6 +1041,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem1<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem1<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem1<Series<T>>(), point);
+        }
+
 	UnivarGradProblem1Benchmark() : UnivarBenchmark<T>("UnivarGradProblem1 function",0, -0.9999,  {0, 20}, true) {
 	}
 };
@@ -825,6 +1077,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarGradProblem2<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem2<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem2<Series<T>>(), point);
+        }
 
 	UnivarGradProblem2Benchmark() : UnivarBenchmark<T>("UnivarGradProblem2 function",0, -1,  {0.2, 7}, true) {
 	}
@@ -854,6 +1115,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem3<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem3<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem3<Series<T>>(), point);
+        }
+
 	UnivarGradProblem3Benchmark() : UnivarBenchmark<T>("UnivarGradProblem3 function",0, 0,  {-10, 10}, true) {
 	}
 };
@@ -881,6 +1151,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarGradProblem4<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem4<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem4<Series<T>>(), point);
+        }
 
 	UnivarGradProblem4Benchmark() : UnivarBenchmark<T>("UnivarGradProblem4 function",0, -17.582872,  {0.2, 7}, true) {
 	}
@@ -910,6 +1189,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem5<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem5<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem5<Series<T>>(), point);
+        }
+
 	UnivarGradProblem5Benchmark() : UnivarBenchmark<T>("UnivarGradProblem5 function",0, -0.020903,  {-10, 10}, true) {
 	}
 };
@@ -937,6 +1225,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarGradProblem6<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem6<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem6<Series<T>>(), point);
+        }
 
 	UnivarGradProblem6Benchmark() : UnivarBenchmark<T>("UnivarGradProblem6 function",0, -0.952897,  {0.2, 7}, true) {
 	}
@@ -966,6 +1263,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem7<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem7<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem7<Series<T>>(), point);
+        }
+
 	UnivarGradProblem7Benchmark() : UnivarBenchmark<T>("UnivarGradProblem7 function",0, -6.262872,  {0.2, 7}, true) {
 	}
 };
@@ -993,6 +1299,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarGradProblem8<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem8<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem8<Series<T>>(), point);
+        }
 
 	UnivarGradProblem8Benchmark() : UnivarBenchmark<T>("UnivarGradProblem8 function",0, -0.077590,  {0.2, 7}, true) {
 	}
@@ -1022,6 +1337,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem9<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem9<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem9<Series<T>>(), point);
+        }
+
 	UnivarGradProblem9Benchmark() : UnivarBenchmark<T>("UnivarGradProblem9 function",0, 0.211315,  {0.2, 7}, true) {
 	}
 };
@@ -1049,6 +1373,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarGradProblem10<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem10<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem10<Series<T>>(), point);
+        }
 
 	UnivarGradProblem10Benchmark() : UnivarBenchmark<T>("UnivarGradProblem10 function",0, -0.478362,  {0.2, 7}, true) {
 	}
@@ -1078,6 +1411,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem11<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem11<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem11<Series<T>>(), point);
+        }
+
 	UnivarGradProblem11Benchmark() : UnivarBenchmark<T>("UnivarGradProblem11 function",0, -5.815675,  {0.2, 7}, true) {
 	}
 };
@@ -1105,6 +1447,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarGradProblem12<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem12<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem12<Series<T>>(), point);
+        }
 
 	UnivarGradProblem12Benchmark() : UnivarBenchmark<T>("UnivarGradProblem12 function",0, -7.047444,  {0.2, 7}, true) {
 	}
@@ -1134,6 +1485,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem13<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem13<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem13<Series<T>>(), point);
+        }
+
 	UnivarGradProblem13Benchmark() : UnivarBenchmark<T>("UnivarGradProblem13 function",0, -4.601308,  {2.7, 7.5}, true) {
 	}
 };
@@ -1161,6 +1521,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarGradProblem14<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem14<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem14<Series<T>>(), point);
+        }
 
 	UnivarGradProblem14Benchmark() : UnivarBenchmark<T>("UnivarGradProblem14 function",0, -0.141100,  {0.2, 7}, true) {
 	}
@@ -1190,6 +1559,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem15<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem15<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem15<Series<T>>(), point);
+        }
+
 	UnivarGradProblem15Benchmark() : UnivarBenchmark<T>("UnivarGradProblem15 function",0, -0.870885,  {0.2, 7}, true) {
 	}
 };
@@ -1217,6 +1595,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarGradProblem16<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem16<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem16<Series<T>>(), point);
+        }
 
 	UnivarGradProblem16Benchmark() : UnivarBenchmark<T>("UnivarGradProblem16 function",0, -9.031249,  {0.2, 7}, true) {
 	}
@@ -1246,6 +1633,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem17<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem17<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem17<Series<T>>(), point);
+        }
+
 	UnivarGradProblem17Benchmark() : UnivarBenchmark<T>("UnivarGradProblem17 function",0, 0.475689,  {-10, 10}, true) {
 	}
 };
@@ -1255,26 +1651,35 @@ class UnivarGradProblem18Benchmark : public UnivarBenchmark<T>
 {
 public:
 	virtual T calcFunc(T point) const {		
-		return ::calcFunc(UnivarGradProblem19<T>(), std::vector<T>(1, point));
+		return ::calcFunc(UnivarGradProblem18<T>(), std::vector<T>(1, point));
 	}
 
 	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
-		return ::calcInterval(UnivarGradProblem19<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+		return ::calcInterval(UnivarGradProblem18<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
 	}
 
 	virtual ValDer<T> calcGrad(T point) const {
-		return ::calcGrad(UnivarGradProblem19<ValDer<T>>(), std::vector<T>(1, point));
+		return ::calcGrad(UnivarGradProblem18<ValDer<T>>(), std::vector<T>(1, point));
 	}
 
 	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
-		return ::calcIntervalGrad(UnivarGradProblem19<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+		return ::calcIntervalGrad(UnivarGradProblem18<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
 	}
 
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
-		return ::calcDerHighOrder(UnivarGradProblem19<Series<T>>(), point, order);
+		return ::calcDerHighOrder(UnivarGradProblem18<Series<T>>(), point, order);
 	}
 
-	UnivarGradProblem18Benchmark() : UnivarBenchmark<T>("UnivarGradProblem18 function",0, 0,  {0.2, 7}, true) {
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem18<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem18<Series<T>>(), point);
+        }
+
+	UnivarGradProblem18Benchmark() : UnivarBenchmark<T>("UnivarGradProblem 18 function",0, 0,  {0.2, 7}, true) {
 	}
 };
 
@@ -1301,6 +1706,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarGradProblem19<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem19<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem19<Series<T>>(), point);
+        }
 
 	UnivarGradProblem19Benchmark() : UnivarBenchmark<T>("UnivarGradProblem19 function",0, -1,  {-5, 5}, true) {
 	}
@@ -1330,6 +1744,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem20<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem20<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem20<Series<T>>(), point);
+        }
+
 	UnivarGradProblem20Benchmark() : UnivarBenchmark<T>("UnivarGradProblem20 function",0, 1,  {-10,10}, true) {
 	}
 };
@@ -1357,6 +1780,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarGradProblem21<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem21<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem21<Series<T>>(), point);
+        }
 
 	UnivarGradProblem21Benchmark() : UnivarBenchmark<T>("UnivarGradProblem21 function",0, 1,  {-20,20}, true) {
 	}
@@ -1386,6 +1818,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem22<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem22<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem22<Series<T>>(), point);
+        }
+
 	UnivarGradProblem22Benchmark() : UnivarBenchmark<T>("UnivarGradProblem22 function",0, -0.918397,  {0.2, 7}, true) {
 	}
 };
@@ -1413,6 +1854,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarGradProblem23<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem23<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem23<Series<T>>(), point);
+        }
 
 	UnivarGradProblem23Benchmark() : UnivarBenchmark<T>("UnivarGradProblem23 function",0, -0.824239,  {-10, 10}, true) {
 	}
@@ -1442,6 +1892,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem24<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem24<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem24<Series<T>>(), point);
+        }
+
 	UnivarGradProblem24Benchmark() : UnivarBenchmark<T>("UnivarGradProblem24 function",0, -0.027864,  {0.2, 7}, true) {
 	}
 };
@@ -1470,6 +1929,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem25<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem25<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem25<Series<T>>(), point);
+        }
+
 	UnivarGradProblem25Benchmark() : UnivarBenchmark<T>("UnivarGradProblem25 function",0, 3.5,  {0.2, 7}, true) {
 	}
 };
@@ -1497,6 +1965,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarGradProblem26<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem26<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem26<Series<T>>(), point);
+        }
 
 	UnivarGradProblem26Benchmark() : UnivarBenchmark<T>("UnivarGradProblem26 function",0, 0.367879,  {0.2, 7}, true) {
 	}
@@ -1528,6 +2005,16 @@ public:
 
 	UnivarGradProblem27Benchmark() : UnivarBenchmark<T>("UnivarGradProblem27 function",0, -0.451388,  {0.2, 7}, true) {
 	}
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem27<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem27<Series<T>>(), point);
+        }
+
+
 };
 
 template <class T>
@@ -1553,6 +2040,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarGradProblem28<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem28<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem28<Series<T>>(), point);
+        }
 
 	UnivarGradProblem28Benchmark() : UnivarBenchmark<T>("UnivarGradProblem28 function",0, -1,  {0, 20}, true) {
 	}
@@ -1582,6 +2078,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem29<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem29<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem29<Series<T>>(), point);
+        }
+
 	UnivarGradProblem29Benchmark() : UnivarBenchmark<T>("UnivarGradProblem29 function",0, -0.410315,  {0.2, 7}, true) {
 	}
 };
@@ -1609,6 +2114,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarGradProblem30<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem30<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem30<Series<T>>(), point);
+        }
 
 	UnivarGradProblem30Benchmark() : UnivarBenchmark<T>("UnivarGradProblem30 function",0, -0.718282,  {0.2, 7}, true) {
 	}
@@ -1638,6 +2152,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem32<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem32<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem32<Series<T>>(), point);
+        }
+
 	UnivarGradProblem32Benchmark() : UnivarBenchmark<T>("UnivarGradProblem32 function",0, -1,  {0.02, 1}, true) {
 	}
 };
@@ -1665,6 +2188,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarGradProblem34<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem34<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem34<Series<T>>(), point);
+        }
 
 	UnivarGradProblem34Benchmark() : UnivarBenchmark<T>("UnivarGradProblem34 function",0, -0.535534,  {0.2, 7}, true) {
 	}
@@ -1694,6 +2226,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem36<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem36<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem36<Series<T>>(), point);
+        }
+
 	UnivarGradProblem36Benchmark() : UnivarBenchmark<T>("UnivarGradProblem36 function",0, -0.35,  {0.2, 7}, true) {
 	}
 };
@@ -1721,6 +2262,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarGradProblem37<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem37<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem37<Series<T>>(), point);
+        }
 
 	UnivarGradProblem37Benchmark() : UnivarBenchmark<T>("UnivarGradProblem37 function",0, -32.781261,  {-1, 7}, true) {
 	}
@@ -1750,6 +2300,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem38<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem38<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem38<Series<T>>(), point);
+        }
+
 	UnivarGradProblem38Benchmark() : UnivarBenchmark<T>("UnivarGradProblem38 function",0, 7,  {-4, 4}, true) {
 	}
 };
@@ -1777,6 +2336,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarGradProblem39<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem39<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem39<Series<T>>(), point);
+        }
 
 	UnivarGradProblem39Benchmark() : UnivarBenchmark<T>("UnivarGradProblem39 function",0, -1,  {-10, 20}, true) {
 	}
@@ -1806,6 +2374,15 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem40<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarGradProblem40<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem40<Series<T>>(), point);
+        }
+
 	UnivarGradProblem40Benchmark() : UnivarBenchmark<T>("UnivarGradProblem40 function",0, -1,  {0, 3}, true) {
 	}
 };
@@ -1833,6 +2410,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarNonDiffProblem1<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem1<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem1<Series<T>>(), point);
+        }
 
 	UnivarNonDiffProblem1Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem1 function", 0.2, 0,  {0.2,7}, false) {
 	}
@@ -1862,6 +2448,15 @@ public:
 		return ::calcDerHighOrder(UnivarNonDiffProblem2<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem2<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem2<Series<T>>(), point);
+        }
+
 	UnivarNonDiffProblem2Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem2 function",0.788, 0,  {0.1, 7}, false) {
 	}
 };
@@ -1889,6 +2484,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarNonDiffProblem3<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem3<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem3<Series<T>>(), point);
+        }
 
 	UnivarNonDiffProblem3Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem3 function",0, 0,  {-10, 10}, false) {
 	}
@@ -1918,6 +2522,15 @@ public:
 		return ::calcDerHighOrder(UnivarNonDiffProblem4<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem4<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem4<Series<T>>(), point);
+        }
+
 	UnivarNonDiffProblem4Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem4 function",0, 0,  {0, 18}, false) {
 	}
 };
@@ -1945,6 +2558,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarNonDiffProblem5<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem5<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem5<Series<T>>(), point);
+        }
 
 	UnivarNonDiffProblem5Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem5 function",0, 0,  {0, 7}, false) {
 	}
@@ -1974,6 +2596,11 @@ public:
 		return ::calcDerHighOrder(UnivarNonDiffProblem6<Series<T>>(), point, order);
 	}
 
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem6<Series<T>>(), point);
+        }
+
 	UnivarNonDiffProblem6Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem6 function",0, 0,  {-10, 10}, false) {
 	}
 };
@@ -2001,6 +2628,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarNonDiffProblem7<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem7<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem7<Series<T>>(), point);
+        }
 
 	UnivarNonDiffProblem7Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem7 function",0, 0,  {0.1, 7}, false) {
 	}
@@ -2030,6 +2666,15 @@ public:
 		return ::calcDerHighOrder(UnivarNonDiffProblem8<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem8<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem8<Series<T>>(), point);
+        }
+
 	UnivarNonDiffProblem8Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem8 function",0, 0,  {-10, 10}, false) {
 	}
 };
@@ -2057,6 +2702,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarNonDiffProblem9<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem9<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem9<Series<T>>(), point);
+        }
 
 	UnivarNonDiffProblem9Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem9 function",0, 0,  {0, 4 * M_PI}, false) {
 	}
@@ -2086,6 +2740,15 @@ public:
 		return ::calcDerHighOrder(UnivarNonDiffProblem10<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem10<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem10<Series<T>>(), point);
+        }
+
 	UnivarNonDiffProblem10Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem10 function",0, 0,  {0, 10}, false) {
 	}
 };
@@ -2113,6 +2776,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarNonDiffProblem11<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem11<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem11<Series<T>>(), point);
+        }
 
 	UnivarNonDiffProblem11Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem11 function",0, 0,  {0, 5}, false) {
 	}
@@ -2142,6 +2814,15 @@ public:
 		return ::calcDerHighOrder(UnivarNonDiffProblem12<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem12<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem12<Series<T>>(), point);
+        }
+
 	UnivarNonDiffProblem12Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem12 function",2.356, 0,  {0, 2*M_PI}, false) {
 	}
 };
@@ -2169,6 +2850,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarNonDiffProblem13<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem13<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem13<Series<T>>(), point);
+        }
 
 	UnivarNonDiffProblem13Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem13 function",0, 0,  {-6, 2}, false) {
 	}
@@ -2198,6 +2888,15 @@ public:
 		return ::calcDerHighOrder(UnivarNonDiffProblem14<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem14<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem14<Series<T>>(), point);
+        }
+
 	UnivarNonDiffProblem14Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem14 function",0, 0,  {0, 4}, false) {
 	}
 };
@@ -2225,6 +2924,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarNonDiffProblem15<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem15<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem15<Series<T>>(), point);
+        }
 
 	UnivarNonDiffProblem15Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem15 function",0, 0,  {-5, 5}, false) {
 	}
@@ -2254,6 +2962,15 @@ public:
 		return ::calcDerHighOrder(UnivarNonDiffProblem16<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem16<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem16<Series<T>>(), point);
+        }
+
 	UnivarNonDiffProblem16Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem16 function",-8.659, 0,  {-10, 10}, false) {
 	}
 };
@@ -2281,6 +2998,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarNonDiffProblem17<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem17<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem17<Series<T>>(), point);
+        }
 
 	UnivarNonDiffProblem17Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem17 function",0, 0,  {-10, 10}, false) {
 	}
@@ -2310,6 +3036,15 @@ public:
 		return ::calcDerHighOrder(UnivarNonDiffProblem18<Series<T>>(), point, order);
 	}
 
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem18<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem18<Series<T>>(), point);
+        }
+
 	UnivarNonDiffProblem18Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem18 function",0, 0,  {-3, 2}, false) {
 	}
 };
@@ -2337,6 +3072,15 @@ public:
 	virtual Series<T> calcDerHighOrder(T point, int order) const {
 		return ::calcDerHighOrder(UnivarNonDiffProblem19<Series<T>>(), point, order);
 	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem19<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem19<Series<T>>(), point);
+        }
 
 	UnivarNonDiffProblem19Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem19 function",0, 0,  {0, 6.5}, false) {
 	}
@@ -2366,7 +3110,16 @@ public:
 		return ::calcDerHighOrder(UnivarNonDiffProblem20<Series<T>>(), point, order);
 	}
 
-	UnivarNonDiffProblem20Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem20 function",1.25 * M_PI, -0.7071067,  {-10, 10}, false) {
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem20<IntervalSeries<T>>(), interval, order);
+	} 
+
+        virtual bool isDerExist(T point) const
+        {
+        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem20<Series<T>>(), point);
+        }
+
+	UnivarNonDiffProblem20Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem 20 function",1.25 * M_PI, -0.7071067,  {-10, 10}, false) {
 	}
 };
 
@@ -2381,91 +3134,91 @@ public:
 	UnivarBenchmarks() { fill(); }
 	virtual void fill()
 	{
-		this->clear();
-		this->add(std::make_shared<Holder1Benchmark<T>>());
-		this->add(std::make_shared<Holder2Benchmark<T>>());
-		this->add(std::make_shared<Holder3Benchmark<T>>());
-		this->add(std::make_shared<Holder4Benchmark<T>>());
-		this->add(std::make_shared<Holder5Benchmark<T>>());
-		this->add(std::make_shared<Holder6Benchmark<T>>());
-		this->add(std::make_shared<Holder7Benchmark<T>>());
-		this->add(std::make_shared<Holder8Benchmark<T>>());
-		this->add(std::make_shared<Univar1Benchmark<T>>());
-		this->add(std::make_shared<Univar2Benchmark<T>>());
-		this->add(std::make_shared<Univar4Benchmark<T>>());	
-		this->add(std::make_shared<Univar5Benchmark<T>>());
-		this->add(std::make_shared<Univar7Benchmark<T>>());
-		this->add(std::make_shared<Univar9Benchmark<T>>());
-		this->add(std::make_shared<Univar10Benchmark<T>>());
-		this->add(std::make_shared<Univar11Benchmark<T>>());
-		this->add(std::make_shared<Univar12Benchmark<T>>());
-		this->add(std::make_shared<Univar13Benchmark<T>>());
-		this->add(std::make_shared<Univar14Benchmark<T>>());
-		this->add(std::make_shared<Univar15Benchmark<T>>());
-		this->add(std::make_shared<Univar16Benchmark<T>>());
-		this->add(std::make_shared<Univar19Benchmark<T>>());
-		this->add(std::make_shared<Univar20Benchmark<T>>());	
-		this->add(std::make_shared<Univar21Benchmark<T>>());
-		this->add(std::make_shared<Lipschitz1Benchmark<T>>());
-		this->add(std::make_shared<Lipschitz2Benchmark<T>>());
-		this->add(std::make_shared<Lipschitz3Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem1Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem2Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem3Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem4Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem5Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem6Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem7Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem8Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem9Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem10Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem11Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem12Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem13Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem14Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem15Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem16Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem17Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem18Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem19Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem20Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem21Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem22Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem23Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem24Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem25Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem26Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem27Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem28Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem29Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem30Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem32Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem34Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem36Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem37Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem38Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem39Benchmark<T>>());
-		this->add(std::make_shared<UnivarGradProblem40Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem1Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem2Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem3Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem4Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem5Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem6Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem7Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem8Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem9Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem10Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem11Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem12Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem13Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem14Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem15Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem16Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem17Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem18Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem19Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem20Benchmark<T>>());
+		UnivarBenchmark<T>::clear();
+		UnivarBenchmark<T>::add(std::make_shared<Holder1Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Holder2Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Holder3Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Holder4Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Holder5Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Holder6Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Holder7Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Holder8Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Univar1Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Univar2Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Univar4Benchmark<T>>());	
+		UnivarBenchmark<T>::add(std::make_shared<Univar5Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Univar7Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Univar9Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Univar10Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Univar11Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Univar12Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Univar13Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Univar14Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Univar15Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Univar16Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Univar19Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Univar20Benchmark<T>>());	
+		UnivarBenchmark<T>::add(std::make_shared<Univar21Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Lipschitz1Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Lipschitz2Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<Lipschitz3Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem1Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem2Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem3Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem4Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem5Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem6Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem7Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem8Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem9Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem10Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem11Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem12Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem13Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem14Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem15Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem16Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem17Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem18Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem19Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem20Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem21Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem22Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem23Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem24Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem25Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem26Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem27Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem28Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem29Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem30Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem32Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem34Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem36Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem37Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem38Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem39Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarGradProblem40Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem1Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem2Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem3Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem4Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem5Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem6Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem7Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem8Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem9Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem10Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem11Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem12Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem13Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem14Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem15Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem16Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem17Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem18Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem19Benchmark<T>>());
+		UnivarBenchmark<T>::add(std::make_shared<UnivarNonDiffProblem20Benchmark<T>>());
 	}
 };
 

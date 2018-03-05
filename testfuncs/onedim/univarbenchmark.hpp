@@ -24,7 +24,7 @@ template <class T>
 class UnivarBenchmark
 {
 protected:
-	const std::string mDesciption;
+	const std::string mDescription;
 	const T mGlobMinY;
 	const bool mMultiModal;
 	T mGlobMinX;
@@ -35,7 +35,7 @@ public:
 	* description of global optimization problem
 	* @return string
 	*/
-	std::string getDesc() const { return mDesciption; }
+	std::string getDesc() const { return mDescription; }
 	/**
 	* get multimodal
  	* @return multimodal true/false
@@ -123,12 +123,12 @@ protected:
 };
 
 template <class T> UnivarBenchmark<T>::UnivarBenchmark(const std::string& desc, T globMinX, T globMinY, Bound<T> bound, bool mMultiModal) : 
-mDesciption(desc), mGlobMinX(globMinX), mGlobMinY(globMinY) , mBounds(bound), mMultiModal(mMultiModal) {}
+mDescription(desc), mGlobMinX(globMinX), mGlobMinY(globMinY) , mBounds(bound), mMultiModal(mMultiModal) {}
 
 template <class T2> std::ostream& operator<<(std::ostream &out, const UnivarBenchmark<T2> &bm)
 {
 	const char* boollut[2] = {"true", "false"};
-	out << "desciption: " << bm.mDesciption << std::endl;
+	out << "description: " << bm.mDescription << std::endl;
 	out << "dimension: " << "1" << std::endl;
 	out << "globMinX: " << bm.mGlobMinX << std::endl;
 	out << "globMinY: " << bm.mGlobMinY << std::endl;	

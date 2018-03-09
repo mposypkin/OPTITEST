@@ -39,8 +39,8 @@ using namespace snowgoose::expression;
 	Expr<T> Holder4()
 	{
 		Expr<T> x;
-		Expr<T> a = -sqrt(2 * x[0] - sqr(x[0]));
-		Expr<T> b = -sqrt(-sqr(x[0]) + 8 * x[0] - 12);
+		Expr<T> a = -sqrt(2.0 * x[0] - sqr(x[0]));
+		Expr<T> b = -sqrt(-sqr(x[0]) + 8.0 * x[0] - 12.0);
 		Expr<T> y = ifThen(x[0] <=2, a, b);
 		return y;
 	}
@@ -49,7 +49,7 @@ using namespace snowgoose::expression;
 	Expr<T> Holder5()
 	{
 		Expr<T> x;
-		Expr<T> y = (3 * x[0] - 1.4) * sin(18 * x[0]);
+		Expr<T> y = (3.0 * x[0] - 1.4) * sin(18.0 * x[0]);
 		return y;
 	}
 
@@ -57,27 +57,25 @@ using namespace snowgoose::expression;
 	Expr<T> Holder6()
 	{
 		Expr<T> x;
-		Expr<T> y = 2 * sqr(x[0] - 3) + exp(sqr(x[0])/2);
+		Expr<T> y = 2.0 * sqr(x[0] - 3.0) + exp(sqr(x[0])/2.0);
 		return y;
 	}
 
 	template <class T>
 	Expr<T> Holder7()
 	{
-		Expr<T> x;
-		Iterator i(1, 5);
-		Expr<T> k = (Expr<T>)i;
-		Expr<T> y = loopSum(k * sin((k + 1) * x[0] + k), i);
+		Expr<T> x, y = 0.0;
+                for(int k=1; k<=5; k++)
+			y = y + k * sin((k + 1) * x[0] + k);
 		return y;
 	}
 
 	template <class T>
 	Expr<T> Holder8()
 	{
-		Expr<T> x;
-		Iterator i(1, 5);
-		Expr<T> k = (Expr<T>)i;
-		Expr<T> y = loopSum(k * cos((k + 1) * x[0] + k), i);
+		Expr<T> x, y = 0.0;
+		for(int k=1; k<=5; k++)
+			y = y + k * cos((k + 1) * x[0] + k);
 		return y;
 	}
 
@@ -149,7 +147,7 @@ using namespace snowgoose::expression;
 	Expr<T> UnivarProblem12()
 	{
 		Expr<T> x;
-		Expr<T> y = -sin(x[0])^3 - cos(x[0])^3;
+		Expr<T> y = -(sin(x[0])^3) - (cos(x[0])^3);
 		return y;
 	}
 
@@ -157,7 +155,7 @@ using namespace snowgoose::expression;
 	Expr<T> UnivarProblem13()
 	{
 		Expr<T> x;
-		Expr<T> y = (x[0]^(2/3)) - (sqr(x[0])-1)^(1/3);
+		Expr<T> y = (x[0]^(2.0/3.0)) - (sqr(x[0])-1.0)^(1.0/3.0);
 		return y;
 	}
 
@@ -165,7 +163,7 @@ using namespace snowgoose::expression;
 	Expr<T> UnivarProblem14()
 	{
 		Expr<T> x;
-		Expr<T> y = exp(-x[0]) * sin(2 * M_PI * x[0]);
+		Expr<T> y = exp(-x[0]) * sin(2.0 * M_PI * x[0]);
 		return y;
 	}
 
@@ -173,7 +171,7 @@ using namespace snowgoose::expression;
 	Expr<T> UnivarProblem15()
 	{
 		Expr<T> x;
-		Expr<T> y = (-sqr(x[0]) + 5*x[0] - 6)/(sqr(x[0]) + 1);
+		Expr<T> y = (-sqr(x[0]) + 5.0*x[0] - 6.0)/(sqr(x[0]) + 1);
 		return y;
 	}
 
@@ -181,7 +179,7 @@ using namespace snowgoose::expression;
 	Expr<T> UnivarProblem16()
 	{
 		Expr<T> x;
-		Expr<T> y = -2*(sqr(x[0] - 3)) - eps(-0.5*sqr(x[0]));
+		Expr<T> y = -2*(sqr(x[0] - 3.0)) - exp(-0.5*sqr(x[0]));
 		return y;
 	}
 
@@ -189,7 +187,7 @@ using namespace snowgoose::expression;
 	Expr<T> UnivarProblem19()
 	{
 		Expr<T> x;
-		Expr<T> y = x[0] - sin(3*x[0]) + 1;
+		Expr<T> y = x[0] - sin(3*x[0]) + 1.0;
 		return y;
 	}
 
@@ -197,24 +195,24 @@ using namespace snowgoose::expression;
 	Expr<T> UnivarProblem20()
 	{
 		Expr<T> x;
-		Expr<T> y = eps(-sqr(x[0]))*(x[0] - sin(x[0]));
+		Expr<T> y = exp(-sqr(x[0]))*(x[0] - sin(x[0]));
 		return y;
 	}
 
 	template <class T>
 	Expr<T> UnivarProblem21()
 	{
-		Expr<T> x, a;
+		Expr<T> x, a = 0.0;
 		Expr<T> y = ifThen(x[0] <= 0.5, 2 * x[0], \
-		ifThen(x[0] <= 2.5, 2 - 2 * x[0],  \
-		ifThen(x[0] <= 4.0, 2 * x[0] - 8,  \
-		ifThen(x[0] <= 4.5, 8 - 2 * x[0], \
-		ifThen(x[0] <= 5.0, 2 * x[0] - 10, \
-		ifThen(x[0] <= 5.5, 10 - 2 * x[0], \
-		ifThen(x[0] <= 6.0, 2 * x[0] - 12, \
-		ifThen(x[0] <= 6.5, 12 - 2 * x[0], \
-		ifThen(x[0] <= 7.5, 14 - 2 * x[0], \
-		ifThen(x[0] <= 8.0, 2 * x[0] - 16, a ))))))))));		
+		ifThen(x[0] <= 2.5, 2.0 - 2.0 * x[0],  \
+		ifThen(x[0] <= 4.0, 2.0 * x[0] - 8.0,  \
+		ifThen(x[0] <= 4.5, 8.0 - 2.0 * x[0], \
+		ifThen(x[0] <= 5.0, 2.0 * x[0] - 10.0, \
+		ifThen(x[0] <= 5.5, 10.0 - 2.0 * x[0], \
+		ifThen(x[0] <= 6.0, 2.0 * x[0] - 12.0, \
+		ifThen(x[0] <= 6.5, 12.0 - 2.0 * x[0], \
+		ifThen(x[0] <= 7.5, 14.0 - 2.0 * x[0], \
+		ifThen(x[0] <= 8.0, 2.0 * x[0] - 16.0, a ))))))))));		
 		return y;
 	}
 
@@ -222,7 +220,7 @@ using namespace snowgoose::expression;
 	Expr<T> LipschitzProblem1()
 	{
 		Expr<T> x;
-		Expr<T> y = -(x[0]^6)/6 + (x[0]^5)*52/25 - (x[0]^4)*39/80 - (x[0]^3)*71/10 + sqr(x[0])*79/20 + x[0] - 1/10;
+		Expr<T> y = -(x[0]^6)/6.0 + (x[0]^5)*52.0/25.0 - (x[0]^4)*39.0/80.0 - (x[0]^3)*71.0/10.0 + sqr(x[0])*79.0/20.0 + x[0] - 1.0/10.0;
 		return y;
 	}
 
@@ -238,7 +236,7 @@ using namespace snowgoose::expression;
 	Expr<T> LipschitzProblem3()
 	{
 		Expr<T> x;
-		Expr<T> y = -ln(x[0]) + 0.84*x[0] - 3;
+		Expr<T> y = -ln(x[0]) + 0.84*x[0] - 3.0;
 		return y;
 	}
 
@@ -253,10 +251,9 @@ using namespace snowgoose::expression;
 	template <class T>
 	Expr<T> UnivarGradProblem2()
 	{
-		Expr<T> x;
-		Iterator i(1, 5);
-		Expr<T> k = (Expr<T>)i;
-		Expr<T> y = loopSum(-cos((k+1)*x[0]) + 4, i);
+		Expr<T> x, y = 0.0;
+                for(int k=1; k<=5; k++)
+			y = y -cos((k+1)*x[0]) + 4.0;
 		return y;
 	}
 	
@@ -312,7 +309,7 @@ using namespace snowgoose::expression;
 	Expr<T> UnivarGradProblem9()
 	{
 		Expr<T> x;
-		Expr<T> y = -eps(-x[0])*sin(2*M_PI*x[0])+1;
+		Expr<T> y = -exp(-x[0])*sin(2*M_PI*x[0])+1;
 		return y;
 	}
 
@@ -320,7 +317,7 @@ using namespace snowgoose::expression;
 	Expr<T> UnivarGradProblem10()
 	{
 		Expr<T> x;
-		Expr<T> y = -eps(-x[0])*sin(2*M_PI*x[0]);
+		Expr<T> y = -exp(-x[0])*sin(2*M_PI*x[0]);
 		return y;
 	}
 
@@ -359,20 +356,18 @@ using namespace snowgoose::expression;
 	template <class T>
 	Expr<T> UnivarGradProblem15()
 	{
-		Expr<T> x;
-		Iterator i(0, 5);
-		Expr<T> k = (Expr<T>)i;
-		Expr<T> y = loopSum(k*cos((k+1)*x[0]+k) + 12, i);
+		Expr<T> x, y = 0.0;
+                for(int k=1; k<=5; k++)
+			y = y + k*cos((k+1)*x[0]+k) + 12;
 		return y;
 	}
 
 	template <class T>
 	Expr<T> UnivarGradProblem16()
 	{
-		Expr<T> x;
-		Iterator i(1, 5);
-		Expr<T> k = (Expr<T>)i;
-		Expr<T> y = -loopSum(k*sin((k+1)*x[0]+k) + 3, i);
+		Expr<T> x, y = 0.0;
+                for(int k=1; k<=5; k++)
+			y = y + k*sin((k+1)*x[0]+k) + 3;
 		return y;
 	}
 
@@ -380,7 +375,7 @@ using namespace snowgoose::expression;
 	Expr<T> UnivarGradProblem17()
 	{
 		Expr<T> x;
-		Expr<T> y = sqr(sin(1+(x[0]-1)/4)) + sqr((x-1)/4);
+		Expr<T> y = sqr(sin(1+(x[0]-1)/4)) + sqr((x[0]-1)/4);
 		return y;
 	}
 
@@ -428,7 +423,7 @@ using namespace snowgoose::expression;
 	Expr<T> UnivarGradProblem23()
 	{
 		Expr<T> x;
-		Expr<T> y = (x[0]+sin(x[0]))*exp(-sqr(x));
+		Expr<T> y = (x[0]+sin(x[0]))*exp(-sqr(x[0]));
 		return y;
 	}
 
@@ -563,10 +558,9 @@ using namespace snowgoose::expression;
 	template <class T>
 	Expr<T> UnivarNonDiffProblem3()
 	{
-		Expr<T> x;
-		Iterator i(1, 5);
-		Expr<T> k = (Expr<T>)i;
-		Expr<T> y = -loopSum(k * sin((k + 1) * x[0] + k) + 3, i);
+		Expr<T> x, y = 0.0;
+                for(int k=1; k<=5; k++)
+			y = y + k * sin((k + 1) * x[0] + k) + 3;
 		return y;
 	}
 
@@ -606,11 +600,10 @@ using namespace snowgoose::expression;
 	template <class T>
 	Expr<T> UnivarNonDiffProblem8()
 	{
-		Expr<T> x;
-		Iterator i(1, 5);
-		Expr<T> k = (Expr<T>)i;
-		Expr<T> y = loopSum(-cos((k + 1) * x[0]), i);
-		return y;
+		Expr<T> x, y = 0.0;
+                for(int k=1; k<=5; k++)
+			y = y - cos((k + 1.0) * x[0]);
+                return y;
 	}
 
 	template <class T>

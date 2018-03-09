@@ -1,48 +1,83 @@
 #include <iostream>
 #include "univarbenchmarks.hpp"
+#include "univarbenchmark.hpp"
+#include <random>
+#include "common/sgerrcheck.hpp"
 
-	template <class T>
-	Expr<T> Holder1SecondDer()
+
+std::mt19937 gen;
+using BM = UnivarBenchmark<double>;
+
+double getRandomPoint(const BM& bm)
+{
+	double a = bm.getBounds().first;
+	double b = bm.getBounds().second;
+	std::uniform_real_distribution<> urd(a, b);
+	return urd(gen);
+}
+
+void TestDerInPoint()
+{
+	UnivarBenchmarks<double> bms;
+
+	for(auto ptrBench : bms)
 	{
-		Expr<T> x;
-		Expr<T> y = 30.0*(x[0]^4)-180.0*sqr(x[0])+54.0;
-		return y;
-	}
+	        std::cout << "*************Testing benchmark**********" << std::endl;
+	        std::cout << *ptrBench;
+		double point = getRandomPoint(*ptrBench);
+		auto ser = ptrBench->calcDerHighOrder(point, 2);
+		double der1 = ser.der(1);
+		std::cout << "Taylor first der in point " << point << " is " << der1 << std::endl;
+		double der2 = ptrBench->calcSymDiff(point, 1);
+		std::cout << "Symbol first der in point " << point << " is " << der2 << std::endl;
+		SG_ASSERT_NEAR(der1, der2, 0.0001);
 
+                der1 = ser.der(2);
+		std::cout << "Symbol second der in point " << point << " is " << der1 << std::endl;
+		der2 = ptrBench->calcSymDiff(point, 2);
+		std::cout << "Taylor second der in point " << point << " is " << der2 << std::endl;
+		SG_ASSERT_NEAR(der1, der2, 0.0001);
+
+                std::cout << "****************************************" << std::endl << std::endl;
+	}  
+}
+
+void TestDerInInterval()
+{
+	UnivarBenchmarks<double> bms;
+
+	for(auto ptrBench : bms)
+	{
+		try
+ 		{
+			std::cout << "*************Testing benchmark**********" << std::endl;
+			std::cout << *ptrBench;
+			double a = ptrBench->getBounds().first;
+			double b = ptrBench->getBounds().second;
+		        Interval<double> i(a,b);
+			auto ser = ptrBench->calcIntervalDerHighOrder(i, 2);
+			auto der1 = ser.der(1);
+			std::cout << "Taylor first der for interval " << i << " is " << der1 << std::endl;
+			auto der2 = ptrBench->calcIntervalSymDiff(i, 1);
+			std::cout << "Symbol first der for interval " << i << " is " << der2 << std::endl;
+			der1 = ser.der(2);
+			std::cout << "Taylor second der for interval " << i << " is " << der1 << std::endl;
+			der2 = ptrBench->calcIntervalSymDiff(i, 2);
+			std::cout << "Symbol second der for interval " << i << " is " << der2 << std::endl;
+         
+		        std::cout << "****************************************" << std::endl << std::endl;
+			
+		}
+		catch(std::exception &ex)
+		{
+			std::cout << "\nException: " << ex.what() << "\n\n";
+			continue;
+		}
+	}  
+}
 
 int main(int argc, char** argv) 
 {
-	Holder1Benchmark<double> bm1;
-	Holder2Benchmark<double> bm2;
-	Holder3Benchmark<double> bm3;
-	Holder4Benchmark<double> bm4;
-	Holder5Benchmark<double> bm5;
-	Holder6Benchmark<double> bm6;
-	Holder7Benchmark<double> bm7;
-	Holder8Benchmark<double> bm8;
-	Univar21Benchmark<double> bm9;
-
-	std::cout << "Holder1Benchmark: " << bm1.calcFunc(3.0) <<  std::endl;
-        std::cout << "Holder1Benchmark(interval): " << bm1.calcInterval({2.9, 3.1}) <<  std::endl;
-	std::cout << "Holder2Benchmark: " << bm2.calcFunc(bm2.getGlobMinX()) <<  std::endl;
-	std::cout << "Holder3Benchmark: " << bm3.calcFunc(bm3.getGlobMinX()) <<  std::endl;
-	std::cout << "Holder4Benchmark: " << bm4.calcFunc(bm4.getGlobMinX()) <<  std::endl;
-	std::cout << "Holder5Benchmark: " << bm5.calcFunc(bm5.getGlobMinX()) <<  std::endl;
-	std::cout << "Holder6Benchmark: " << bm6.calcFunc(bm6.getGlobMinX()) <<  std::endl;
-	std::cout << "Holder7Benchmark: " << bm7.calcFunc(bm7.getGlobMinX()) <<  std::endl;
-	std::cout << "Holder8Benchmark: " << bm8.calcFunc(bm8.getGlobMinX()) <<  std::endl;
-	std::cout << "Univar21Benchmark: " << bm9.calcFunc(2.5) <<  std::endl;
-
-        std::cout << "Holder1Benchmark(der high order): " << bm1.calcDerHighOrder(3.0, 3) <<  std::endl;
-        std::cout << "Holder1Benchmark(interval estimation der high order): " << bm1.calcIntervalDerHighOrder({2.9, 3.1}, 3) <<  std::endl;
-
-        Expr<Interval<double>> x;
-        auto expr = Holder1SecondDer<Interval<double>>(); //expression for second der of Holder1
-        std::cout << "Interval estimation of second der of Holder1: " << snowgoose::expression::calcInterval(expr, std::vector<Interval<double>>(1, {2.9, 3.1}) ) <<  std::endl;
-
-        bool isDerExist = bm1.isDerExist(3.0);  
-        std::cout << "Univar14Benchmark: isDerExist " << (isDerExist ? 1 : 0) <<  std::endl;
-
-        
-                                                                                     
+	TestDerInPoint();   
+	TestDerInInterval();                                                                                        
 }

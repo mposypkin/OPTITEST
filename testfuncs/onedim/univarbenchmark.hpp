@@ -86,15 +86,34 @@ public:
 	* @param order order of derivative
  	* @return gradient of function
 	*/
-	virtual Series<T> calcDerHighOrder(T point, int order) const = 0; 	/**
+	virtual Series<T> calcDerHighOrder(T point, int order) const = 0; 	
+        /**
 	* calculate interval estimation of function derivative
 	* @param interval where derivative of function will be calculated
         * @param order order of derivative
  	* @return interval estimation of derivative of function
 	*/
 	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const = 0; 
-
-        
+	/**
+        * calculate derivative using symbol differentation
+	* @param point coordinate where derivative of function will be calculated
+	* @param order order of derivative
+ 	* @return derivative in a point
+	*/
+	virtual T calcSymDiff(T point, int order) const = 0; 
+	/**
+        * calculate interval estimation of derivative using symbol differentation
+	* @param interval interval where interval estimation of derivative of function will be calculated
+	* @param order order of derivative
+ 	* @return interval estimation of derivative of function
+	*/
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const = 0;   
+        /**
+	* gets expression
+	* @return expression
+        */
+	virtual Expr<T> getExpr() const = 0;
+    
         /**
          * Constructor
          * @param desc description of global optimization problem
@@ -102,6 +121,8 @@ public:
          * @param mMultiModal is multimodal function
          */
 	UnivarBenchmark(const std::string& desc, T globMinX, T globMinY, Bound<T> bound, bool mMultiModal = true);
+
+
 
 	/**
 	* print benchmark
@@ -134,6 +155,7 @@ template <class T2> std::ostream& operator<<(std::ostream &out, const UnivarBenc
 	out << "globMinY: " << bm.mGlobMinY << std::endl;	
 	out << "bounds: " << "[ " << bm.mBounds.first << " , " << bm.mBounds.second << " ]" << std::endl;
 	out << "multiModal: " << boollut[bm.mMultiModal] << std::endl;
+	out << "expression: " << bm.getExpr() << std::endl;
 	return out;	
 }
 

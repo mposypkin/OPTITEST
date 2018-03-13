@@ -4,7 +4,6 @@
 #include <random>
 #include "common/sgerrcheck.hpp"
 
-
 std::mt19937 gen;
 using BM = UnivarBenchmark<double>;
 
@@ -22,8 +21,8 @@ void TestDerInPoint()
 
 	for(auto ptrBench : bms)
 	{
-	        std::cout << "*************Testing benchmark**********" << std::endl;
-	        std::cout << *ptrBench;
+	  std::cout << "*************Testing benchmark**********" << std::endl;
+	  std::cout << *ptrBench;
 		double point = getRandomPoint(*ptrBench);
 		auto ser = ptrBench->calcDerHighOrder(point, 2);
 		double der1 = ser.der(1);
@@ -32,13 +31,12 @@ void TestDerInPoint()
 		std::cout << "Symbol first der in point " << point << " is " << der2 << std::endl;
 		SG_ASSERT_NEAR(der1, der2, 0.0001);
 
-                der1 = ser.der(2);
+    der1 = ser.der(2);
 		std::cout << "Symbol second der in point " << point << " is " << der1 << std::endl;
 		der2 = ptrBench->calcSymDiff(point, 2);
 		std::cout << "Taylor second der in point " << point << " is " << der2 << std::endl;
 		SG_ASSERT_NEAR(der1, der2, 0.0001);
-
-                std::cout << "****************************************" << std::endl << std::endl;
+    std::cout << "****************************************" << std::endl << std::endl;
 	}  
 }
 
@@ -63,9 +61,8 @@ void TestDerInInterval()
 			der1 = ser.der(2);
 			std::cout << "Taylor second der for interval " << i << " is " << der1 << std::endl;
 			der2 = ptrBench->calcIntervalSymDiff(i, 2);
-			std::cout << "Symbol second der for interval " << i << " is " << der2 << std::endl;
-         
-		        std::cout << "****************************************" << std::endl << std::endl;
+			std::cout << "Symbol second der for interval " << i << " is " << der2 << std::endl;   
+		  std::cout << "****************************************" << std::endl << std::endl;
 			
 		}
 		catch(std::exception &ex)

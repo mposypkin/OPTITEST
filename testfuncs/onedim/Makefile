@@ -1,5 +1,5 @@
 ROOT = ../../
-BINS = univartests.exe
+BINS = univartests.exe findmin.exe
 TESTS = univartests.exe
 
 

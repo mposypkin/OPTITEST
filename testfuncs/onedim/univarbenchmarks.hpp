@@ -116,7 +116,7 @@ public:
 		return Holder2<T>();
 	}
 
-	Holder2Benchmark() : UnivarBenchmark<T>("Holder2 function", 2.414213, -1.71768,  {-5, 5}, true) {
+	Holder2Benchmark() : UnivarBenchmark<T>("Holder2 function", 2.58194, -1.86513,  {-5, 5}, true) {
 	}
 };
 
@@ -168,7 +168,7 @@ public:
 		return Holder3<T>();
 	}
 
-	Holder3Benchmark() : UnivarBenchmark<T>("Holder3 function", 2.0,  0, {0, 6}, true) {
+	Holder3Benchmark() : UnivarBenchmark<T>("Holder3 function", 1.99219,  0, {0, 6}, true) {
 	}
 };
 
@@ -376,7 +376,7 @@ public:
 		return Holder7<T>();
 	}
 
-	Holder7Benchmark() : UnivarBenchmark<T>("Holder7 function", -0.49139, 12.03125, {-10, 10}, true) {
+	Holder7Benchmark() : UnivarBenchmark<T>("Holder7 function", 5.16909, -14.838, {-10, 10}, true) {
 	}
 };
 
@@ -428,7 +428,7 @@ public:
 		return Holder8<T>();
 	}
 
-	Holder8Benchmark() : UnivarBenchmark<T>("Holder8 function", -0.8003, 14.508, {-10, 10}, true) {
+	Holder8Benchmark() : UnivarBenchmark<T>("Holder8 function", -7.70831, -12.8709, {-10, 10}, true) {
 	}
 };
 
@@ -480,7 +480,7 @@ public:
 		return UnivarProblem1<T>();
 	}
 
-	Univar1Benchmark() : UnivarBenchmark<T>("Univariate 1 function", 0, 0,  {-1.5, 11}, false) {
+	Univar1Benchmark() : UnivarBenchmark<T>("Univariate 1 function", 9.99989, -29753.3,  {-1.5, 11}, false) {
 	}
 };
 
@@ -532,7 +532,7 @@ public:
 		return UnivarProblem2<T>();
 	}
 
-	Univar2Benchmark() : UnivarBenchmark<T>("Univariate 2 function", 5.145735, 1.899599, {2.7, 7.5}, true) {
+	Univar2Benchmark() : UnivarBenchmark<T>("Univariate 2 function", 6.21713, -0.888315, {2.7, 7.5}, true) {
 	}
 };
 
@@ -584,7 +584,7 @@ public:
 		return UnivarProblem4<T>();
 	}
 
-	Univar4Benchmark() : UnivarBenchmark<T>("Univariate 4 function", 2.868, 3.85045, {1.9, 3.9}, false) {
+	Univar4Benchmark() : UnivarBenchmark<T>("Univariate 4 function", 1.9, 2.56661, {1.9, 3.9}, false) {
 	}
 };
 
@@ -636,7 +636,7 @@ public:
 		return UnivarProblem5<T>();
 	}
 
-	Univar5Benchmark() : UnivarBenchmark<T>("Univariate 5 function", 0.96609, 1.48907,  {0, 1.2}, false) {
+	Univar5Benchmark() : UnivarBenchmark<T>("Univariate 5 function", 1.13904, -2.01028,  {0, 1.2}, false) {
 	}
 };
 
@@ -688,7 +688,7 @@ public:
 		return UnivarProblem7<T>();
 	}
 
-	Univar7Benchmark() : UnivarBenchmark<T>("Univariate 7 function", 0, 0,  {2.7, 7.5}, false) {
+	Univar7Benchmark() : UnivarBenchmark<T>("Univariate 7 function", 5.19979, -1.60131,  {2.7, 7.5}, false) {
 	}
 };
 
@@ -740,7 +740,7 @@ public:
 		return UnivarProblem9<T>();
 	}
 
-	Univar9Benchmark() : UnivarBenchmark<T>("Univariate 9 function", 17.039, 1.90596,  {3.1, 20.4}, false) {
+	Univar9Benchmark() : UnivarBenchmark<T>("Univariate 9 function", 20.3997, -1.85886,  {3.1, 20.4}, false) {
 	}
 };
 
@@ -792,7 +792,7 @@ public:
 		return UnivarProblem10<T>();
 	}
 
-	Univar10Benchmark() : UnivarBenchmark<T>("Univariate 10 function", 7.9787, 7.91673,  {0, 10}, false) {
+	Univar10Benchmark() : UnivarBenchmark<T>("Univariate 10 function", 9.99999, -5.44013,  {0, 10}, false) {
 	}
 };
 
@@ -845,7 +845,7 @@ public:
 		return UnivarProblem11<T>();
 	}
 
-	Univar11Benchmark() : UnivarBenchmark<T>("Univariate 11 function", 4.189, 1.5,  {-1.57, 6.28}, false) {
+	Univar11Benchmark() : UnivarBenchmark<T>("Univariate 11 function", 6.27808, -2.99992,  {-1.57, 6.28}, false) {
 	}
 };
 
@@ -897,7 +897,7 @@ public:
 		return UnivarProblem12<T>();
 	}
 
-	Univar12Benchmark() : UnivarBenchmark<T>("Univariate 12 function", 4.712, 1,  {0, 6.28}, false) {
+	Univar12Benchmark() : UnivarBenchmark<T>("Univariate 12 function", 1.57, -0.999999,  {0, 6.28}, false) {
 	}
 };
 
@@ -949,7 +949,7 @@ public:
 		return UnivarProblem13<T>();
 	}
 
-	Univar13Benchmark() : UnivarBenchmark<T>("Univariate 13 function", 0.7071, 1.5874,  {0.001, 0.99}, false) {
+	Univar13Benchmark() : UnivarBenchmark<T>("Univariate 13 function", 0.00103018, 1.00339,  {0.001, 0.99}, false) {
 	}
 };
 
@@ -1001,7 +1001,7 @@ public:
 		return UnivarProblem14<T>();
 	}
 
-	Univar14Benchmark() : UnivarBenchmark<T>("Univariate 14 function", 0.224885, 0.788685,  {0, 4}, false) {
+	Univar14Benchmark() : UnivarBenchmark<T>("Univariate 14 function", 0.724854, -0.478362,  {0, 4}, false) {
 	}
 };
 
@@ -1053,7 +1053,7 @@ public:
 		return UnivarProblem15<T>();
 	}
 
-	Univar15Benchmark() : UnivarBenchmark<T>("Univariate 15 function", 2.4142, 0.03553,  {-5, 5}, false) {
+	Univar15Benchmark() : UnivarBenchmark<T>("Univariate 15 function", -0.414209, -7.03553,  {-5, 5}, false) {
 	}
 };
 
@@ -1105,7 +1105,7 @@ public:
 		return UnivarProblem16<T>();
 	}
 
-	Univar16Benchmark() : UnivarBenchmark<T>("Univariate 16 function", 1.5907, -7.515924,  {-3, 3}, false) {
+	Univar16Benchmark() : UnivarBenchmark<T>("Univariate 16 function", -3, -72.011,  {-3, 3}, false) {
 	}
 };
 
@@ -1158,7 +1158,7 @@ public:
 		return UnivarProblem19<T>();
 	}
 
-	Univar19Benchmark() : UnivarBenchmark<T>("Univariate 19 function", 5.87287, 7.81567,  {0, 6.5}, false) {
+	Univar19Benchmark() : UnivarBenchmark<T>("Univariate 19 function", 0.410316, 0.467511,  {0, 6.5}, false) {
 	}
 };
 
@@ -1210,7 +1210,7 @@ public:
 		return UnivarProblem20<T>();
 	}
 
-	Univar20Benchmark() : UnivarBenchmark<T>("Univariate 20 function", 1.195137, 0.0634905,  {-10, 10}, false) {
+	Univar20Benchmark() : UnivarBenchmark<T>("Univariate 20 function", -1.19507, -0.0634905,  {-10, 10}, false) {
 	}
 };
 
@@ -1262,7 +1262,7 @@ public:
 		return UnivarProblem21<T>();
 	}
 
-	Univar21Benchmark() : UnivarBenchmark<T>("Univariate 21 function", -3, 2.5,  {0, 8}, true) {
+	Univar21Benchmark() : UnivarBenchmark<T>("Univariate 21 function", 2.5, -3.0,  {0, 8}, true) {
 	}
 };
 
@@ -1314,7 +1314,7 @@ public:
 		return LipschitzProblem1<T>();
 	}
 
-	Lipschitz1Benchmark() : UnivarBenchmark<T>("LipschitzProblem 1 function", 29763.233, 10,  {0, 8}, true) {
+	Lipschitz1Benchmark() : UnivarBenchmark<T>("LipschitzProblem 1 function", 1.41421, -2.3847,  {0, 8}, true) {
 	}
 };
 
@@ -1366,7 +1366,7 @@ public:
 		return LipschitzProblem2<T>();
 	}
 
-	Lipschitz2Benchmark() : UnivarBenchmark<T>("LipschitzProblem 2 function", 0.67956, 0.824239,  {-10, 10}, true) {
+	Lipschitz2Benchmark() : UnivarBenchmark<T>("LipschitzProblem 2 function", -0.679588, -0.824239,  {-10, 10}, true) {
 	}
 };
 
@@ -1418,7 +1418,7 @@ public:
 		return LipschitzProblem3<T>();
 	}
 
-	Lipschitz3Benchmark() : UnivarBenchmark<T>("LipschitzProblem 3 function", 5.19978, 1.6013,  {2.7, 7.5}, true) {
+	Lipschitz3Benchmark() : UnivarBenchmark<T>("LipschitzProblem 3 function", 2.70007, -1.72522,  {2.7, 7.5}, true) {
 	}
 };
 
@@ -1470,7 +1470,7 @@ public:
 		return UnivarGradProblem1<T>();
 	}
 
-	UnivarGradProblem1Benchmark() : UnivarBenchmark<T>("UnivarGradProblem1 function",0, -0.9999,  {0, 20}, true) {
+	UnivarGradProblem1Benchmark() : UnivarBenchmark<T>("UnivarGradProblem1 function",14.1406, -0.999982,  {0, 20}, true) {
 	}
 };
 
@@ -1522,7 +1522,7 @@ public:
 		return UnivarGradProblem2<T>();
 	}
 
-	UnivarGradProblem2Benchmark() : UnivarBenchmark<T>("UnivarGradProblem2 function",0, -1,  {0.2, 7}, true) {
+	UnivarGradProblem2Benchmark() : UnivarBenchmark<T>("UnivarGradProblem2 function",6.28281, 15,  {0.2, 7}, true) {
 	}
 };
 
@@ -1574,7 +1574,7 @@ public:
 		return UnivarGradProblem3<T>();
 	}
 
-	UnivarGradProblem3Benchmark() : UnivarBenchmark<T>("UnivarGradProblem3 function",0, 0,  {-10, 10}, true) {
+	UnivarGradProblem3Benchmark() : UnivarBenchmark<T>("UnivarGradProblem3 function",0.996094, 0,  {-10, 10}, true) {
 	}
 };
 
@@ -1626,7 +1626,7 @@ public:
 		return UnivarGradProblem4<T>();
 	}
 
-	UnivarGradProblem4Benchmark() : UnivarBenchmark<T>("UnivarGradProblem4 function",0, -17.582872,  {0.2, 7}, true) {
+	UnivarGradProblem4Benchmark() : UnivarBenchmark<T>("UnivarGradProblem4 function",6.89453, -17.5829,  {0.2, 7}, true) {
 	}
 };
 
@@ -1678,7 +1678,7 @@ public:
 		return UnivarGradProblem5<T>();
 	}
 
-	UnivarGradProblem5Benchmark() : UnivarBenchmark<T>("UnivarGradProblem5 function",0, -0.020903,  {-10, 10}, true) {
+	UnivarGradProblem5Benchmark() : UnivarBenchmark<T>("UnivarGradProblem5 function",0, 0,  {-10, 10}, true) {
 	}
 };
 
@@ -1730,7 +1730,7 @@ public:
 		return UnivarGradProblem6<T>();
 	}
 
-	UnivarGradProblem6Benchmark() : UnivarBenchmark<T>("UnivarGradProblem6 function",0, -0.952897,  {0.2, 7}, true) {
+	UnivarGradProblem6Benchmark() : UnivarBenchmark<T>("UnivarGradProblem6 function",2.83934, -0.952897,  {0.2, 7}, true) {
 	}
 };
 
@@ -1782,7 +1782,7 @@ public:
 		return UnivarGradProblem7<T>();
 	}
 
-	UnivarGradProblem7Benchmark() : UnivarBenchmark<T>("UnivarGradProblem7 function",0, -6.262872,  {0.2, 7}, true) {
+	UnivarGradProblem7Benchmark() : UnivarBenchmark<T>("UnivarGradProblem7 function",6.92005, -6.262872,  {0.2, 7}, true) {
 	}
 };
 
@@ -1834,7 +1834,7 @@ public:
 		return UnivarGradProblem8<T>();
 	}
 
-	UnivarGradProblem8Benchmark() : UnivarBenchmark<T>("UnivarGradProblem8 function",0, -0.077590,  {0.2, 7}, true) {
+	UnivarGradProblem8Benchmark() : UnivarBenchmark<T>("UnivarGradProblem8 function",0.902194, -0.0775897,  {0.2, 7}, true) {
 	}
 };
 
@@ -1886,7 +1886,7 @@ public:
 		return UnivarGradProblem9<T>();
 	}
 
-	UnivarGradProblem9Benchmark() : UnivarBenchmark<T>("UnivarGradProblem9 function",0, 0.211315,  {0.2, 7}, true) {
+	UnivarGradProblem9Benchmark() : UnivarBenchmark<T>("UnivarGradProblem9 function",0.224902, 0.211315,  {0.2, 7}, true) {
 	}
 };
 
@@ -1938,7 +1938,7 @@ public:
 		return UnivarGradProblem10<T>();
 	}
 
-	UnivarGradProblem10Benchmark() : UnivarBenchmark<T>("UnivarGradProblem10 function",0, -0.478362,  {0.2, 7}, true) {
+	UnivarGradProblem10Benchmark() : UnivarBenchmark<T>("UnivarGradProblem10 function",0.224902, -0.788685,  {0.2, 7}, true) {
 	}
 };
 
@@ -1990,7 +1990,7 @@ public:
 		return UnivarGradProblem11<T>();
 	}
 
-	UnivarGradProblem11Benchmark() : UnivarBenchmark<T>("UnivarGradProblem11 function",0, -5.815675,  {0.2, 7}, true) {
+	UnivarGradProblem11Benchmark() : UnivarBenchmark<T>("UnivarGradProblem11 function",5.87286, -5.815675,  {0.2, 7}, true) {
 	}
 };
 
@@ -2042,7 +2042,7 @@ public:
 		return UnivarGradProblem12<T>();
 	}
 
-	UnivarGradProblem12Benchmark() : UnivarBenchmark<T>("UnivarGradProblem12 function",0, -7.047444,  {0.2, 7}, true) {
+	UnivarGradProblem12Benchmark() : UnivarBenchmark<T>("UnivarGradProblem12 function",5.13433, -7.047444,  {0.2, 7}, true) {
 	}
 };
 
@@ -2094,7 +2094,7 @@ public:
 		return UnivarGradProblem13<T>();
 	}
 
-	UnivarGradProblem13Benchmark() : UnivarBenchmark<T>("UnivarGradProblem13 function",0, -4.601308,  {2.7, 7.5}, true) {
+	UnivarGradProblem13Benchmark() : UnivarBenchmark<T>("UnivarGradProblem13 function",5.19979, -4.60131,  {2.7, 7.5}, true) {
 	}
 };
 
@@ -2146,7 +2146,7 @@ public:
 		return UnivarGradProblem14<T>();
 	}
 
-	UnivarGradProblem14Benchmark() : UnivarBenchmark<T>("UnivarGradProblem14 function",0, -0.141100,  {0.2, 7}, true) {
+	UnivarGradProblem14Benchmark() : UnivarBenchmark<T>("UnivarGradProblem14 function",0.408246, -0.141100,  {0.2, 7}, true) {
 	}
 };
 
@@ -2198,7 +2198,7 @@ public:
 		return UnivarGradProblem15<T>();
 	}
 
-	UnivarGradProblem15Benchmark() : UnivarBenchmark<T>("UnivarGradProblem15 function",0, -0.870885,  {0.2, 7}, true) {
+	UnivarGradProblem15Benchmark() : UnivarBenchmark<T>("UnivarGradProblem15 function",4.85806, 47.1291,  {0.2, 7}, true) {
 	}
 };
 
@@ -2250,7 +2250,7 @@ public:
 		return UnivarGradProblem16<T>();
 	}
 
-	UnivarGradProblem16Benchmark() : UnivarBenchmark<T>("UnivarGradProblem16 function",0, -9.031249,  {0.2, 7}, true) {
+	UnivarGradProblem16Benchmark() : UnivarBenchmark<T>("UnivarGradProblem16 function",5.16908, 0.16205,  {0.2, 7}, true) {
 	}
 };
 
@@ -2302,7 +2302,7 @@ public:
 		return UnivarGradProblem17<T>();
 	}
 
-	UnivarGradProblem17Benchmark() : UnivarBenchmark<T>("UnivarGradProblem17 function",0, 0.475689,  {-10, 10}, true) {
+	UnivarGradProblem17Benchmark() : UnivarBenchmark<T>("UnivarGradProblem17 function",-0.787811, 0.475689,  {-10, 10}, true) {
 	}
 };
 
@@ -2354,7 +2354,7 @@ public:
 		return UnivarGradProblem18<T>();
 	}
 
-	UnivarGradProblem18Benchmark() : UnivarBenchmark<T>("UnivarGradProblem 18 function",0, 0,  {0.2, 7}, true) {
+	UnivarGradProblem18Benchmark() : UnivarBenchmark<T>("UnivarGradProblem 18 function",6.28281, 0,  {0.2, 7}, true) {
 	}
 };
 
@@ -2562,7 +2562,7 @@ public:
 		return UnivarGradProblem22<T>();
 	}
 
-	UnivarGradProblem22Benchmark() : UnivarBenchmark<T>("UnivarGradProblem22 function",0, -0.918397,  {0.2, 7}, true) {
+	UnivarGradProblem22Benchmark() : UnivarBenchmark<T>("UnivarGradProblem22 function",3.25095, -0.918397,  {0.2, 7}, true) {
 	}
 };
 
@@ -2614,7 +2614,7 @@ public:
 		return UnivarGradProblem23<T>();
 	}
 
-	UnivarGradProblem23Benchmark() : UnivarBenchmark<T>("UnivarGradProblem23 function",0, -0.824239,  {-10, 10}, true) {
+	UnivarGradProblem23Benchmark() : UnivarBenchmark<T>("UnivarGradProblem23 function",-0.679588, -0.824239,  {-10, 10}, true) {
 	}
 };
 
@@ -2666,7 +2666,7 @@ public:
 		return UnivarGradProblem24<T>();
 	}
 
-	UnivarGradProblem24Benchmark() : UnivarBenchmark<T>("UnivarGradProblem24 function",0, -0.027864,  {0.2, 7}, true) {
+	UnivarGradProblem24Benchmark() : UnivarBenchmark<T>("UnivarGradProblem24 function",3.92705, -0.0278641,  {0.2, 7}, true) {
 	}
 };
 
@@ -2718,7 +2718,7 @@ public:
 		return UnivarGradProblem25<T>();
 	}
 
-	UnivarGradProblem25Benchmark() : UnivarBenchmark<T>("UnivarGradProblem25 function",0, 3.5,  {0.2, 7}, true) {
+	UnivarGradProblem25Benchmark() : UnivarBenchmark<T>("UnivarGradProblem25 function",2.09439, 3.5,  {0.2, 7}, true) {
 	}
 };
 
@@ -2770,7 +2770,7 @@ public:
 		return UnivarGradProblem26<T>();
 	}
 
-	UnivarGradProblem26Benchmark() : UnivarBenchmark<T>("UnivarGradProblem26 function",0, 0.367879,  {0.2, 7}, true) {
+	UnivarGradProblem26Benchmark() : UnivarBenchmark<T>("UnivarGradProblem26 function",5.76484, 0.367925,  {0.2, 7}, true) {
 	}
 };
 
@@ -2798,7 +2798,7 @@ public:
 		return ::calcDerHighOrder(UnivarGradProblem27<Series<T>>(), point, order);
 	}
 
-	UnivarGradProblem27Benchmark() : UnivarBenchmark<T>("UnivarGradProblem27 function",0, -0.451388,  {0.2, 7}, true) {
+	UnivarGradProblem27Benchmark() : UnivarBenchmark<T>("UnivarGradProblem27 function",5.00641, -0.451388,  {0.2, 7}, true) {
 	}
 	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
 		return ::calcIntervalDerHighOrder(UnivarGradProblem27<IntervalSeries<T>>(), interval, order);
@@ -2874,7 +2874,7 @@ public:
 		return UnivarGradProblem28<T>();
 	}
 
-	UnivarGradProblem28Benchmark() : UnivarBenchmark<T>("UnivarGradProblem28 function",0, -1,  {0, 20}, true) {
+	UnivarGradProblem28Benchmark() : UnivarBenchmark<T>("UnivarGradProblem28 function",17.2656, -0.999914,  {0, 20}, true) {
 	}
 };
 
@@ -2926,7 +2926,7 @@ public:
 		return UnivarGradProblem29<T>();
 	}
 
-	UnivarGradProblem29Benchmark() : UnivarBenchmark<T>("UnivarGradProblem29 function",0, -0.410315,  {0.2, 7}, true) {
+	UnivarGradProblem29Benchmark() : UnivarBenchmark<T>("UnivarGradProblem29 function",3.86208, -0.410315,  {0.2, 7}, true) {
 	}
 };
 
@@ -2978,7 +2978,7 @@ public:
 		return UnivarGradProblem30<T>();
 	}
 
-	UnivarGradProblem30Benchmark() : UnivarBenchmark<T>("UnivarGradProblem30 function",0, -0.718282,  {0.2, 7}, true) {
+	UnivarGradProblem30Benchmark() : UnivarBenchmark<T>("UnivarGradProblem30 function",6.80742, -0.718277,  {0.2, 7}, true) {
 	}
 };
 
@@ -3030,7 +3030,7 @@ public:
 		return UnivarGradProblem32<T>();
 	}
 
-	UnivarGradProblem32Benchmark() : UnivarBenchmark<T>("UnivarGradProblem32 function",0, -1,  {0.02, 1}, true) {
+	UnivarGradProblem32Benchmark() : UnivarBenchmark<T>("UnivarGradProblem32 function",0.212363, -1,  {0.02, 1}, true) {
 	}
 };
 
@@ -3082,7 +3082,7 @@ public:
 		return UnivarGradProblem34<T>();
 	}
 
-	UnivarGradProblem34Benchmark() : UnivarBenchmark<T>("UnivarGradProblem34 function",0, -0.535534,  {0.2, 7}, true) {
+	UnivarGradProblem34Benchmark() : UnivarBenchmark<T>("UnivarGradProblem34 function",2.414230, -0.535534,  {0.2, 7}, true) {
 	}
 };
 
@@ -3134,7 +3134,7 @@ public:
 		return UnivarGradProblem36<T>();
 	}
 
-	UnivarGradProblem36Benchmark() : UnivarBenchmark<T>("UnivarGradProblem36 function",0, -0.35,  {0.2, 7}, true) {
+	UnivarGradProblem36Benchmark() : UnivarBenchmark<T>("UnivarGradProblem36 function",3.60, 16.6102,  {0.2, 7}, true) {
 	}
 };
 
@@ -3186,7 +3186,7 @@ public:
 		return UnivarGradProblem37<T>();
 	}
 
-	UnivarGradProblem37Benchmark() : UnivarBenchmark<T>("UnivarGradProblem37 function",0, -32.781261,  {-1, 7}, true) {
+	UnivarGradProblem37Benchmark() : UnivarBenchmark<T>("UnivarGradProblem37 function",0.713667, -32.7813,  {-1, 7}, true) {
 	}
 };
 
@@ -3238,7 +3238,7 @@ public:
 		return UnivarGradProblem38<T>();
 	}
 
-	UnivarGradProblem38Benchmark() : UnivarBenchmark<T>("UnivarGradProblem38 function",0, 7,  {-4, 4}, true) {
+	UnivarGradProblem38Benchmark() : UnivarBenchmark<T>("UnivarGradProblem38 function",3, 7,  {-4, 4}, true) {
 	}
 };
 
@@ -3290,7 +3290,7 @@ public:
 		return UnivarGradProblem39<T>();
 	}
 
-	UnivarGradProblem39Benchmark() : UnivarBenchmark<T>("UnivarGradProblem39 function",0, -1,  {-10, 20}, true) {
+	UnivarGradProblem39Benchmark() : UnivarBenchmark<T>("UnivarGradProblem39 function",3.618030, -1,  {-10, 20}, true) {
 	}
 };
 
@@ -3342,7 +3342,7 @@ public:
 		return UnivarGradProblem40<T>();
 	}
 
-	UnivarGradProblem40Benchmark() : UnivarBenchmark<T>("UnivarGradProblem40 function",0, -1,  {0, 3}, true) {
+	UnivarGradProblem40Benchmark() : UnivarBenchmark<T>("UnivarGradProblem40 function",2, -89,  {0, 3}, true) {
 	}
 };
 
@@ -3394,7 +3394,7 @@ public:
 		return UnivarNonDiffProblem1<T>();
 	}
 
-	UnivarNonDiffProblem1Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem1 function", 0.2, 0,  {0.2,7}, false) {
+	UnivarNonDiffProblem1Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem1 function", 0.2, 1.37878,  {0.2,7}, false) {
 	}
 };
 
@@ -3446,7 +3446,7 @@ public:
 		return UnivarNonDiffProblem2<T>();
 	}
 
-	UnivarNonDiffProblem2Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem2 function",0.788, 0,  {0.1, 7}, false) {
+	UnivarNonDiffProblem2Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem2 function",0.78541, -0.114214,  {0.1, 7}, false) {
 	}
 };
 
@@ -3498,7 +3498,7 @@ public:
 		return UnivarNonDiffProblem3<T>();
 	}
 
-	UnivarNonDiffProblem3Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem3 function",0, 0,  {-10, 10}, false) {
+	UnivarNonDiffProblem3Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem3 function",5.16909, 0.16205,  {-10, 10}, false) {
 	}
 };
 
@@ -3550,7 +3550,7 @@ public:
 		return UnivarNonDiffProblem4<T>();
 	}
 
-	UnivarNonDiffProblem4Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem4 function",0, 0,  {0, 18}, false) {
+	UnivarNonDiffProblem4Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem4 function",15.7148, -0.999976,  {0, 18}, false) {
 	}
 };
 
@@ -3602,7 +3602,7 @@ public:
 		return UnivarNonDiffProblem5<T>();
 	}
 
-	UnivarNonDiffProblem5Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem5 function",0, 0,  {0, 7}, false) {
+	UnivarNonDiffProblem5Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem5 function",2.83937, -0.952897,  {0, 7}, false) {
 	}
 };
 
@@ -3654,7 +3654,7 @@ public:
 		return UnivarNonDiffProblem6<T>();
 	}
 
-	UnivarNonDiffProblem6Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem6 function",0, 0,  {-10, 10}, false) {
+	UnivarNonDiffProblem6Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem6 function",9.73633, -0.999915,  {-10, 10}, false) {
 	}
 };
 
@@ -3708,7 +3708,7 @@ public:
 		return UnivarNonDiffProblem7<T>();
 	}
 
-	UnivarNonDiffProblem7Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem7 function",0, 0,  {0.1, 7}, false) {
+	UnivarNonDiffProblem7Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem7 function",0.408224, -1.0411,  {0.1, 7}, false) {
 	}
 };
 
@@ -3760,7 +3760,7 @@ public:
 		return UnivarNonDiffProblem8<T>();
 	}
 
-	UnivarNonDiffProblem8Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem8 function",0, 0,  {-10, 10}, false) {
+	UnivarNonDiffProblem8Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem8 function",0, -5.0,  {-10, 10}, false) {
 	}
 };
 
@@ -3812,7 +3812,7 @@ public:
 		return UnivarNonDiffProblem9<T>();
 	}
 
-	UnivarNonDiffProblem9Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem9 function",0, 0,  {0, 4 * M_PI}, false) {
+	UnivarNonDiffProblem9Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem9 function",9.42478, -1.0,  {0, 4 * M_PI}, false) {
 	}
 };
 
@@ -3864,7 +3864,7 @@ public:
 		return UnivarNonDiffProblem10<T>();
 	}
 
-	UnivarNonDiffProblem10Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem10 function",0, 0,  {0, 10}, false) {
+	UnivarNonDiffProblem10Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem10 function",6, 0.0,  {0, 10}, false) {
 	}
 };
 
@@ -3916,7 +3916,7 @@ public:
 		return UnivarNonDiffProblem11<T>();
 	}
 
-	UnivarNonDiffProblem11Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem11 function",0, 0,  {0, 5}, false) {
+	UnivarNonDiffProblem11Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem11 function",2.74902, -3.49991,  {0, 5}, false) {
 	}
 };
 
@@ -3968,7 +3968,7 @@ public:
 		return UnivarNonDiffProblem12<T>();
 	}
 
-	UnivarNonDiffProblem12Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem12 function",2.356, 0,  {0, 2*M_PI}, false) {
+	UnivarNonDiffProblem12Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem12 function",5.49779, 0.1,  {0, 2*M_PI}, false) {
 	}
 };
 
@@ -4020,7 +4020,7 @@ public:
 		return UnivarNonDiffProblem13<T>();
 	}
 
-	UnivarNonDiffProblem13Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem13 function",0, 0,  {-6, 2}, false) {
+	UnivarNonDiffProblem13Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem13 function",1, -2,  {-6, 2}, false) {
 	}
 };
 
@@ -4072,7 +4072,7 @@ public:
 		return UnivarNonDiffProblem14<T>();
 	}
 
-	UnivarNonDiffProblem14Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem14 function",0, 0,  {0, 4}, false) {
+	UnivarNonDiffProblem14Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem14 function",0.224854, -0.288685,  {0, 4}, false) {
 	}
 };
 
@@ -4124,7 +4124,7 @@ public:
 		return UnivarNonDiffProblem15<T>();
 	}
 
-	UnivarNonDiffProblem15Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem15 function",0, 0,  {-5, 5}, false) {
+	UnivarNonDiffProblem15Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem15 function",2.414210, -0.535534,  {-5, 5}, false) {
 	}
 };
 
@@ -4176,7 +4176,7 @@ public:
 		return UnivarNonDiffProblem16<T>();
 	}
 
-	UnivarNonDiffProblem16Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem16 function",-8.659, 0,  {-10, 10}, false) {
+	UnivarNonDiffProblem16Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem16 function",-7.97867, -1.91673,  {-10, 10}, false) {
 	}
 };
 
@@ -4228,7 +4228,7 @@ public:
 		return UnivarNonDiffProblem17<T>();
 	}
 
-	UnivarNonDiffProblem17Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem17 function",0, 0,  {-10, 10}, false) {
+	UnivarNonDiffProblem17Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem17 function",0, -1.5,  {-10, 10}, false) {
 	}
 };
 
@@ -4280,7 +4280,7 @@ public:
 		return UnivarNonDiffProblem18<T>();
 	}
 
-	UnivarNonDiffProblem18Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem18 function",0, 0,  {-3, 2}, false) {
+	UnivarNonDiffProblem18Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem18 function",1.57031, -1.71828,  {-3, 2}, false) {
 	}
 };
 
@@ -4332,7 +4332,7 @@ public:
 		return UnivarNonDiffProblem19<T>();
 	}
 
-	UnivarNonDiffProblem19Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem19 function",0, 0,  {0, 6.5}, false) {
+	UnivarNonDiffProblem19Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem19 function",5.87287, -5.811567,  {0, 6.5}, false) {
 	}
 };
 
@@ -4384,7 +4384,7 @@ public:
 		return UnivarNonDiffProblem20<T>();
 	}
 
-	UnivarNonDiffProblem20Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem 20 function",1.25 * M_PI, -0.7071067,  {-10, 10}, false) {
+	UnivarNonDiffProblem20Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem 20 function",-8.63937, -0.707103,  {-10, 10}, false) {
 	}
 };
 

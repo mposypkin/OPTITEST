@@ -87,18 +87,18 @@ public:
  	* @return gradient of function
 	*/
 	virtual Series<T> calcDerHighOrder(T point, int order) const = 0; 	
-        /**
+   /**
 	* calculate interval estimation of function derivative
 	* @param interval where derivative of function will be calculated
-        * @param order order of derivative
+   * @param order order of derivative
  	* @return interval estimation of derivative of function
 	*/
 	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const = 0; 
 	/**
-        * calculate derivative using symbol differentation
+   * calculate derivative using symbol differentation
 	* @param point coordinate where derivative of function will be calculated
 	* @param order order of derivative
- 	* @return derivative in a point
+ 	* @return a collection of bounds on derivatives.
 	*/
 	virtual T calcSymDiff(T point, int order) const = 0; 
 	/**
@@ -108,10 +108,10 @@ public:
  	* @return interval estimation of derivative of function
 	*/
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const = 0;   
-        /**
+   /**
 	* gets expression
 	* @return expression
-        */
+   */
 	virtual Expr<T> getExpr() const = 0;
     
         /**

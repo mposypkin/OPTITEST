@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * A simple branch-and-bound code with interval bounds
  */
 
 /* 
@@ -21,11 +19,12 @@
 
 constexpr double eps = 0.0001;
 
-void findGlobMin(const std::shared_ptr<UnivarBenchmark<double>> pbench, double& fbest, double& xbest) {
+void findGlobMin(const std::shared_ptr<UnivarBenchmark<double>> pbench, double& fbest, double& xbest, int& steps) {
     const double a = pbench->getBounds().first;
     const double b = pbench->getBounds().second;
     std::vector<Interval<double>> segments;
     segments.emplace_back(a, b);
+    steps = 0;
     while (!segments.empty()) {
         try {
             const Interval<double> ci = segments.back();
@@ -46,6 +45,7 @@ void findGlobMin(const std::shared_ptr<UnivarBenchmark<double>> pbench, double& 
             std::cout << "Exception caught!\n";
             break;
         }
+        steps ++;
     }
 }
 
@@ -56,8 +56,10 @@ void findMinForAllBenchMarks() {
         std::cout << *ptrBench;
         double fbest = std::numeric_limits<double>::max();
         double xbest = 0;
-        findGlobMin(ptrBench, fbest, xbest);
+        int steps = 0;
+        findGlobMin(ptrBench, fbest, xbest, steps);
         std::cout << "Found f = " << fbest << " at x = " << xbest << std::endl; 
+        std::cout << "Steps = " << steps << std::endl;
         std::cout << "****************************************" << std::endl << std::endl;
     }
 

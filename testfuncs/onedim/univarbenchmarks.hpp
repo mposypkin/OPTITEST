@@ -4364,20 +4364,20 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem20<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem20<Series<T>>(), point);
-        }
+   virtual bool isDerExist(T point) const
+   {
+  		return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem20<Series<T>>(), point);
+   }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+   {
 		return ::calcSymDiff(UnivarNonDiffProblem20<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+   {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem20<Interval<T>>(), interval, order);
-        }
+   }
 
 	virtual Expr<T> getExpr() const
 	{
@@ -4387,6 +4387,924 @@ public:
 	UnivarNonDiffProblem20Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem 20 function",-8.63937, -0.707103,  {-10, 10}, false) {
 	}
 };
+
+template <class T>
+class UnivarSlopesProblem1Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem1<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem1<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem1<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem1<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem1<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem1<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem1<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem1<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem1<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem1<T>();
+	}
+
+	UnivarSlopesProblem1Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem1 function",-0.6795, -0.8242,  {-10, 10}, false) {
+	}
+};
+
+template <class T>
+class UnivarSlopesProblem2Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem2<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem2<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem2<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem2<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem2<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem2<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem2<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem2<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem2<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem2<T>();
+	}
+
+	UnivarSlopesProblem2Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem2 function",-6.774, -12.03,  {-10, 10}, false) {
+	}
+};
+
+
+template <class T>
+class UnivarSlopesProblem4Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem4<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem4<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem4<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem4<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem4<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem4<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem4<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem4<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem4<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem4<T>();
+	}
+
+	UnivarSlopesProblem4Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem4 function",9*M_PI/2, -1.0,  {0, 20}, false) {
+	}
+};
+
+template <class T>
+class UnivarSlopesProblem5Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem5<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem5<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem5<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem5<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem5<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem5<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem5<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem5<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem5<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem5<T>();
+	}
+
+	UnivarSlopesProblem5Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem5 function",2/(3*M_PI), -1.0,  {0.02, 1}, false) {
+	}
+};
+
+template <class T>
+class UnivarSlopesProblem6Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem6<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem6<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem6<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem6<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem6<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem6<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem6<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem6<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem6<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem6<T>();
+	}
+
+	UnivarSlopesProblem6Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem6 function",0, (5-sqrt(5))/2.0,  {-10, 20}, false) {
+	}
+};
+
+template <class T>
+class UnivarSlopesProblem7Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem7<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem7<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem7<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem7<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem7<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem7<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem7<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem7<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem7<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem7<T>();
+	}
+
+	UnivarSlopesProblem7Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem7 function",2, 1,  {0, 3}, false) {
+	}
+};
+
+template <class T>
+class UnivarSlopesProblem8Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem8<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem8<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem8<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem8<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem8<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem8<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem8<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem8<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem8<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem8<T>();
+	}
+
+	UnivarSlopesProblem8Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem8 function",5.1997, -4.601,  {2.7, 7.5}, false) {
+	}
+};
+
+template <class T>
+class UnivarSlopesProblem9Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem9<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem9<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem9<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem9<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem9<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem9<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem9<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem9<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem9<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem9<T>();
+	}
+
+	UnivarSlopesProblem9Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem9 function",0.06738, -0.02090,  {-10, 10}, false) {
+	}
+};
+
+template <class T>
+class UnivarSlopesProblem10Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem10<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem10<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem10<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem10<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem10<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem10<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem10<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem10<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem10<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem10<T>();
+	}
+
+	UnivarSlopesProblem10Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem10 function",0.6858, -14.59,  {0, 10}, false) {
+	}
+};
+
+template <class T>
+class UnivarSlopesProblem11Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem11<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem11<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem11<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem11<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem11<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem11<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem11<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem11<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem11<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem11<T>();
+	}
+
+	UnivarSlopesProblem11Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem11 function",4.855, -13.92,  {0, 10}, false) {
+	}
+};
+
+template <class T>
+class UnivarSlopesProblem12Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem12<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem12<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem12<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem12<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem12<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem12<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem12<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem12<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem12<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem12<T>();
+	}
+
+	UnivarSlopesProblem12Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem12 function",0.0, 1.0,  {-20, 20}, false) {
+	}
+};
+
+template <class T>
+class UnivarSlopesProblem13Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem13<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem13<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem13<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem13<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem13<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem13<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem13<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem13<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem13<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem13<T>();
+	}
+
+	UnivarSlopesProblem13Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem13 function",2.0, -1.0/3.0,  {0, 10}, false) {
+	}
+};
+
+template <class T>
+class UnivarSlopesProblem14Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem14<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem14<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem14<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem14<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem14<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem14<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem14<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem14<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem14<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem14<T>();
+	}
+
+	UnivarSlopesProblem14Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem14 function",0, -1.0,  {-5, 5}, false) {
+	}
+};
+
+template <class T>
+class UnivarSlopesProblem15Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem15<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem15<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem15<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem15<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem15<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem15<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem15<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem15<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem15<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem15<T>();
+	}
+
+	UnivarSlopesProblem15Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem15 function",1.0, 1.0,  {-10, 10}, false) {
+	}
+};
+
+
+template <class T>
+class UnivarSlopesProblem16Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem16<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem16<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem16<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem16<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem16<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem16<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem16<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem16<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem16<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem16<T>();
+	}
+
+	UnivarSlopesProblem16Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem16 function",0, 1.0,  {-10, 10}, false) {
+	}
+};
+
+template <class T>
+class UnivarSlopesProblem17Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem17<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem17<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem17<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem17<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem17<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem17<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem17<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem17<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem17<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem17<T>();
+	}
+
+	UnivarSlopesProblem17Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem17 function",0.7136, -32.78,  {-1, 7}, false) {
+	}
+};
+
+template <class T>
+class UnivarSlopesProblem18Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem18<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem18<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem18<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem18<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem18<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem18<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem18<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem18<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem18<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem18<T>();
+	}
+
+	UnivarSlopesProblem18Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem18 function",-3, 7,  {-4, 4}, false) {
+	}
+};
+
+template <class T>
+class UnivarSlopesProblem19Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem19<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem19<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem19<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem19<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem19<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem19<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem19<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem19<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem19<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem19<T>();
+	}
+
+	UnivarSlopesProblem19Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem19 function",-0.7878, 0.4756,  {-10, 10}, false) {
+	}
+};
+
+template <class T>
+class UnivarSlopesProblem20Benchmark : public UnivarBenchmark<T>
+{
+public:
+	virtual T calcFunc(T point) const {		
+		return ::calcFunc(UnivarSlopesProblem20<T>(), std::vector<T>(1, point));
+	}
+
+	virtual Interval<T> calcInterval(const Interval<T>& interval) const {
+		return ::calcInterval(UnivarSlopesProblem20<Interval<T>>(), std::vector<Interval<T>>(1, interval));					
+	}
+
+	virtual ValDer<T> calcGrad(T point) const {
+		return ::calcGrad(UnivarSlopesProblem20<ValDer<T>>(), std::vector<T>(1, point));
+	}
+
+	virtual IntervalDer<T> calcIntervalGrad(const Interval<T>& interval) const {
+		return ::calcIntervalGrad(UnivarSlopesProblem20<IntervalDer<T>>(), std::vector<Interval<T>>(1, interval));
+	}
+
+	virtual Series<T> calcDerHighOrder(T point, int order) const {
+		return ::calcDerHighOrder(UnivarSlopesProblem20<Series<T>>(), point, order);
+	}
+
+	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
+		return ::calcIntervalDerHighOrder(UnivarSlopesProblem20<IntervalSeries<T>>(), interval, order);
+	} 
+
+   virtual bool isDerExist(T point) const {
+  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem20<Series<T>>(), point);
+   }
+
+	virtual T calcSymDiff(T point, int order) const {
+		return ::calcSymDiff(UnivarSlopesProblem20<T>(), point, order);
+	}
+
+	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
+		return ::calcIntervalSymDiff(UnivarSlopesProblem20<Interval<T>>(), interval, order);
+   }
+
+	virtual Expr<T> getExpr() const {
+		return UnivarSlopesProblem20<T>();
+	}
+
+	UnivarSlopesProblem20Benchmark() : UnivarBenchmark<T>("UnivarSlopesProblem20 function",1.0, 0.0,  {-10, 10}, false) {
+	}
+};
+
+
+
+
 
 
 template <class T>
@@ -4484,6 +5402,26 @@ public:
 		this->add(std::make_shared<UnivarNonDiffProblem18Benchmark<T>>());
 		this->add(std::make_shared<UnivarNonDiffProblem19Benchmark<T>>());
 		this->add(std::make_shared<UnivarNonDiffProblem20Benchmark<T>>());
+
+		this->add(std::make_shared<UnivarSlopesProblem1Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem2Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem4Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem5Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem6Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem7Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem8Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem9Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem10Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem11Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem12Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem13Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem14Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem15Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem16Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem17Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem18Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem19Benchmark<T>>());
+		this->add(std::make_shared<UnivarSlopesProblem20Benchmark<T>>());
 	}
 };
 

@@ -1,6 +1,6 @@
 ROOT = ../../
-BINS = univartests.exe findmin.exe
-TESTS = univartests.exe
+BINS = univartests.exe findmin.exe pwltests.exe
+TESTS = univartests.exe pwltests.exe
 
 
 include $(ROOT)all.inc

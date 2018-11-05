@@ -9,6 +9,7 @@
 #include "univarbenchmark.hpp"
 #include "expression/expr.hpp"
 #include "univarproblem.hpp"
+#include "pwl/pwlbound.hpp"
 
 
 using namespace snowgoose::expression;
@@ -44,10 +45,10 @@ public:
 		return ::calcIntervalDerHighOrder(Holder1<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(Holder1<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(Holder1<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
         {
@@ -55,9 +56,13 @@ public:
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(Holder1<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(Holder1<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -96,20 +101,24 @@ public:
 		return ::calcIntervalDerHighOrder(Holder2<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(Holder2<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(Holder2<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+	{
 		return ::calcSymDiff(Holder2<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(Holder2<Interval<T>>(), interval, order);
-        }
+    }
+	
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(Holder2<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -148,20 +157,24 @@ public:
 		return ::calcIntervalDerHighOrder(Holder3<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(Holder3<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(Holder3<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(Holder3<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(Holder3<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(Holder3<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -200,20 +213,24 @@ public:
 		return ::calcIntervalDerHighOrder(Holder4<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(Holder4<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(Holder4<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(Holder4<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(Holder4<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(Holder4<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -252,20 +269,24 @@ public:
 		return ::calcIntervalDerHighOrder(Holder5<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(Holder5<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(Holder5<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(Holder5<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(Holder5<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(Holder5<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -304,20 +325,24 @@ public:
 		return ::calcIntervalDerHighOrder(Holder6<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(Holder6<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(Holder6<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(Holder6<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(Holder6<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(Holder6<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -356,20 +381,24 @@ public:
 		return ::calcIntervalDerHighOrder(Holder7<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(Holder7<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(Holder7<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(Holder7<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(Holder7<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(Holder7<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -408,20 +437,24 @@ public:
 		return ::calcIntervalDerHighOrder(Holder8<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(Holder8<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(Holder8<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(Holder8<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(Holder8<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(Holder8<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -460,20 +493,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarProblem1<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarProblem1<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarProblem1<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarProblem1<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarProblem1<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarProblem1<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -512,20 +549,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarProblem2<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarProblem2<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarProblem2<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarProblem2<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarProblem2<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarProblem2<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -564,20 +605,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarProblem4<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarProblem4<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarProblem4<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarProblem4<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarProblem4<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarProblem4<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -616,20 +661,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarProblem5<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarProblem5<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarProblem5<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarProblem5<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarProblem5<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarProblem5<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -668,20 +717,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarProblem7<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarProblem7<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarProblem7<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarProblem7<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarProblem7<Interval<T>>(), interval, order);
-        }
+    }
+	
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarProblem7<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -720,20 +773,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarProblem9<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarProblem9<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarProblem9<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarProblem9<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarProblem9<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarProblem9<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -772,20 +829,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarProblem10<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarProblem10<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarProblem10<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarProblem10<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarProblem10<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarProblem10<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -825,20 +886,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarProblem11<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarProblem11<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarProblem11<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarProblem11<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarProblem11<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarProblem11<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -877,20 +942,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarProblem12<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarProblem12<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarProblem12<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarProblem12<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarProblem12<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarProblem12<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -929,20 +998,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarProblem13<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarProblem13<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarProblem13<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarProblem13<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarProblem13<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarProblem13<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -981,20 +1054,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarProblem14<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarProblem14<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarProblem14<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarProblem14<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarProblem14<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarProblem14<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1033,20 +1110,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarProblem15<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarProblem15<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarProblem15<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarProblem15<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarProblem15<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarProblem15<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1085,20 +1166,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarProblem16<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarProblem16<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarProblem16<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarProblem16<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarProblem16<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarProblem16<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1138,20 +1223,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarProblem19<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarProblem19<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarProblem19<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarProblem19<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarProblem19<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarProblem19<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1190,20 +1279,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarProblem20<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarProblem20<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarProblem20<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarProblem20<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarProblem20<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarProblem20<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1242,20 +1335,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarProblem21<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarProblem21<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarProblem21<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarProblem21<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarProblem21<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarProblem21<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1294,20 +1391,24 @@ public:
 		return ::calcIntervalDerHighOrder(LipschitzProblem1<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(LipschitzProblem1<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(LipschitzProblem1<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(LipschitzProblem1<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(LipschitzProblem1<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(LipschitzProblem1<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1346,20 +1447,24 @@ public:
 		return ::calcIntervalDerHighOrder(LipschitzProblem2<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(LipschitzProblem2<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(LipschitzProblem2<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(LipschitzProblem2<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(LipschitzProblem2<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(LipschitzProblem2<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1398,20 +1503,24 @@ public:
 		return ::calcIntervalDerHighOrder(LipschitzProblem3<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(LipschitzProblem3<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(LipschitzProblem3<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(LipschitzProblem3<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(LipschitzProblem3<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(LipschitzProblem3<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1450,20 +1559,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem1<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem1<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem1<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem1<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem1<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem1<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1502,20 +1615,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem2<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem2<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem2<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem2<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem2<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem2<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1554,20 +1671,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem3<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem3<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem3<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem3<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem3<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem3<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1606,20 +1727,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem4<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem4<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem4<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem4<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem4<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem4<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1658,20 +1783,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem5<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem5<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem5<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem5<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem5<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem5<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1710,20 +1839,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem6<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem6<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem6<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem6<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem6<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem6<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1762,20 +1895,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem7<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem7<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem7<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem7<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem7<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem7<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1814,20 +1951,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem8<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem8<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem8<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem8<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem8<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem8<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1866,20 +2007,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem9<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem9<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem9<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem9<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem9<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem9<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1918,20 +2063,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem10<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem10<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem10<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem10<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem10<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem10<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -1970,20 +2119,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem11<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem11<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem11<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem11<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem11<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem11<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2022,20 +2175,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem12<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem12<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem12<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem12<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem12<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem12<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2074,20 +2231,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem13<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem13<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem13<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem13<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem13<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem13<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2126,20 +2287,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem14<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem14<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem14<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem14<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem14<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem14<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2178,20 +2343,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem15<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem15<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem15<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem15<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem15<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem15<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2230,20 +2399,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem16<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem16<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem16<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem16<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem16<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem16<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2282,20 +2455,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem17<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem17<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem17<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem17<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem17<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem17<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2334,20 +2511,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem18<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem18<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem18<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem18<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem18<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem18<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2386,20 +2567,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem19<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem19<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem19<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem19<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem19<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem19<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2438,20 +2623,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem20<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem20<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+	{
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem20<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem20<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem20<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem20<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2490,20 +2679,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem21<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem21<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem21<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem21<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem21<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem21<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2542,20 +2735,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem22<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem22<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem22<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem22<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem22<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem22<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2594,20 +2791,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem23<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem23<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem23<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem23<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem23<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem23<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2646,20 +2847,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem24<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem24<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem24<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem24<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem24<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem24<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2698,20 +2903,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem25<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem25<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem25<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem25<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem25<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem25<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2750,20 +2959,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem26<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem26<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem26<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem26<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem26<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem26<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2800,23 +3013,28 @@ public:
 
 	UnivarGradProblem27Benchmark() : UnivarBenchmark<T>("UnivarGradProblem27 function",5.00641, -0.451388,  {0.2, 7}, true) {
 	}
+
 	virtual IntervalSeries<T> calcIntervalDerHighOrder(const Interval<T>& interval, int order) const {
 		return ::calcIntervalDerHighOrder(UnivarGradProblem27<IntervalSeries<T>>(), interval, order);
 	} 
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem27<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem27<Interval<T>>(), interval, order);
-        }
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem27<Series<T>>(), point);
-        }
+    }
+    virtual bool isDerExist(T point) const
+	{
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem27<Series<T>>(), point);
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem27<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2854,20 +3072,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem28<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem28<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem28<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem28<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem28<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem28<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2906,20 +3128,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem29<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem29<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem29<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem29<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem29<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem29<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -2958,20 +3184,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem30<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem30<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem30<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem30<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem30<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem30<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3010,20 +3240,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem32<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem32<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem32<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem32<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem32<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem32<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3062,20 +3296,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem34<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem34<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem34<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem34<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem34<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem34<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3114,20 +3352,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem36<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem36<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem36<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem36<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem36<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem36<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3166,20 +3408,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem37<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem37<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem37<Series<T>>(), point);
+    }
 	
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem37<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem37<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem37<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3218,20 +3464,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem38<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem38<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem38<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem38<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem38<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem38<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3270,20 +3520,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem39<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem39<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem39<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem39<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem39<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem39<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3322,20 +3576,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarGradProblem40<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem40<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarGradProblem40<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarGradProblem40<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarGradProblem40<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarGradProblem40<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3374,20 +3632,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem1<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem1<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem1<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem1<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem1<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem1<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3426,20 +3688,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem2<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem2<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem2<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem2<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem2<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem2<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3478,20 +3744,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem3<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem3<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem3<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem3<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem3<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem3<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3530,20 +3800,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem4<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem4<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem4<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem4<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem4<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem4<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3582,20 +3856,23 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem5<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem5<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem5<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem5<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem5<Interval<T>>(), interval, order);
-        }
+    }
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem5<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3634,20 +3911,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem6<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem6<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem6<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem6<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem6<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem6<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3688,20 +3969,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem7<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem7<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem7<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem7<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem7<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem7<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3740,20 +4025,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem8<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem8<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem8<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem8<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem8<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem8<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3792,20 +4081,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem9<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem9<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem9<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem9<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem9<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem9<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3844,20 +4137,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem10<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem10<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem10<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem10<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem10<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem10<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -3896,24 +4193,28 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem11<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem11<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem11<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem11<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem11<Interval<T>>(), interval, order);
-        }
+    }
 
 	virtual Expr<T> getExpr() const
 	{
 		return UnivarNonDiffProblem11<T>();
+	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem11<PwlBound<T>>(), a, b, steps);
 	}
 
 	UnivarNonDiffProblem11Benchmark() : UnivarBenchmark<T>("UnivarNonDiffProblem11 function",2.74902, -3.49991,  {0, 5}, false) {
@@ -3948,20 +4249,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem12<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem12<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem12<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem12<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem12<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem12<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -4000,20 +4305,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem13<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem13<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem13<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem13<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem13<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem13<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -4052,20 +4361,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem14<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem14<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem14<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem14<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem14<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem14<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -4104,20 +4417,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem15<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem15<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem15<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem15<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem15<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem15<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -4156,20 +4473,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem16<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem16<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem16<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem16<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem16<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem16<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -4208,20 +4529,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem17<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem17<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem17<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem17<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem17<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem17<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -4260,20 +4585,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem18<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem18<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem18<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem18<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem18<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem18<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -4312,20 +4641,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem19<IntervalSeries<T>>(), interval, order);
 	} 
 
-        virtual bool isDerExist(T point) const
-        {
-        	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem19<Series<T>>(), point);
-        }
+    virtual bool isDerExist(T point) const
+    {
+    	return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem19<Series<T>>(), point);
+    }
 
 	virtual T calcSymDiff(T point, int order) const
-        {
+    {
 		return ::calcSymDiff(UnivarNonDiffProblem19<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-        {
+    {
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem19<Interval<T>>(), interval, order);
-        }
+    }
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem19<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -4364,20 +4697,24 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarNonDiffProblem20<IntervalSeries<T>>(), interval, order);
 	} 
 
-   virtual bool isDerExist(T point) const
-   {
-  		return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem20<Series<T>>(), point);
-   }
+	virtual bool isDerExist(T point) const
+	{
+		return UnivarBenchmark<T>::isDerExist(UnivarNonDiffProblem20<Series<T>>(), point);
+	}
 
 	virtual T calcSymDiff(T point, int order) const
-   {
+   	{
 		return ::calcSymDiff(UnivarNonDiffProblem20<T>(), point, order);
 	}
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const
-   {
+   	{
 		return ::calcIntervalSymDiff(UnivarNonDiffProblem20<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarNonDiffProblem20<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const
 	{
@@ -4418,7 +4755,7 @@ public:
 
    virtual bool isDerExist(T point) const {
   		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem1<Series<T>>(), point);
-   }
+   	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem1<T>(), point, order);
@@ -4426,7 +4763,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem1<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem1<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem1<T>();
@@ -4464,9 +4805,9 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarSlopesProblem2<IntervalSeries<T>>(), interval, order);
 	} 
 
-   virtual bool isDerExist(T point) const {
-  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem2<Series<T>>(), point);
-   }
+	virtual bool isDerExist(T point) const {
+		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem2<Series<T>>(), point);
+	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem2<T>(), point, order);
@@ -4474,7 +4815,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem2<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem2<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem2<T>();
@@ -4513,9 +4858,9 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarSlopesProblem4<IntervalSeries<T>>(), interval, order);
 	} 
 
-   virtual bool isDerExist(T point) const {
+   	virtual bool isDerExist(T point) const {
   		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem4<Series<T>>(), point);
-   }
+   	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem4<T>(), point, order);
@@ -4523,7 +4868,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem4<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem4<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem4<T>();
@@ -4561,9 +4910,9 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarSlopesProblem5<IntervalSeries<T>>(), interval, order);
 	} 
 
-   virtual bool isDerExist(T point) const {
-  		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem5<Series<T>>(), point);
-   }
+	virtual bool isDerExist(T point) const {
+		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem5<Series<T>>(), point);
+	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem5<T>(), point, order);
@@ -4571,7 +4920,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem5<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem5<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem5<T>();
@@ -4609,9 +4962,9 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarSlopesProblem6<IntervalSeries<T>>(), interval, order);
 	} 
 
-   virtual bool isDerExist(T point) const {
+   	virtual bool isDerExist(T point) const {
   		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem6<Series<T>>(), point);
-   }
+   	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem6<T>(), point, order);
@@ -4619,7 +4972,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem6<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem6<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem6<T>();
@@ -4657,9 +5014,9 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarSlopesProblem7<IntervalSeries<T>>(), interval, order);
 	} 
 
-   virtual bool isDerExist(T point) const {
+   	virtual bool isDerExist(T point) const {
   		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem7<Series<T>>(), point);
-   }
+   	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem7<T>(), point, order);
@@ -4667,7 +5024,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem7<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem7<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem7<T>();
@@ -4707,7 +5068,7 @@ public:
 
    virtual bool isDerExist(T point) const {
   		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem8<Series<T>>(), point);
-   }
+   	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem8<T>(), point, order);
@@ -4715,7 +5076,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem8<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem8<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem8<T>();
@@ -4755,7 +5120,7 @@ public:
 
    virtual bool isDerExist(T point) const {
   		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem9<Series<T>>(), point);
-   }
+   	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem9<T>(), point, order);
@@ -4763,7 +5128,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem9<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem9<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem9<T>();
@@ -4801,9 +5170,9 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarSlopesProblem10<IntervalSeries<T>>(), interval, order);
 	} 
 
-   virtual bool isDerExist(T point) const {
+   	virtual bool isDerExist(T point) const {
   		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem10<Series<T>>(), point);
-   }
+   	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem10<T>(), point, order);
@@ -4811,7 +5180,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem10<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem10<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem10<T>();
@@ -4851,7 +5224,7 @@ public:
 
    virtual bool isDerExist(T point) const {
   		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem11<Series<T>>(), point);
-   }
+   	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem11<T>(), point, order);
@@ -4859,7 +5232,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem11<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem11<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem11<T>();
@@ -4897,9 +5274,9 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarSlopesProblem12<IntervalSeries<T>>(), interval, order);
 	} 
 
-   virtual bool isDerExist(T point) const {
+   	virtual bool isDerExist(T point) const {
   		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem12<Series<T>>(), point);
-   }
+   	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem12<T>(), point, order);
@@ -4907,7 +5284,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem12<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem12<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem12<T>();
@@ -4947,7 +5328,7 @@ public:
 
    virtual bool isDerExist(T point) const {
   		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem13<Series<T>>(), point);
-   }
+   	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem13<T>(), point, order);
@@ -4955,7 +5336,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem13<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem13<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem13<T>();
@@ -4995,7 +5380,7 @@ public:
 
    virtual bool isDerExist(T point) const {
   		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem14<Series<T>>(), point);
-   }
+   	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem14<T>(), point, order);
@@ -5003,7 +5388,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem14<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem14<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem14<T>();
@@ -5043,7 +5432,7 @@ public:
 
    virtual bool isDerExist(T point) const {
   		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem15<Series<T>>(), point);
-   }
+   	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem15<T>(), point, order);
@@ -5051,7 +5440,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem15<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem15<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem15<T>();
@@ -5090,9 +5483,9 @@ public:
 		return ::calcIntervalDerHighOrder(UnivarSlopesProblem16<IntervalSeries<T>>(), interval, order);
 	} 
 
-   virtual bool isDerExist(T point) const {
+   	virtual bool isDerExist(T point) const {
   		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem16<Series<T>>(), point);
-   }
+   	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem16<T>(), point, order);
@@ -5100,7 +5493,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem16<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem16<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem16<T>();
@@ -5140,7 +5537,7 @@ public:
 
    virtual bool isDerExist(T point) const {
   		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem17<Series<T>>(), point);
-   }
+   	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem17<T>(), point, order);
@@ -5148,7 +5545,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem17<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem17<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem17<T>();
@@ -5188,7 +5589,7 @@ public:
 
    virtual bool isDerExist(T point) const {
   		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem18<Series<T>>(), point);
-   }
+   	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem18<T>(), point, order);
@@ -5196,7 +5597,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem18<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem18<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem18<T>();
@@ -5236,7 +5641,7 @@ public:
 
    virtual bool isDerExist(T point) const {
   		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem19<Series<T>>(), point);
-   }
+   	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem19<T>(), point, order);
@@ -5244,7 +5649,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem19<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem19<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem19<T>();
@@ -5284,7 +5693,7 @@ public:
 
    virtual bool isDerExist(T point) const {
   		return UnivarBenchmark<T>::isDerExist(UnivarSlopesProblem20<Series<T>>(), point);
-   }
+   	}
 
 	virtual T calcSymDiff(T point, int order) const {
 		return ::calcSymDiff(UnivarSlopesProblem20<T>(), point, order);
@@ -5292,7 +5701,11 @@ public:
 
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const {
 		return ::calcIntervalSymDiff(UnivarSlopesProblem20<Interval<T>>(), interval, order);
-   }
+   	}
+
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const {
+		return ::calcPwlBound(UnivarSlopesProblem20<PwlBound<T>>(), a, b, steps);
+	}
 
 	virtual Expr<T> getExpr() const {
 		return UnivarSlopesProblem20<T>();
@@ -5315,6 +5728,8 @@ class UnivarBenchmarks : public BenchmarksBase<PtrBenchOneDim<T>>
 {
 public:
 	UnivarBenchmarks() { fill(); }
+
+
 	virtual void fill()
 	{
 		this->clear();

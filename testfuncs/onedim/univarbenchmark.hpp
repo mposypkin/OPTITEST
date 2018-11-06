@@ -10,6 +10,7 @@
 #include "derivatives/intervalder.hpp"
 #include "expression/expr.hpp"
 #include "testfuncs/manydim/benchmarks.hpp"
+#include "pwl/pwlbound.hpp"
 
 using namespace snowgoose::expression;
 using namespace snowgoose::derivative;
@@ -108,6 +109,15 @@ public:
  	* @return interval estimation of derivative of function
 	*/
 	virtual Interval<T> calcIntervalSymDiff(const Interval<T> &interval, int order) const = 0;   
+
+	/**
+	* calcilates PWL estimation of function
+	* @param a is a left bound
+	* @param b is a right bound
+	* @param steps are number of steps
+	* @return pwl bound
+	*/
+	virtual PwlBound<T> calcPwlBound(T a, T b, int steps) const = 0;
    /**
 	* gets expression
 	* @return expression

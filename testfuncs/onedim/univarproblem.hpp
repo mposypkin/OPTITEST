@@ -13,7 +13,7 @@ using namespace snowgoose::expression;
 	Expr<T> Holder1()
 	{
 		Expr<T> x;
-		Expr<T> y = pow(x[0],6) - 15.0 * pow(x[0],4) + 27.0 * sqr(x[0]) + 250.0;
+		Expr<T> y = pow(x[0],6) - 15.0 * pow(x[0],4) + 27.0 * sqr(x[0]) + 150.0;
 		return y;
 	}
 

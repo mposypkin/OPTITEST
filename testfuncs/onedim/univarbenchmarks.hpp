@@ -5747,6 +5747,7 @@ public:
 		this->add(std::make_shared<Univar5Benchmark<T>>());
 		this->add(std::make_shared<Univar7Benchmark<T>>());
 		this->add(std::make_shared<Univar9Benchmark<T>>());
+
 		this->add(std::make_shared<Univar10Benchmark<T>>());
 		this->add(std::make_shared<Univar11Benchmark<T>>());
 		this->add(std::make_shared<Univar12Benchmark<T>>());
@@ -5760,6 +5761,7 @@ public:
 		this->add(std::make_shared<Lipschitz1Benchmark<T>>());
 		this->add(std::make_shared<Lipschitz2Benchmark<T>>());
 		this->add(std::make_shared<Lipschitz3Benchmark<T>>());
+
 		this->add(std::make_shared<UnivarGradProblem1Benchmark<T>>());
 		this->add(std::make_shared<UnivarGradProblem2Benchmark<T>>());
 		this->add(std::make_shared<UnivarGradProblem3Benchmark<T>>());
@@ -5816,7 +5818,7 @@ public:
 		this->add(std::make_shared<UnivarNonDiffProblem17Benchmark<T>>());
 		this->add(std::make_shared<UnivarNonDiffProblem18Benchmark<T>>());
 		this->add(std::make_shared<UnivarNonDiffProblem19Benchmark<T>>());
-		this->add(std::make_shared<UnivarNonDiffProblem20Benchmark<T>>());
+		//this->add(std::make_shared<UnivarNonDiffProblem20Benchmark<T>>());
 
 		this->add(std::make_shared<UnivarSlopesProblem1Benchmark<T>>());
 		this->add(std::make_shared<UnivarSlopesProblem2Benchmark<T>>());
@@ -5837,6 +5839,7 @@ public:
 		this->add(std::make_shared<UnivarSlopesProblem18Benchmark<T>>());
 		this->add(std::make_shared<UnivarSlopesProblem19Benchmark<T>>());
 		this->add(std::make_shared<UnivarSlopesProblem20Benchmark<T>>());
+
 	}
 };
 

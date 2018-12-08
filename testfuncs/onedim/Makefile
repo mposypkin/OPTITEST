@@ -1,5 +1,5 @@
 ROOT = ../../
-BINS = univartests.exe findmin.exe pwltests.exe
+BINS = univartests.exe findmin.exe pwltests.exe pwlroots.exe
 TESTS = univartests.exe pwltests.exe
 
 
